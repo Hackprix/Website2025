@@ -12,7 +12,7 @@ export function Navbar() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
 
   return (
-  <header className="md:fixed mt-4 md:mt-10 md:left-20 md:right-20 w-auto mx-4 z-50 md:mx-0 rounded-full dark:bg-white bg-black text-black dark:text-white shadow-md">
+  <header className="hover:scale-[1.007] transition duration-300 md:fixed mt-4 md:mt-10 md:left-20 md:right-20 w-auto mx-4 z-50 md:mx-0 rounded-full dark:bg-white bg-black text-black dark:text-white shadow-md hover:dark:bg-white/90 hover:bg-black/80">
     <div className="container mx-auto flex items-center justify-between p-4">
       <div className="flex items-center">
         <Image
