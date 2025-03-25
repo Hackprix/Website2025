@@ -52,7 +52,7 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
               key={`first-${index}`}
               className="flex items-center px-4 md:px-6"
             >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <div className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
               <span className="ml-4 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
                 {item}
               </span>
@@ -72,7 +72,7 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
               key={`second-${index}`}
               className="flex items-center px-4 md:px-6"
             >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <div className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
               <span className="ml-4 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
                 {item}
               </span>
@@ -92,7 +92,7 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
               key={`third-${index}`}
               className="flex items-center px-4 md:px-6"
             >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-primary" />
+              <div className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
               <span className="ml-4 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
                 {item}
               </span>

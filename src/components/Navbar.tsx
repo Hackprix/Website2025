@@ -14,7 +14,7 @@ export function Navbar() {
   return (
   <header className=" hover:scale-[1.007] transition duration-300 md:fixed mt-4 md:mt-10 md:left-20 md:right-20 w-auto mx-4 z-20 md:mx-0 rounded-full bg-white dark:bg-black text-black dark:text-white shadow-md hover:bg-white/90 hover:dark:bg-black/80">
     
-    <div className="container mx-auto flex items-center justify-between md:p-4 p-4 px-8 md:px-0 gap-40">
+    <div className="container mx-auto flex items-center justify-between md:p-4 p-4 px-8 md:px-8 gap-40">
       <div className="flex items-center">
         <Image
           src="/assets/sanketika.png"

@@ -20,15 +20,15 @@ const About = () => {
 //   ];
 
   const topImages = [
-    "/image-1.png", // Replace with your actual image paths
-    "/image-1.png", // Replace with your actual image paths
-    "/image-1.png", // Replace with your actual image paths
+    "/carousal1.jpg", // Replace with your actual image paths
+    "/carousal2.png", // Replace with your actual image paths
+    "/carousal3.jpg", // Replace with your actual image paths
   ];
 
   const bottomImages = [
-    "/image-1.png", // Replace with your actual image paths
-    "/image-1.png", // Replace with your actual image paths
-    "/image-1.png", // Replace with your actual image paths
+    "/carousal4.jpg", // Replace with your actual image paths
+    "/carousal5.jpg", // Replace with your actual image paths
+    "/carousal6.jpg", // Replace with your actual image paths
   ];
 
   useEffect(() => {
