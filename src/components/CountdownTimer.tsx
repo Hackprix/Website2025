@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { config } from '@/config';
+import { Card } from './ui/Card';
 
 interface TimeLeft {
   days: number;
@@ -65,15 +66,12 @@ const CountdownTimer: React.FC = () => {
       <h3 className="text-xl font-semibold dark:text-white text-black mb-2 font-poppins tracking-wider">Event Starts in</h3>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
         {validUnits.map(([label, value], index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center p-2 rounded-lg bg-purple-900/10 border border-purple-500/10"
-          >
+          <Card key={index} variant="dots" className="flex flex-col items-center p-2 ">
             <div className="md:text-2xl text-lg font-bold dark:text-yellow-200 text-sky-700 font-poppins">
               {String(value).padStart(2, '0')}
             </div>
             <div className="md:text-lg dark:text-gray-300 text-sky-700 capitalize font-poppins">{label}</div>
-          </div>
+          </Card>
         ))}
       </div>
     </div>

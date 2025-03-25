@@ -64,7 +64,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
             <motion.path
               d={underlinePath}
               stroke="currentColor"
-              strokeWidth="4"
+              strokeWidth="3"
               fill="none"
               variants={pathVariants}
               initial="hidden"

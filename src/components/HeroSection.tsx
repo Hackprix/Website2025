@@ -10,7 +10,7 @@ import { SparklesCore } from "@/components/ui/Sparkles";
 const HeroSection = () => {
   const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
   return (
-    <div className="w-full h-full flex items-center justify-center overflow-hidden z-20 pt-40">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden z-20 md:pt-40 pt-10">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
@@ -25,20 +25,20 @@ const HeroSection = () => {
         className="w-full h-full opacity-50 absolute"
       />
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="inline-block px-6 py-2 mb-6 rounded-full border-2 dark:border-yellow-500 border-red-500/70 text-white text-lg md:text-xl font-semibold bg-red-600/30 dark:bg-yellow-500/60 transition-all duration-300">
+        <div className="inline-block px-6 py-2 mb-6 rounded-full border-2 dark:border-yellow-500 border-red-500/70 text-white text-sm md:text-xl font-semibold bg-red-600/30 dark:bg-yellow-500/60 transition-all duration-300">
           {conferenceDates}
         </div>
         <AnimatedText
           className="text-center dark:text-white text-black text-4xl mb-8"
           text="Sanketika"
-          textClassName="text-6xl md:text-9xl font-bold mb-4 text-sky-700"
+          textClassName="text-5xl md:text-9xl font-bold mb-4 text-sky-600"
           underlinePath="M 0,10 Q 75,0 150,10 Q 225,20 300,10"
           underlineHoverPath="M 0,10 Q 75,20 150,10 Q 225,0 300,10"
           underlineDuration={1.5}
         />
         <AnimatedShinyText className="rounded-full dark:bg-black/85 bg-gray-400/50 border border-gray-200 inline-flex items-center justify-center px-4 md:w-3/4 py-1 transition ease-out hover:text-black hover:duration-300 text-black dark:text-white z-10">
-          <span className="font-poppins md:text-lg text-sm">🕹️ Where Innovation Meet Collaboration</span>
-          <ArrowRightIcon className="ml-1 size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
+          <span className="font-poppins md:text-lg text-xs">🕹️ Where Innovation Meets Collaboration</span>
+          <ArrowRightIcon className="ml-1 size-3 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </AnimatedShinyText>
         <Link
           href="https://2024.aidays.io"
