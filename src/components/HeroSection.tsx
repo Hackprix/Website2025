@@ -31,7 +31,7 @@ const HeroSection = () => {
         <AnimatedText
           className="text-center dark:text-white text-black text-4xl mb-8"
           text="Sanketika"
-          textClassName="text-5xl md:text-9xl font-bold mb-4 text-sky-600"
+          textClassName="text-5xl md:text-9xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-blue-700 to-purple-900 text-transparent bg-clip-text dark:from-purple-400 dark:via-yellow-200 dark:to-cyan-400 transition duration-700"
           underlinePath="M 0,10 Q 75,0 150,10 Q 225,20 300,10"
           underlineHoverPath="M 0,10 Q 75,20 150,10 Q 225,0 300,10"
           underlineDuration={1.5}

@@ -62,19 +62,26 @@ const CountdownTimer: React.FC = () => {
   if (validUnits.length === 0) return null;
 
   return (
-    <div className="dark:bg-black/90 bg-white p-4 border rounded-lg">
-      <h3 className="text-xl font-semibold dark:text-white text-black mb-2 font-poppins tracking-wider">Event Starts in</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
-        {validUnits.map(([label, value], index) => (
-          <Card key={index} variant="dots" className="flex flex-col items-center p-2 ">
-            <div className="md:text-2xl text-lg font-bold dark:text-yellow-200 text-sky-700 font-poppins">
-              {String(value).padStart(2, '0')}
-            </div>
-            <div className="md:text-lg dark:text-gray-300 text-sky-700 capitalize font-poppins">{label}</div>
-          </Card>
-        ))}
-      </div>
-    </div>
+<div className="dark:bg-black/90 bg-white p-2 border rounded-lg">
+  <h3 className="text-xl font-semibold dark:text-white text-black mb-2 font-poppins tracking-wider">
+    Event Starts in
+  </h3>
+  <div className="grid grid-cols-4 sm:grid-cols-4 gap-0 mb-3">
+    {validUnits.map(([label, value], index) => (
+      <Card key={index} variant="dots" className="flex flex-col justify-center items-center p-2">
+        <div className="flex flex-col justify-center items-center">
+        <div className="md:text-2xl text-base font-bold dark:text-yellow-200 text-sky-700 font-poppins">
+          {String(value).padStart(2, '0')}
+        </div>
+        <div className="md:text-lg text-xs dark:text-gray-300 text-sky-700 capitalize font-poppins">
+          {label}
+        </div>
+        </div>
+      </Card>
+    ))}
+  </div>
+</div>
+
   );
 };
 

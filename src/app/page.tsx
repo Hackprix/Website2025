@@ -1,9 +1,11 @@
+'use client';
 import { Navbar } from "@/components/Navbar";
 /// import { GooeyText } from "@/components/ui/GooeyText";
 import HeroSection from "@/components/HeroSection";
 import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
 import { MARQUEE } from '@/config/content';
 import { Footerdemo } from "@/components/Footer";
+import About from "@/components/About";
 
 
 export default function Home() {
@@ -17,6 +19,7 @@ export default function Home() {
           <HeroSection />
         </div>
         <InfiniteMarquee items={MARQUEE} />
+        <About />
         <Footerdemo />
       </div>
     </>

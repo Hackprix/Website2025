@@ -245,7 +245,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
                 <div className="rounded-full outline outline-8 dark:outline-gray-950 sm:my-6 md:my-8 size-1 my-4 outline-gray-50 bg-green-400 translate-x-[2.5px] place-self-end" />
               </section>
             </div>
-            <div className="relative z-20 mx-auto py-8">{content}</div>
+            <div className="relative z-20 md:mx-auto py-2 md:px-0 items-center text-center ">{content}</div>
           </div>
         </div>
       )
