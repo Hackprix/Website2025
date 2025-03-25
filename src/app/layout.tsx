@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Play, Roboto, Catamaran, Poppins, Anton, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +13,35 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+const play = Play({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+
+const space = Space_Grotesk({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const catamaran = Catamaran({
+  subsets: ["latin"],
+  weight: "800",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const anton = Anton({
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -31,6 +62,7 @@ export default function RootLayout({
         <ThemeProvider attribute={"class"} enableSystem defaultTheme="system">
         {children}
         <Analytics />
+        <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

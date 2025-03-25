@@ -1,32 +1,21 @@
 import { Navbar } from "@/components/Navbar";
-import { FlickeringGrid } from '@/components/FlickeringGrid';
-import { GooeyText } from "@/components/ui/GooeyText";
+/// import { GooeyText } from "@/components/ui/GooeyText";
+import HeroSection from "@/components/HeroSection";
+import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
+import { MARQUEE } from '@/config/content';
+import { Footerdemo } from "@/components/Footer";
+
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <div className="w-full absolute inset-0 h-screen">
-      <FlickeringGrid 
-              className="w-full h-full"
-              squareSize={4}
-              gridGap={6}
-              color="#249cad"
-              maxOpacity={0.5}
-              flickerChance={0.1}
-              // height={800}
-              // width={800}
-      />
-      </div>
-      <div className="bg-white dark:bg-black text-black dark:text-white transition-all duration-300 flex items-center justify-center min-h-screen flex-col">
-      <div className="h-[200px] flex items-center justify-center">
-      <GooeyText
-        texts={["Sanketika", "Fest", "Is", "Here!"]}
-        morphTime={1}
-        cooldownTime={0.45}
-        className="font-bold"
-      />
-    </div>
+      <div className="bg-white dark:bg-black text-black dark:text-white transition-all duration-300 flex flex-col min-h-screen">
+        <Navbar />
+        <div className="flex-grow relative">
+          <HeroSection />
+        </div>
+        <InfiniteMarquee items={MARQUEE} />
+        <Footerdemo />
       </div>
     </>
   );

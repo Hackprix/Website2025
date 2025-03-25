@@ -138,3 +138,24 @@
     transform: translateX(-100%);
   }
 }
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.font-play {
+  font-family: 'Play', sans-serif;
+}
+.font-cat {
+  font-family: 'Catamaran', serif;
+}
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.font-anton {
+  font-family: 'Anton', sans-serif;
+}
+
+.font-space{
+  font-family: 'Space_Grotesk', sans-serif;
+}
