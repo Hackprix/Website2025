@@ -13,7 +13,7 @@ const TitleSponserSection = () => {
               minSize={0.2}
               maxSize={1.6}
               particleDensity={40}
-              className="w-full h-full opacity-50 absolute top-0 left-0 z-0"
+              className="w-full h-full opacity-50 absolute top-0 left-0 z-0 pointer-events-none"
             />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
@@ -71,7 +71,7 @@ const TitleSponserSection = () => {
               minSize={0.2}
               maxSize={1.6}
               particleDensity={40}
-              className="w-full h-full opacity-50 absolute top-0 left-0 z-0"
+              className="w-full h-full opacity-50 absolute top-0 left-0 z-0 pointer-events-none"
             />
 
       <TextImageSection

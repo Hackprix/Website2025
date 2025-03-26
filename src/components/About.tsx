@@ -1,23 +1,76 @@
-/* eslint-disable @next/next/no-img-element */
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import { ABOUT, METRICS } from "@/config/content";
 import { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
 import { SparklesCore } from "./ui/Sparkles";
+import { motion, useInView, useAnimation } from "framer-motion";
 
-const About = () => {
-  const [inView, setInView] = useState(false);
+interface AboutProps {
+  reverse?: boolean;
+}
+const About: React.FC<AboutProps> = ({ reverse = false }) => {
+  const controls = useAnimation();
   const statsRef = useRef(null);
+  const [metricsInView, setMetricsInView] = useState(false);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          setMetricsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-//   const metrics = [
-//     { id: 1, number: 5000, label: "Hackers" },
-//     { id: 2, number: 50, label: "Partners" },
-//     { id: 3, number: 70, label: "Hack hours" },
-//     { id: 4, number: 85, label: "Events" },
-//     { id: 5, number: 220, label: "Projects" },
-//     { id: 6, number: 50, label: "Mentors" },
-//   ];
+    const currentStatsRef = statsRef.current;
+    if (currentStatsRef) observer.observe(currentStatsRef);
+    return () => {
+      if (currentStatsRef) observer.unobserve(currentStatsRef);
+    };
+  }, []);
+  useEffect(() => {
+      if (isInView) {
+        controls.start("visible");
+      } else {
+        controls.start("hidden");
+      }
+    }, [isInView, controls]);
+
+  const textVariants = {
+    hidden: {
+      opacity: 0,
+      x: reverse ? 100 : -100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const imageVariants = {
+    hidden: {
+      opacity: 0,
+      x: reverse ? -100 : 100,
+      scale: 0.8,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.2,
+      },
+    },
+  };
 
   const topImages = [
     "/carousal1.jpg", 
@@ -35,30 +88,6 @@ const About = () => {
     "/carousal10.jpg",
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
-    }
-
-    return () => {
-      if (statsRef.current) {
-        observer.unobserve(statsRef.current);
-      }
-    };
-  }, []);
-
   return (
     <div className="w-full bg-gradient-to-r from-purple-900/20 to-cyan-900/20 px-4 py-8 md:px-8 relative">
       <SparklesCore
@@ -70,54 +99,55 @@ const About = () => {
         className="w-full h-full opacity-50 absolute top-0 left-0 z-0"
       />
 
-      <div className="mx-auto max-w-9xl">
+      <div ref={sectionRef} className="mx-auto max-w-9xl">
         <div className="grid gap-8 md:grid-cols-2">
           {/* Left Content */}
-          <div className="flex flex-col justify-center">
-            <h2 className="relative mb-4 font-poppins dark:text-white text-black">
-              <p className="absolute top-1/2 -translate-y-1/2 text-3xl md:text-4xl">
+          <motion.div className="flex flex-col justify-center" initial="hidden" animate={controls} variants={textVariants}>
+            <motion.h2 className="relative mb-4 font-poppins dark:text-white text-black">
+              <motion.p className="absolute top-1/2 -translate-y-1/2 text-3xl md:text-4xl" variants={textVariants}>
                 {ABOUT.title}
-              </p>
-              <p
-                style={{
-                  fontSize: "5rem",
-                }}
+              </motion.p>
+              <motion.p
+                style={{ fontSize: "5rem" }}
                 className="font-extrabold dark:text-white/30 text-black/30"
+                variants={textVariants}
               >
                 About
-              </p>
-            </h2>
-            <p className="mb-6 text-xl text-sky-700 font-poppins font-poppins">{ABOUT.subtitle}</p>
-            <p className="mb-8 text-lg dark:text-white font-poppins leading-relaxed md:leading-loose">{ABOUT.description}</p>
+              </motion.p>
+            </motion.h2>
+
+            <motion.p className="mb-6 text-xl text-sky-700 font-poppins" variants={textVariants}>
+              {ABOUT.subtitle}
+            </motion.p>
+
+            <motion.p className="mb-8 text-lg dark:text-white font-poppins leading-relaxed md:leading-loose" variants={textVariants}>
+              {ABOUT.description}
+            </motion.p>
 
             {/* Metrics Grid */}
-            <div
-              ref={statsRef}
-              className="grid grid-cols-2 gap-6 md:grid-cols-4"
-            >
-              {METRICS.map((metric) => (
-                <div key={metric.id} className="text-center">
-                  <p className="text-2xl font-poppins font-poppins text-red-500 md:text-3xl">
-                    {inView && (
-                      <>
-                        {metric.isCurrency ? "₹" : ""}
-                        <CountUp end={metric.number} duration={2} />
-                        {metric.isCurrency ? "L" : ""}
-                      </>
-                    )}
-                    +
-                  </p>
-                  <p className="mt-1 text-sm dark:text-white md:text-base">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+            {/* Metrics Grid */}
+<div ref={statsRef} className="grid grid-cols-2 gap-6 md:grid-cols-4">
+  {METRICS.map((metric) => (
+    <div key={metric.id} className="text-center">
+      {metricsInView && (
+        <>
+          <p className="text-2xl font-poppins text-red-500 md:text-3xl">
+            {metric.isCurrency ? "₹" : ""}
+            <CountUp end={metric.number} duration={10} />
+            {metric.isCurrency ? "L" : ""}+
+          </p>
+          <p className="mt-1 text-sm dark:text-white md:text-base">
+            {metric.label}
+          </p>
+        </>
+      )}
+    </div>
+  ))}
+</div>
+          </motion.div>
 
-          {/* Right Content - Scrolling Images */}
-          <div className="relative overflow-hidden">
-            {/* Top row */}
+          {/* Right Content - Scrolling Images with Animations */}
+          <motion.div className="relative overflow-hidden" initial="hidden" animate={controls} variants={textVariants}>
             <SparklesCore
               id="tsparticlesfullpage"
               background="transparent"
@@ -126,35 +156,29 @@ const About = () => {
               particleDensity={40}
               className="w-full h-full opacity-50 absolute"
             />
-            <div className="relative mb-4 h-48 overflow-hidden md:h-64">
+
+            {/* First Scrolling Row */}
+            <motion.div className="relative mb-4 h-48 overflow-hidden md:h-64" variants={imageVariants}>
               <div className="hover:pause flex animate-scroll-left space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...topImages, ...topImages].map((img, index) => (
-                  <div key={index} className="h-48 w-72 shrink-0 md:h-64">
-                    <img
-                      src={img}
-                      alt={`Event ${index + 1}`}
-                      className="h-full w-full rounded-lg object-cover"
-                    />
-                  </div>
+                  <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
+                    <img src={img} alt={`Event ${index + 1}`} className="h-full w-full rounded-lg object-cover" />
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            {/* Bottom row */}
-            <div className="relative h-48 overflow-hidden md:h-64">
+            {/* Second Scrolling Row */}
+            <motion.div className="relative h-48 overflow-hidden md:h-64" variants={imageVariants}>
               <div className="hover:pause flex animate-scroll-right space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...bottomImages, ...bottomImages].map((img, index) => (
-                  <div key={index} className="h-48 w-72 shrink-0 md:h-64">
-                    <img
-                      src={img}
-                      alt={`Event ${index + 1}`}
-                      className="h-full w-full rounded-lg object-cover"
-                    />
-                  </div>
+                  <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
+                    <img src={img} alt={`Event ${index + 1}`} className="h-full w-full rounded-lg object-cover" />
+                  </motion.div>
                 ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
