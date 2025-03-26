@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
 import { SparklesCore } from "./ui/Sparkles";
 import { motion, useInView, useAnimation } from "framer-motion";
+import Image from "next/image";
 
 interface AboutProps {
   reverse?: boolean;
@@ -14,6 +15,7 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
   const [metricsInView, setMetricsInView] = useState(false);
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -31,13 +33,12 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
       if (currentStatsRef) observer.unobserve(currentStatsRef);
     };
   }, []);
+
   useEffect(() => {
-      if (isInView) {
-        controls.start("visible");
-      } else {
-        controls.start("hidden");
-      }
-    }, [isInView, controls]);
+    if (isInView) {
+      controls.start("visible");
+    }
+  }, [isInView, controls]);
 
   const textVariants = {
     hidden: {
@@ -125,25 +126,24 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
             </motion.p>
 
             {/* Metrics Grid */}
-            {/* Metrics Grid */}
-<div ref={statsRef} className="grid grid-cols-2 gap-6 md:grid-cols-4">
-  {METRICS.map((metric) => (
-    <div key={metric.id} className="text-center">
-      {metricsInView && (
-        <>
-          <p className="text-2xl font-poppins text-red-500 md:text-3xl">
-            {metric.isCurrency ? "₹" : ""}
-            <CountUp end={metric.number} duration={10} />
-            {metric.isCurrency ? "L" : ""}+
-          </p>
-          <p className="mt-1 text-sm dark:text-white md:text-base">
-            {metric.label}
-          </p>
-        </>
-      )}
-    </div>
-  ))}
-</div>
+            <div ref={statsRef} className="grid grid-cols-2 gap-6 md:grid-cols-4">
+              {METRICS.map((metric) => (
+                <div key={metric.id} className="text-center">
+                  {metricsInView && (
+                    <>
+                      <p className="text-2xl font-poppins text-red-500 md:text-3xl">
+                        {metric.isCurrency ? "₹" : ""}
+                        <CountUp end={metric.number} duration={10} />
+                        {metric.isCurrency ? "L" : ""}+
+                      </p>
+                      <p className="mt-1 text-sm dark:text-white md:text-base">
+                        {metric.label}
+                      </p>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Right Content - Scrolling Images with Animations */}
@@ -162,7 +162,13 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
               <div className="hover:pause flex animate-scroll-left space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...topImages, ...topImages].map((img, index) => (
                   <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
-                    <img src={img} alt={`Event ${index + 1}`} className="h-full w-full rounded-lg object-cover" />
+                    <Image
+                      src={img}
+                      alt={`Event ${index + 1}`}
+                      width={288}
+                      height={256}
+                      className="h-full w-full rounded-lg object-cover"
+                    />
                   </motion.div>
                 ))}
               </div>
@@ -173,7 +179,12 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
               <div className="hover:pause flex animate-scroll-right space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...bottomImages, ...bottomImages].map((img, index) => (
                   <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
-                    <img src={img} alt={`Event ${index + 1}`} className="h-full w-full rounded-lg object-cover" />
+                    <Image
+                      src={img}
+                      alt={`Event ${index + 1}`}
+                      width={288}
+                      height={256}
+                      className="h-full w-full rounded-lg object-cover"                    />
                   </motion.div>
                 ))}
               </div>
