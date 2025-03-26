@@ -1,11 +1,20 @@
 import Image from 'next/image';
 import TextImageSection from '@/components/TextImageSection';
 import { TitleSponser } from '@/config/content';
+import { SparklesCore } from './ui/Sparkles';
 
 const TitleSponserSection = () => {
   return (
     <section className="text-center py-16 relative">
       {/* Fix: Added pointer-events-none to prevent blocking interactions */}
+      <SparklesCore
+              id="tsparticles-sponser"
+              background="transparent"
+              minSize={0.2}
+              maxSize={1.6}
+              particleDensity={40}
+              className="w-full h-full opacity-50 absolute top-0 left-0 z-0"
+            />
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
@@ -56,6 +65,14 @@ const TitleSponserSection = () => {
       
 
       <p className="mt-2 text-sm font-poppins md:text-2xl relative z-50 md:mb-0 mb-4">{TitleSponser.subtitle}</p>
+      <SparklesCore
+              id="tsparticles-sponser2"
+              background="transparent"
+              minSize={0.2}
+              maxSize={1.6}
+              particleDensity={40}
+              className="w-full h-full opacity-50 absolute top-0 left-0 z-0"
+            />
 
       <TextImageSection
         description={TitleSponser.description}

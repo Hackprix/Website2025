@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Info, Contact } from "lucide-react";
+import { Home, ScrollText , ClipboardPen, HandCoins, Navigation } from "lucide-react";
 import { AnimeNavBar } from "./ui/anime-navbar";
 import { ThemeToggle } from "./ui/ThemeToggle";
 import Image from "next/image";
@@ -28,8 +28,10 @@ export function Navbar() {
         <AnimeNavBar
           items={[
             { name: "Home", url: "/", icon: Home },
-            { name: "About", url: "/about", icon: Info },
-            { name: "Contact", url: "/contact", icon: Contact },
+            { name: "Events", url: "/Events", icon: ScrollText },
+            { name: "Schedule", url: "/contact", icon: ClipboardPen },
+            { name: "Sponsers", url: "/sponsers", icon: HandCoins },
+            { name: "Venue", url: "/venue", icon: Navigation },
           ]}
         />
         <ThemeToggle />
@@ -49,8 +51,10 @@ export function Navbar() {
       onClose={() => setIsSideNavOpen(false)}
       items={[
         { name: "Home", url: "/", icon: Home },
-        { name: "About", url: "/about", icon: Info },
-        { name: "Contact", url: "/contact", icon: Contact },
+        { name: "About", url: "/about", icon: ScrollText },
+        { name: "Contact", url: "/contact", icon: ClipboardPen },
+        { name: "Sponsers", url: "/sponsers", icon: HandCoins },
+        { name: "Venue", url: "/venue", icon: Navigation },
       ]}
     />
   </header>

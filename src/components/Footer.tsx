@@ -61,32 +61,32 @@ function Footerdemo() {
                 Home
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                About Us
+                Events
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Services
+                Schedule
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Products
+                Sponsers
               </a>
               <a href="#" className="block transition-colors hover:text-primary">
-                Contact
+                Venue
               </a>
             </nav>
           </div>
           <div>
             <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
             <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
+              <p>Lords Institute of Engineering & Technology</p>
+              <p>Himayath sagar, Hyderabad, Telangana 500091</p>
+              <p>Phone: (+91) 99086-6428</p>
+              <p>Email: sanketika@lords.ac.in</p>
             </address>
           </div>
           <div className="relative">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="mb-6 flex space-x-4">
-              <TooltipProvider>
+              {/* <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
@@ -103,7 +103,7 @@ function Footerdemo() {
                     <p>Follow us on Facebook</p>
                   </TooltipContent>
                 </Tooltip>
-              </TooltipProvider>
+              </TooltipProvider> */}
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
@@ -111,7 +111,7 @@ function Footerdemo() {
                       variant="outline"
                       size="icon"
                       className="rounded-full"
-                      onClick={() => window.open("https://www.twitter.com", "_blank")}
+                      onClick={() => window.open("https://www.x.com/lordsinstitute", "_blank")}
                     >
                       <Twitter className="h-4 w-4" />
                       <span className="sr-only">Twitter</span>
@@ -147,7 +147,7 @@ function Footerdemo() {
                       variant="outline"
                       size="icon"
                       className="rounded-full"
-                      onClick={() => window.open("https://www.instagram.com", "_blank")}
+                      onClick={() => window.open("https://www.instagram.com/sanketika2025", "_blank")}
                     >
                       <Instagram className="h-4 w-4" />
                       <span className="sr-only">Instagram</span>
@@ -165,7 +165,7 @@ function Footerdemo() {
                       variant="outline"
                       size="icon"
                       className="rounded-full"
-                      onClick={() => window.open("https://www.linkedin.com", "_blank")}
+                      onClick={() => window.open("https://www.linkedin.com/school/lords-institute-of-engineering-&-technology", "_blank")}
                     >
                       <Linkedin className="h-4 w-4" />
                       <span className="sr-only">LinkedIn</span>
