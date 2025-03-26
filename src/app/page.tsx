@@ -6,6 +6,7 @@ import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
 import { MARQUEE } from '@/config/content';
 import { Footerdemo } from "@/components/Footer";
 import About from "@/components/About";
+import TitleSponserSection from "@/components/TitleSponserSection";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         </div>
         <InfiniteMarquee items={MARQUEE} />
         <About />
+        <TitleSponserSection />
         <Footerdemo />
       </div>
     </>

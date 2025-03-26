@@ -20,15 +20,19 @@ const About = () => {
 //   ];
 
   const topImages = [
-    "/carousal1.jpg", // Replace with your actual image paths
-    "/carousal2.png", // Replace with your actual image paths
-    "/carousal3.jpg", // Replace with your actual image paths
+    "/carousal1.jpg", 
+    "/carousal2.png", 
+    "/carousal3.jpg", 
+    "/carousal7.jpg", 
+    "/carousal8.jpg", 
   ];
 
   const bottomImages = [
-    "/carousal4.jpg", // Replace with your actual image paths
-    "/carousal5.jpg", // Replace with your actual image paths
-    "/carousal6.jpg", // Replace with your actual image paths
+    "/carousal4.jpg", 
+    "/carousal5.jpg", 
+    "/carousal6.jpg", 
+    "/carousal9.jpg",
+    "/carousal10.jpg",
   ];
 
   useEffect(() => {
@@ -84,7 +88,7 @@ const About = () => {
               </p>
             </h2>
             <p className="mb-6 text-xl text-sky-700 font-poppins font-poppins">{ABOUT.subtitle}</p>
-            <p className="mb-8 text-lg dark:text-white font-poppins">{ABOUT.description}</p>
+            <p className="mb-8 text-lg dark:text-white font-poppins leading-relaxed md:leading-loose">{ABOUT.description}</p>
 
             {/* Metrics Grid */}
             <div

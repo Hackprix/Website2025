@@ -32,4 +32,10 @@ const METRICS = [
       isCurrency: true // Add a flag to handle special formatting
 }
 ]
-export { MARQUEE, ABOUT, METRICS };
+const TitleSponser = {
+  title: "Title Sponsor",
+  subtitle: "Lords Institute of Engineering and Technology",
+  description: "Lords Institute of Engineering and Technology proudly serves as the Title Sponsor for SanketikaFest, providing the venue, funding, and essential support to bring this event to life. As the host institution, they play a crucial role in facilitating a platform where students, professionals, and tech enthusiasts can engage in a wide range of technical and non-technical competitions, hands-on workshops, speaker sessions, and interactive activities.Their commitment to fostering innovation, creativity, and knowledge-sharing ensures that SanketikaFest is not just an event, but an experience that inspires learning and growth. By providing an ecosystem that encourages collaboration, networking, and skill-building, Lords Institute empowers students to explore cutting-edge technologies, develop solutions to real-world problems, and connect with industry leaders."
+};
+
+export { MARQUEE, ABOUT, METRICS, TitleSponser };
