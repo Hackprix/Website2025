@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 export interface AnimatedBeamProps {
   className?: string;
   containerRef: React.RefObject<HTMLElement | HTMLDivElement>;
-  fromRef: RefObject<HTMLElement>;
-  toRef: RefObject<HTMLElement>;
+fromRef: RefObject<HTMLElement | HTMLDivElement>;
+toRef: RefObject<HTMLElement | HTMLDivElement>;
   curvature?: number;
   reverse?: boolean;
   pathColor?: string;
