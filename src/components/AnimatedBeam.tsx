@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 export interface AnimatedBeamProps {
   className?: string;
-  containerRef: React.RefObject<HTMLDivElement>;
-  fromRef: RefObject<HTMLDivElement>;
-  toRef: RefObject<HTMLDivElement>;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+  fromRef: React.RefObject<HTMLDivElement | null>;
+  toRef: React.RefObject<HTMLDivElement | null>;
   curvature?: number;
   reverse?: boolean;
   pathColor?: string;
