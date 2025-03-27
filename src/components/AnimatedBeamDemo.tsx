@@ -22,7 +22,7 @@ const Circle = forwardRef<
 Circle.displayName = "Circle";
 
 export function AnimatedBeamDemo() {
-  const containerRef = useRef<HTMLElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null); 
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
@@ -141,42 +141,42 @@ export function AnimatedBeamDemo() {
         </div>
         <div>
         <AnimatedBeam
-          containerRef={containerRef as React.RefObject<HTMLElement>}
-          fromRef={div1Ref as React.RefObject<HTMLElement>}
-          toRef={div4Ref as React.RefObject<HTMLElement>}
+          containerRef={containerRef}
+          fromRef={div1Ref}
+          toRef={div4Ref}
           curvature={-75}
           endYOffset={-10}
         />
         <AnimatedBeam
-          containerRef={containerRef as React.RefObject<HTMLElement>}
-          fromRef={div2Ref as React.RefObject<HTMLElement>}
-          toRef={div4Ref as React.RefObject<HTMLElement>}
+          containerRef={containerRef}
+          fromRef={div2Ref}
+          toRef={div4Ref}
         />
         <AnimatedBeam
-          containerRef={containerRef as React.RefObject<HTMLElement>}
-          fromRef={div3Ref as React.RefObject<HTMLElement>}
-          toRef={div4Ref as React.RefObject<HTMLElement>}
+          containerRef={containerRef}
+          fromRef={div3Ref}
+          toRef={div4Ref}
           curvature={75}
           endYOffset={10}
         />
         <AnimatedBeam
-          containerRef={containerRef as React.RefObject<HTMLElement>}
-          fromRef={div5Ref as React.RefObject<HTMLElement>}
-          toRef={div4Ref as React.RefObject<HTMLElement>}
+          containerRef={containerRef}
+          fromRef={div5Ref}
+          toRef={div4Ref}
           curvature={-75}
           endYOffset={-10}
           reverse
         />
         <AnimatedBeam
-          containerRef={containerRef as React.RefObject<HTMLElement>}
-          fromRef={div6Ref as React.RefObject<HTMLElement>}
-          toRef={div4Ref as React.RefObject<HTMLElement>}
+          containerRef={containerRef}
+          fromRef={div6Ref}
+          toRef={div4Ref}
           reverse
         />
         <AnimatedBeam
-          containerRef={containerRef as React.RefObject<HTMLElement>}
-          fromRef={div7Ref as React.RefObject<HTMLElement>}
-          toRef={div4Ref as React.RefObject<HTMLElement>}
+          containerRef={containerRef}
+          fromRef={div7Ref}
+          toRef={div4Ref}
           curvature={75}
           endYOffset={10}
           reverse
