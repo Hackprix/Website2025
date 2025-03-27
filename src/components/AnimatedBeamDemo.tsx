@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef, useRef, RefObject } from "react";
+import React, { forwardRef, useRef } from "react";
 import Image from "next/image";
 import { AnimatedBeam } from "@/components/AnimatedBeam";
 import { SparklesCore } from "./ui/Sparkles";
