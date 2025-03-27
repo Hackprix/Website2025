@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Play, Roboto, Catamaran, Poppins, Anton, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Play, Roboto, Catamaran, Poppins, Anton, Space_Grotesk, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
@@ -14,6 +14,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const press = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+})
+
 const play = Play({
   subsets: ["latin"],
   weight: "400",

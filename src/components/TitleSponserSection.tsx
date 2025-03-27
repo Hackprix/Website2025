@@ -5,7 +5,7 @@ import { SparklesCore } from './ui/Sparkles';
 
 const TitleSponserSection = () => {
   return (
-    <section className="text-center py-16 relative">
+    <section className="text-center pt-12 relative">
       {/* Fix: Added pointer-events-none to prevent blocking interactions */}
       <SparklesCore
               id="tsparticles-sponser"

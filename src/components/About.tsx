@@ -14,7 +14,7 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
   const statsRef = useRef(null);
   const [metricsInView, setMetricsInView] = useState(false);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,7 +76,6 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
   const topImages = [
     "/carousal1.jpg", 
     "/carousal2.png", 
-    "/carousal3.jpg", 
     "/carousal7.jpg", 
     "/carousal8.jpg", 
   ];
@@ -86,7 +85,6 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
     "/carousal5.jpg", 
     "/carousal6.jpg", 
     "/carousal9.jpg",
-    "/carousal10.jpg",
   ];
 
   return (
@@ -121,7 +119,7 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
               {ABOUT.subtitle}
             </motion.p>
 
-            <motion.p className="mb-8 text-lg dark:text-white font-poppins leading-relaxed md:leading-loose" variants={textVariants}>
+            <motion.p className="mb-8 text-lg z-20 dark:text-white font-poppins leading-relaxed md:leading-loose" variants={textVariants}>
               {ABOUT.description}
             </motion.p>
 
@@ -159,7 +157,7 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
 
             {/* First Scrolling Row */}
             <motion.div className="relative mb-4 h-48 overflow-hidden md:h-64" variants={imageVariants}>
-              <div className="hover:pause flex animate-scroll-left space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
+              <div className="hover:pause flex animate-scroll-right space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...topImages, ...topImages].map((img, index) => (
                   <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
                     <Image
@@ -176,7 +174,7 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
 
             {/* Second Scrolling Row */}
             <motion.div className="relative h-48 overflow-hidden md:h-64" variants={imageVariants}>
-              <div className="hover:pause flex animate-scroll-right space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
+              <div className="hover:pause flex animate-scroll-left space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...bottomImages, ...bottomImages].map((img, index) => (
                   <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
                     <Image

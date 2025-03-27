@@ -7,6 +7,8 @@ import { MARQUEE } from '@/config/content';
 import { Footerdemo } from "@/components/Footer";
 import About from "@/components/About";
 import TitleSponserSection from "@/components/TitleSponserSection";
+import { AnimatedBeamDemo } from "@/components/AnimatedBeamDemo";
+import { Faqs } from "@/components/Faqs";
 
 
 export default function Home() {
@@ -22,6 +24,8 @@ export default function Home() {
         <InfiniteMarquee items={MARQUEE} />
         <About />
         <TitleSponserSection />
+        <AnimatedBeamDemo />
+        <Faqs />
         <Footerdemo />
       </div>
     </>

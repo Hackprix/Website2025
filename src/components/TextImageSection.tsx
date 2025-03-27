@@ -33,7 +33,7 @@ const TextImageSection: React.FC<TextImageSectionProps> = ({
   reverse = false,
 }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3, once: false });
+  const isInView = useInView(ref, { amount: 0.3, once: true });
   const controls = useAnimation();
 
   useEffect(() => {
@@ -126,7 +126,7 @@ const TextImageSection: React.FC<TextImageSectionProps> = ({
               <a href={button.link} target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="custom"
-                  className="w-full z-50 rounded-full border-2 border-border/20 bg-secondary/45 px-6 py-6 md:w-auto md:px-6"
+                  className="w-full z-50 rounded-full border-4 border-border/20 text-white hover:bg-black/70 bg-black/50  dark:bg-white/30 dark:hover:bg-white/10 dark:text-white px-6 py-6 md:w-auto md:px-6"
                 >
                   {button.text}
                 </Button>
