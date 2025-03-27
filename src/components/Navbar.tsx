@@ -20,7 +20,7 @@ export function Navbar() {
   return (
     <header className=" hover:shadow-2xl dark:hover:shadow-white dark:hover:shadow-sm transition duration-300 md:fixed mt-4 md:mt-10 md:left-20 md:right-20 w-auto mx-4 z-20 md:mx-0 rounded-full bg-white dark:bg-black text-black dark:text-white shadow-md hover:bg-white/90 hover:dark:bg-black/80">
       <div className="container mx-auto flex items-center justify-between md:p-4 p-4 px-8 md:px-8 gap-40">
-        <div className="flex items-center h-12">
+        <div className="flex items-center h-4 md:h-12">
           {" "}
           {/* Fixed height */}
           <Image
@@ -28,7 +28,7 @@ export function Navbar() {
             alt="Logo of the website, a simple placeholder image"
             width={100}
             height={100}
-            className="w-20 object-contain"
+            className="md:w-20 w-14 object-contain"
             unoptimized
           />
         </div>

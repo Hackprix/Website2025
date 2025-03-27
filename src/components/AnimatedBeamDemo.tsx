@@ -34,7 +34,7 @@ export function AnimatedBeamDemo() {
 
   return (
     <div
-      className="relative flex flex-col h-[600px] w-screen items-center justify-start gap-10 p-10 "
+      className="relative flex flex-col h-[500px] w-screen items-center justify-start gap-10 p-10 "
       ref={containerRef}
     >
       <SparklesCore
