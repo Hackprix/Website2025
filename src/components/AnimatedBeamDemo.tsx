@@ -140,26 +140,26 @@ export function AnimatedBeamDemo() {
         </div>
         <div>
         <AnimatedBeam
-          containerRef={containerRef}
+          containerRef={containerRef as React.RefObject<HTMLElement>}
           fromRef={div1Ref}
           toRef={div4Ref}
           curvature={-75}
           endYOffset={-10}
         />
         <AnimatedBeam
-          containerRef={containerRef}
+          containerRef={containerRef as React.RefObject<HTMLElement>}
           fromRef={div2Ref}
           toRef={div4Ref}
         />
         <AnimatedBeam
-          containerRef={containerRef}
+          containerRef={containerRef as React.RefObject<HTMLElement>}
           fromRef={div3Ref}
           toRef={div4Ref}
           curvature={75}
           endYOffset={10}
         />
         <AnimatedBeam
-          containerRef={containerRef}
+          containerRef={containerRef as React.RefObject<HTMLElement>}
           fromRef={div5Ref}
           toRef={div4Ref}
           curvature={-75}
@@ -167,13 +167,13 @@ export function AnimatedBeamDemo() {
           reverse
         />
         <AnimatedBeam
-          containerRef={containerRef}
+          containerRef={containerRef as React.RefObject<HTMLElement>}
           fromRef={div6Ref}
           toRef={div4Ref}
           reverse
         />
         <AnimatedBeam
-          containerRef={containerRef}
+          containerRef={containerRef as React.RefObject<HTMLElement>}
           fromRef={div7Ref}
           toRef={div4Ref}
           curvature={75}
