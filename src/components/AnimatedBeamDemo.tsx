@@ -1,6 +1,6 @@
 "use client";
 
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useRef, RefObject } from "react";
 import Image from "next/image";
 import { AnimatedBeam } from "@/components/AnimatedBeam";
 import { SparklesCore } from "./ui/Sparkles";
@@ -22,7 +22,7 @@ const Circle = forwardRef<
 Circle.displayName = "Circle";
 
 export function AnimatedBeamDemo() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = <HTMLDivElement>(null) as RefObject<HTMLElement>;
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
