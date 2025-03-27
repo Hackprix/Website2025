@@ -22,7 +22,7 @@ const Circle = forwardRef<
 Circle.displayName = "Circle";
 
 export function AnimatedBeamDemo() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
@@ -30,6 +30,7 @@ export function AnimatedBeamDemo() {
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
+
 
   return (
     <div
