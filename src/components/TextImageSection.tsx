@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
+ 
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";

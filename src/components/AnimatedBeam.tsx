@@ -1,3 +1,5 @@
+/* eslint-disable prefer-const */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 
 import { RefObject, useEffect, useId, useState } from "react";
