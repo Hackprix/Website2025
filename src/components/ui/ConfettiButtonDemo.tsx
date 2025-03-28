@@ -5,7 +5,7 @@ import confetti from "canvas-confetti";
 import type { ConfettiRef } from "@/components/ui/Confetti";
 import { Confetti } from "@/components/ui/Confetti";
 import ConfettiButton from "@/components/ui/ConfettiButton";
-import { Button } from "@/components/ui/Button";
+// import { Button } from "@/components/ui/Button";
 
 function ConfettiDemo() {
   const confettiRef = useRef<ConfettiRef>(null);

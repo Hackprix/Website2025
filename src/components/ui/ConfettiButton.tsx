@@ -5,7 +5,6 @@ import confetti, { Options as ConfettiOptions, GlobalOptions as ConfettiGlobalOp
 import { useRouter } from 'next/navigation'; // ✅ Use 'next/navigation' instead of 'next/router'
 import { Button, ButtonProps } from '@/components/ui/Button';
 import CircularProgress from '@mui/material/CircularProgress';
-import Image from 'next/image';
 
 interface ConfettiButtonProps extends ButtonProps {
   options?: ConfettiOptions & ConfettiGlobalOptions & { canvas?: HTMLCanvasElement };
