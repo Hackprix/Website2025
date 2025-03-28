@@ -1,10 +1,11 @@
 "use client";
 
-import React, { forwardRef, useRef } from "react";
+import React, { forwardRef, useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { AnimatedBeam } from "@/components/AnimatedBeam";
 import { SparklesCore } from "./ui/Sparkles";
 
+// Reusable Circle Component
 const Circle = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
@@ -18,11 +19,10 @@ const Circle = forwardRef<
     </div>
   );
 });
-
 Circle.displayName = "Circle";
 
 export function AnimatedBeamDemo() {
-  const containerRef = useRef<HTMLDivElement>(null); 
+  const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
   const div3Ref = useRef<HTMLDivElement>(null);
@@ -31,157 +31,97 @@ export function AnimatedBeamDemo() {
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
 
+  // Ensure circles and images are fully loaded before rendering beams
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoaded(true), 200);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
-    <div
-      className="relative flex flex-col h-[500px] w-screen items-center justify-start gap-10 p-10 "
-      ref={containerRef}
-    >
-      <SparklesCore
-        id="tsparticles-animatedBeam"
-        background="transparent"
-        minSize={0.2}
-        maxSize={1.6}
-        particleDensity={40}
-        className="w-full h-full opacity-50 absolute top-0 left-0 z-0 pointer-events-none"
-      />
-      <div className="flex flex-col  ">
-        <Image
-          src="/org.svg"
-          alt="Sanketika Logo Light"
-          width={100}
-          height={100}
-          className=" w-250 block dark:hidden"
+    <div className="min-h-[500px] w-screen">
+      <div
+        ref={containerRef}
+        className="relative flex flex-col h-[500px] w-screen items-center justify-start gap-10 p-10"
+      >
+        {/* Sparkle Effect Background */}
+        <SparklesCore
+          id="tsparticles-animatedBeam"
+          background="transparent"
+          minSize={0.2}
+          maxSize={1.6}
+          particleDensity={40}
+          className="w-full h-full opacity-50 absolute top-0 left-0 z-0 pointer-events-none"
         />
 
-        {/* Image visible in dark mode */}
-        <Image
-          src="/org2.svg"
-          alt="Sanketika Logo Dark"
-          width={100}
-          height={100}
-          className="w-250 hidden dark:block"
-        />
-      </div>
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
-        <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
-      </div>
-      <div className="flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify gap-10">
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref}>
-            <Image
-              src="/civil.png"
-              alt="Placeholder image 1"
-              width={200}
-              height={100}
-              className="w-100"
-            />
-          </Circle>
-          <Circle ref={div5Ref}>
-            <Image
-              src="/csd.png"
-              alt="Placeholder image 2"
-              width={200}
-              height={100}
-              className="w-100 mt-3 ml-1"
-            />
-          </Circle>
+        {/* Logos */}
+        <div className="flex flex-col mb-16">
+          <Image
+            src="/org.svg"
+            alt="Sanketika Logo Light"
+            width={100}
+            height={100}
+            className="w-250 block dark:hidden"
+          />
+          <Image
+            src="/org2.svg"
+            alt="Sanketika Logo Dark"
+            width={100}
+            height={100}
+            className="w-250 hidden dark:block"
+          />
         </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref}>
-            <Image
-              src="/ece.png"
-              alt="Placeholder image 3"
-              width={200}
-              height={100}
-              className="w-[52px] mt-4"
-            />
-          </Circle>
-          <Circle ref={div4Ref} className="size-16">
-            <Image
-              src="/assets/sanketika.png"
-              alt="Placeholder image 4"
-              width={100}
-              height={100}
-              className="w-100 mt-2"
-            />
-            {/* //middle image */}
-          </Circle>
-          <Circle ref={div6Ref}>
-            <Image
-              src="/csm.png"
-              alt="Placeholder image 5"
-              width={200}
-              height={100}
-              className="w-[200px] mt-2"
-            />
-          </Circle>
+
+        {/* Gradient Background Overlays */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
+          <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
         </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div3Ref}>
-            <Image
-              src="/mech.png"
-              alt="Placeholder image 6"
-              width={100}
-              height={100}
-              className="w-100 mt-2"
-            />
-          </Circle>
-          <Circle ref={div7Ref}>
-            <Image
-              src="/it.png"
-              alt="Placeholder image 7"
-              width={100}
-              height={100}
-              className="w-100 mt-2"
-            />
-          </Circle>
+
+        {/* Circles Container */}
+        <div className="relative flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-center gap-10">
+          <div className="flex flex-row items-center justify-between">
+            <Circle ref={div1Ref}>
+              <Image src="/civil.png" alt="Civil" width={200} height={100} className="w-100" />
+            </Circle>
+            <Circle ref={div5Ref}>
+              <Image src="/csd.png" alt="CSD" width={200} height={100} className="w-100 mt-3 ml-1" />
+            </Circle>
+          </div>
+          <div className="flex flex-row items-center justify-between">
+            <Circle ref={div2Ref}>
+              <Image src="/ece.png" alt="ECE" width={200} height={100} className="w-[52px] mt-4" />
+            </Circle>
+            <Circle ref={div4Ref} className="size-16">
+              <Image src="/assets/sanketika.png" alt="Sanketika" width={100} height={100} className="w-100 mt-2" />
+            </Circle>
+            <Circle ref={div6Ref}>
+              <Image src="/csm.png" alt="CSM" width={200} height={100} className="w-[200px] mt-2" />
+            </Circle>
+          </div>
+          <div className="flex flex-row items-center justify-between">
+            <Circle ref={div3Ref}>
+              <Image src="/mech.png" alt="Mech" width={100} height={100} className="w-100 mt-2" />
+            </Circle>
+            <Circle ref={div7Ref}>
+              <Image src="/it.png" alt="IT" width={100} height={100} className="w-100 mt-2" />
+            </Circle>
+          </div>
         </div>
-        <div>
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div1Ref}
-          toRef={div4Ref}
-          curvature={-75}
-          endYOffset={-10}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div2Ref}
-          toRef={div4Ref}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div3Ref}
-          toRef={div4Ref}
-          curvature={75}
-          endYOffset={10}
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div5Ref}
-          toRef={div4Ref}
-          curvature={-75}
-          endYOffset={-10}
-          reverse
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div6Ref}
-          toRef={div4Ref}
-          reverse
-        />
-        <AnimatedBeam
-          containerRef={containerRef}
-          fromRef={div7Ref}
-          toRef={div4Ref}
-          curvature={75}
-          endYOffset={10}
-          reverse
-        />
-        </div>
+
+        {/* Animated Beams - Render only after circles and images are loaded */}
+        {isLoaded && (
+          <div className="absolute inset-0 pointer-events-none">
+            <AnimatedBeam containerRef={containerRef} fromRef={div1Ref} toRef={div4Ref} curvature={-75} endYOffset={-10} />
+            <AnimatedBeam containerRef={containerRef} fromRef={div2Ref} toRef={div4Ref} />
+            <AnimatedBeam containerRef={containerRef} fromRef={div3Ref} toRef={div4Ref} curvature={75} endYOffset={10} />
+            <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div4Ref} curvature={-75} endYOffset={-10} reverse />
+            <AnimatedBeam containerRef={containerRef} fromRef={div6Ref} toRef={div4Ref} reverse />
+            <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div4Ref} curvature={75} endYOffset={10} reverse />
+          </div>
+        )}
       </div>
     </div>
   );

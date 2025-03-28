@@ -3,18 +3,15 @@ import { ABOUT, METRICS } from "@/config/content";
 import { useState, useEffect, useRef } from "react";
 import CountUp from "react-countup";
 import { SparklesCore } from "./ui/Sparkles";
-import { motion, useInView, useAnimation } from "framer-motion";
 import Image from "next/image";
 
 interface AboutProps {
   reverse?: boolean;
 }
-const About: React.FC<AboutProps> = ({ reverse = false }) => {
-  const controls = useAnimation();
+const About: React.FC<AboutProps> = ({ }) => {
   const statsRef = useRef(null);
   const [metricsInView, setMetricsInView] = useState(false);
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,45 +30,6 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
       if (currentStatsRef) observer.unobserve(currentStatsRef);
     };
   }, []);
-
-  useEffect(() => {
-    if (isInView) {
-      controls.start("visible");
-    }
-  }, [isInView, controls]);
-
-  const textVariants = {
-    hidden: {
-      opacity: 0,
-      x: reverse ? 100 : -100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  const imageVariants = {
-    hidden: {
-      opacity: 0,
-      x: reverse ? -100 : 100,
-      scale: 0.8,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      scale: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-        delay: 0.2,
-      },
-    },
-  };
 
   const topImages = [
     "/carousal1.jpg", 
@@ -101,30 +59,29 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
       <div ref={sectionRef} className="mx-auto max-w-9xl">
         <div className="grid gap-8 md:grid-cols-2">
           {/* Left Content */}
-          <motion.div className="flex flex-col justify-center" initial="hidden" animate={controls} variants={textVariants}>
-            <motion.h2 className="relative mb-4 font-poppins dark:text-white text-black">
-              <motion.p className="absolute top-1/2 -translate-y-1/2 text-3xl md:text-4xl" variants={textVariants}>
+          <div className="flex flex-col justify-center">
+            <div className="relative mb-4 font-poppins dark:text-white text-black">
+              <p className="absolute top-1/2 -translate-y-1/2 text-3xl md:text-4xl">
                 {ABOUT.title}
-              </motion.p>
-              <motion.p
+              </p>
+              <p
                 style={{ fontSize: "5rem" }}
                 className="font-extrabold dark:text-white/30 text-black/30"
-                variants={textVariants}
               >
                 About
-              </motion.p>
-            </motion.h2>
+              </p>
+            </div>
 
-            <motion.p className="mb-6 text-xl text-sky-700 font-poppins" variants={textVariants}>
+            <p className="mb-6 text-xl text-sky-700 font-poppins">
               {ABOUT.subtitle}
-            </motion.p>
+            </p>
 
-            <motion.p className="mb-8 text-lg z-20 dark:text-white font-poppins leading-relaxed md:leading-loose" variants={textVariants}>
+            <p className="mb-8 text-lg z-20 dark:text-white font-poppins leading-relaxed md:leading-loose">
               {ABOUT.description}
-            </motion.p>
+            </p>
 
             {/* Metrics Grid */}
-            <div ref={statsRef} className="grid grid-cols-2 gap-6 md:grid-cols-4">
+            <div ref={statsRef} className="grid grid-cols-2 gap-6 md:grid-cols-4 h-[150px]">
               {METRICS.map((metric) => (
                 <div key={metric.id} className="text-center">
                   {metricsInView && (
@@ -142,10 +99,10 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right Content - Scrolling Images with Animations */}
-          <motion.div className="relative overflow-hidden" initial="hidden" animate={controls} variants={textVariants}>
+          {/* Right Content - Scrolling Images */}
+          <div className="relative overflow-hidden">
             <SparklesCore
               id="tsparticlesfullpage"
               background="transparent"
@@ -156,10 +113,10 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
             />
 
             {/* First Scrolling Row */}
-            <motion.div className="relative mb-4 h-48 overflow-hidden md:h-64" variants={imageVariants}>
+            <div className="relative mb-4 h-48 overflow-hidden md:h-64">
               <div className="hover:pause flex animate-scroll-right space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...topImages, ...topImages].map((img, index) => (
-                  <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
+                  <div key={index} className="h-48 w-72 shrink-0 md:h-64">
                     <Image
                       src={img}
                       alt={`Event ${index + 1}`}
@@ -167,27 +124,28 @@ const About: React.FC<AboutProps> = ({ reverse = false }) => {
                       height={256}
                       className="h-full w-full rounded-lg object-cover"
                     />
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* Second Scrolling Row */}
-            <motion.div className="relative h-48 overflow-hidden md:h-64" variants={imageVariants}>
+            <div className="relative h-48 overflow-hidden md:h-64">
               <div className="hover:pause flex animate-scroll-left space-x-4 whitespace-nowrap hover:[animation-play-state:paused]">
                 {[...bottomImages, ...bottomImages].map((img, index) => (
-                  <motion.div key={index} className="h-48 w-72 shrink-0 md:h-64" variants={imageVariants}>
+                  <div key={index} className="h-48 w-72 shrink-0 md:h-64">
                     <Image
                       src={img}
                       alt={`Event ${index + 1}`}
                       width={288}
                       height={256}
-                      className="h-full w-full rounded-lg object-cover"                    />
-                  </motion.div>
+                      className="h-full w-full rounded-lg object-cover"
+                    />
+                  </div>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

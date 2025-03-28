@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { config } from "@/config";
 import { ArrowRightIcon, Link } from "lucide-react";
 import React from "react";
@@ -6,11 +6,13 @@ import CountdownTimer from "./CountdownTimer";
 import AnimatedShinyText from "./ui/AnimatedShinyText";
 import AnimatedText from "./ui/AnimatedText";
 import { SparklesCore } from "@/components/ui/Sparkles";
+// import { GradientButton } from "@/components/ui/GradientButton";
+import ConfettiButton from "@/components/ui/ConfettiButton";
 
 const HeroSection = () => {
   const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
   return (
-    <div className="w-full h-full flex items-center justify-center overflow-hidden z-20 md:pt-40 pt-10">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden z-20 md:pt-40 pt-30">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
@@ -37,7 +39,9 @@ const HeroSection = () => {
           underlineDuration={1.5}
         />
         <AnimatedShinyText className="rounded-full dark:bg-black/85 bg-gray-400/50 border border-gray-200 inline-flex items-center justify-center px-4 md:w-3/4 py-1 transition ease-out hover:text-black hover:duration-300 text-black dark:text-white z-10">
-          <span className="font-poppins md:text-lg text-xs">🕹️ Where Innovation Meets Collaboration</span>
+          <span className="font-poppins md:text-lg text-xs">
+            🕹️ Unleash Talent, Ignite Passion
+          </span>
           <ArrowRightIcon className="ml-1 size-3 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </AnimatedShinyText>
         <Link
@@ -61,10 +65,14 @@ const HeroSection = () => {
             />
           </svg>
         </Link>
+        <div className="flex justify-center gap-8">
+        <ConfettiButton>Register</ConfettiButton>
+        </div>
+
         <div className="mt-10">
           <CountdownTimer />
         </div>
-      </div>
+              </div>
     </div>
   );
 };

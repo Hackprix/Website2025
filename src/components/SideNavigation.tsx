@@ -18,7 +18,7 @@ interface SideNavigationProps {
 const SideNavigation = ({ isOpen, onClose, items }: SideNavigationProps) => {
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col justify-between z-50 bg-white dark:bg-black dark:text-white text-black">
+      <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col justify-between z-80 bg-white dark:bg-black dark:text-white text-black">
         <div className="flex justify-between items-center p-4">
           <SheetTitle className="text-lg font-bold">Menu</SheetTitle>
           <ThemeToggle />
