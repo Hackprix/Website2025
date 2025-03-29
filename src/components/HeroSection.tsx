@@ -8,6 +8,8 @@ import AnimatedText from "./ui/AnimatedText";
 import { SparklesCore } from "@/components/ui/Sparkles";
 // import { GradientButton } from "@/components/ui/GradientButton";
 import ConfettiButton from "@/components/ui/ConfettiButton";
+import { AiOutlineDiscord } from "react-icons/ai";
+import { Button } from "@/components/ui/Button";
 
 const HeroSection = () => {
   const conferenceDates = config.CONFERENCE_DAYS.datesLabel;
@@ -65,8 +67,14 @@ const HeroSection = () => {
             />
           </svg>
         </Link>
-        <div className="flex justify-center gap-8">
-        <ConfettiButton>Register</ConfettiButton>
+        <div className="flex justify-center items-center gap-4 md:gap-8">
+          <Button variant="shimmer" size="custom" onClick={() => window.open('https://discord.gg/BWNj5rfv', '_blank')} className="flex items-center gap-2">
+            <span className="relative z-10">
+              <AiOutlineDiscord className="w-4 h-4 md:w-6 md:h-6 text-black font-poppins dark:text-white" />
+            </span>
+            <span className="relative z-10 text-xs sm:text-lg font-poppins" >Join Discord</span>
+          </Button>
+          <ConfettiButton>Register</ConfettiButton>
         </div>
 
         <div className="mt-10">

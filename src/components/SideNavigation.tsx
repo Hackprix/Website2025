@@ -1,9 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetDescription } from "@/components/ui/sheet";
 import { NavItem } from "./ui/anime-navbar";
 // import { RiCloseLine } from "react-icons/ri";
@@ -16,6 +17,18 @@ interface SideNavigationProps {
 }
 
 const SideNavigation = ({ isOpen, onClose, items }: SideNavigationProps) => {
+  const pathname = usePathname();
+  const [activeItem, setActiveItem] = useState<string>("/");
+
+  useEffect(() => {
+    setActiveItem(pathname);
+  }, [pathname]);
+
+  const handleNavigation = (url: string) => {
+    onClose();
+    setActiveItem(url);
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
       <SheetContent side="right" className="w-[300px] sm:w-[400px] flex flex-col justify-between z-80 bg-white dark:bg-black dark:text-white text-black">
@@ -36,10 +49,15 @@ const SideNavigation = ({ isOpen, onClose, items }: SideNavigationProps) => {
               <li key={item.name} className="w-full">
                 <Link
                   href={item.url}
-                  className="text-lg tracking-tighter font-medium w-full block py-2 px-4 rounded-md transition-all duration-200 ease-in-out hover:bg-purple-500/10 hover:scale-[1.02]"
-                  onClick={onClose}
+                  className={`text-lg tracking-tighter font-medium w-full block py-2 px-4 rounded-md transition-all duration-200 ease-in-out hover:bg-purple-500/10 hover:scale-[1.02] ${
+                    activeItem === item.url ? 'bg-purple-500/20 scale-[1.02]' : ''
+                  }`}
+                  onClick={() => handleNavigation(item.url)}
                 >
-                  {item.name}
+                  <div className="flex items-center gap-3">
+                    <item.icon className="w-5 h-5" />
+                    <span>{item.name}</span>
+                  </div>
                 </Link>
               </li>
             ))}

@@ -15,7 +15,7 @@ import { InteractiveHoverButton } from "@/components/ui/InteractiveHoverButton";
 
 function Component() {
   return (
-    <div className="overflow-hidden inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 items-center justify-center flex py-10 ">
+    <div className="overflow-hidden inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 items-center justify-center flex py-24 ">
       <Dialog>
         <DialogTrigger asChild>
         <InteractiveHoverButton />

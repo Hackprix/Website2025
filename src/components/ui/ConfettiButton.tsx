@@ -13,33 +13,35 @@ interface ConfettiButtonProps extends ButtonProps {
 
 const ConfettiButton: React.FC<ConfettiButtonProps> = ({ options, children, ...props }) => {
   const [loading, setLoading] = useState(false);
+  const [buttonText, setButtonText] = useState<React.ReactNode>(children);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const router = useRouter(); 
+  const router = useRouter();
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const rect = event.currentTarget.getBoundingClientRect(); 
+    const rect = event.currentTarget.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
+    // Start loading
     setLoading(true);
-    console.log("Confetti Options:", options);
-    // Trigger confetti
-    setTimeout(() => {
-        confetti({
-          ...options,
-          origin: {
-            x: x / window.innerWidth,
-            y: y / window.innerHeight,
-          },
-        });
-      }, 2000); // ⏳ Wait 2 seconds before triggering confetti
-      
 
-    // Wait for confetti animation, then navigate
-    timerRef.current = setTimeout(() => {
+    // After 2 seconds, show confetti and change text
+    setTimeout(() => {
+      confetti({
+        ...options,
+        origin: {
+          x: x / window.innerWidth,
+          y: y / window.innerHeight,
+        },
+      });
       setLoading(false);
-      router.push('/Events'); 
-    }, 3000);
+      setButtonText("Redirecting...");
+    }, 2000);
+
+    // After 3.5 seconds total (2s loading + 1.5s redirecting text), navigate
+    timerRef.current = setTimeout(() => {
+      router.push('/events');
+    }, 100);
   };
 
   useEffect(() => {
@@ -52,27 +54,30 @@ const ConfettiButton: React.FC<ConfettiButtonProps> = ({ options, children, ...p
 
   return (
     <Button
-  onClick={handleClick}
-  {...props}
-  variant="shimmer"
-  size="custom"
-  style={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "8px",
-  }}
->
-  {loading ? (
-    <>
-      <CircularProgress size={24} color="inherit" />
-      <span>Loading...</span>
-    </>
-  ) : (
-    children
-  )}
-</Button>
-
+      onClick={handleClick}
+      {...props}
+      variant="shimmer"
+      size="custom"
+      className="font-poppins text-xs sm:text-lg min-w-[120px] sm:min-w-[160px]"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        fontFamily: "Poppins",
+        justifyContent: "center",
+        gap: "8px",
+      }}
+    >
+      {loading ? (
+        <>
+        <div className="flex items-center justify-center">
+          <CircularProgress size={20} color="inherit" />
+          <span className="ml-2">Loading...</span>
+        </div>
+        </>
+      ) : (
+        buttonText
+      )}
+    </Button>
   );
 };
 

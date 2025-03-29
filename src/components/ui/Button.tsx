@@ -25,9 +25,9 @@ const buttonVariants = cva(
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
+        lg: "h-12 rounded-md px-8",
         icon: "h-10 w-10",
-        custom: "h-12 w-16 rounded-2xl px-20",
+        custom: "h-10 w-30 md:h-14 md:w-60 rounded-2xl px-16",
       },
     },
     defaultVariants: {
@@ -70,7 +70,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           <div className="insert-0 absolute size-full rounded-2xl px-4 py-1.5 text-sm font-medium 
             dark:shadow-[inset_0_-8px_10px_#ffffff1f]
             shadow-[inset_0_-8px_10px_#0000001f]
-            transform-gpu transition-all duration-300 ease-in-out 
+            transform transition-all duration-300 ease-in-out 
             dark:group-hover:shadow-[inset_0_-6px_10px_#ffffff3f]
             group-hover:shadow-[inset_0_-6px_10px_#0000003f]
             dark:group-active:shadow-[inset_0_-10px_10px_#ffffff3f]

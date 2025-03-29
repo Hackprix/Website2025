@@ -38,4 +38,67 @@ const TitleSponser = {
   description: "Lords Institute of Engineering and Technology proudly serves as the Title Sponsor for SanketikaFest, providing the venue, funding, and essential support to bring this event to life. As the host institution, they play a crucial role in facilitating a platform where students, professionals, and tech enthusiasts can engage in a wide range of technical and non-technical competitions, hands-on workshops, speaker sessions, and interactive activities.Their commitment to fostering innovation, creativity, and knowledge-sharing ensures that SanketikaFest is not just an event, but an experience that inspires learning and growth. By providing an ecosystem that encourages collaboration, networking, and skill-building, Lords Institute empowers students to explore cutting-edge technologies, develop solutions to real-world problems, and connect with industry leaders."
 };
 
-export { MARQUEE, ABOUT, METRICS, TitleSponser };
+const DEPARTMENTS = [
+  {
+    id: "cse",
+    name: "Computer Science Engineering",
+    shortName: "CSE",
+    logo: "/cse.png",
+    poster: "/departments/cse-poster.png",
+    description: "The Department of Computer Science Engineering at Lords Institute brings you cutting-edge technical events, hackathons, and workshops focused on the latest technologies in software development, artificial intelligence, and cybersecurity.",
+    events: [
+      {
+        title: "Code Quest",
+        description: "24-hour coding competition",
+        type: "Competition"
+      },
+      {
+        title: "Hack Lords",
+        description: "Hackathon focused on solving real-world problems",
+        type: "Hackathon"
+      }
+    ]
+  },
+  {
+    id: "it",
+    name: "Information Technology",
+    shortName: "IT",
+    logo: "/it.png",
+    poster: "/departments/it-poster.png",
+    description: "The IT Department showcases innovation through technical workshops, coding competitions, and project exhibitions focused on web technologies, cloud computing, and data analytics.",
+    events: [
+      {
+        title: "Web Masters",
+        description: "Web development competition",
+        type: "Competition"
+      },
+      {
+        title: "Cloud Camp",
+        description: "Workshop on cloud technologies",
+        type: "Workshop"
+      }
+    ]
+  },
+  {
+    id: "ds",
+    name: "Data Science",
+    shortName: "DS",
+    logo: "/csd.png",
+    poster: "/departments/ds-poster.png",
+    description: "The Data Science Department brings you events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
+    events: [
+      {
+        title: "Data Derby",
+        description: "Data analysis competition",
+        type: "Competition"
+      },
+      {
+        title: "ML Workshop",
+        description: "Hands-on machine learning workshop",
+        type: "Workshop"
+      }
+    ]
+  }
+];
+
+export { MARQUEE, ABOUT, METRICS, TitleSponser, DEPARTMENTS };

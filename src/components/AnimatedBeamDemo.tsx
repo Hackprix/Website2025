@@ -30,6 +30,8 @@ export function AnimatedBeamDemo() {
   const div5Ref = useRef<HTMLDivElement>(null);
   const div6Ref = useRef<HTMLDivElement>(null);
   const div7Ref = useRef<HTMLDivElement>(null);
+  const div8Ref = useRef<HTMLDivElement>(null);
+  const div9Ref = useRef<HTMLDivElement>(null);
 
   // Ensure circles and images are fully loaded before rendering beams
   const [isLoaded, setIsLoaded] = useState(false);
@@ -81,10 +83,13 @@ export function AnimatedBeamDemo() {
         </div>
 
         {/* Circles Container */}
-        <div className="relative flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-center gap-10">
+        <div className="relative flex size-full flex-col max-w-lg max-h-[200px] items-stretch justify-center gap-12">
           <div className="flex flex-row items-center justify-between">
             <Circle ref={div1Ref}>
               <Image src="/civil.png" alt="Civil" width={200} height={100} className="w-100" />
+            </Circle>
+            <Circle ref={div8Ref}>
+              <Image src="/cse.png" alt="CSE" width={200} height={100} className="w-100 mt-2" />
             </Circle>
             <Circle ref={div5Ref}>
               <Image src="/csd.png" alt="CSD" width={200} height={100} className="w-100 mt-3 ml-1" />
@@ -96,14 +101,17 @@ export function AnimatedBeamDemo() {
             </Circle>
             <Circle ref={div4Ref} className="size-16">
               <Image src="/assets/sanketika.png" alt="Sanketika" width={100} height={100} className="w-100 mt-2" />
-            </Circle>
+            </Circle> 
             <Circle ref={div6Ref}>
               <Image src="/csm.png" alt="CSM" width={200} height={100} className="w-[200px] mt-2" />
             </Circle>
           </div>
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex flex-row items-center justify-between ">
             <Circle ref={div3Ref}>
               <Image src="/mech.png" alt="Mech" width={100} height={100} className="w-100 mt-2" />
+            </Circle>
+            <Circle ref={div9Ref}>
+              <Image src="/mba.png" alt="MBA" width={200} height={100} className="w-100 mt-2" />
             </Circle>
             <Circle ref={div7Ref}>
               <Image src="/it.png" alt="IT" width={100} height={100} className="w-100 mt-2" />
@@ -120,6 +128,8 @@ export function AnimatedBeamDemo() {
             <AnimatedBeam containerRef={containerRef} fromRef={div5Ref} toRef={div4Ref} curvature={-75} endYOffset={-10} reverse />
             <AnimatedBeam containerRef={containerRef} fromRef={div6Ref} toRef={div4Ref} reverse />
             <AnimatedBeam containerRef={containerRef} fromRef={div7Ref} toRef={div4Ref} curvature={75} endYOffset={10} reverse />
+            <AnimatedBeam containerRef={containerRef} fromRef={div8Ref} toRef={div4Ref} curvature={-45} endYOffset={-10} />
+            <AnimatedBeam containerRef={containerRef} fromRef={div9Ref} toRef={div4Ref} curvature={45} endYOffset={10} />
           </div>
         )}
       </div>
