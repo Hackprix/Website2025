@@ -41,7 +41,7 @@ const ConfettiButton: React.FC<ConfettiButtonProps> = ({ options, children, ...p
     // After 3.5 seconds total (2s loading + 1.5s redirecting text), navigate
     timerRef.current = setTimeout(() => {
       router.push('/events');
-    }, 100);
+    }, 1000);
   };
 
   useEffect(() => {

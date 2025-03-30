@@ -42,47 +42,64 @@ const DEPARTMENTS = [
   {
     id: "cse",
     name: "Computer Science Engineering",
+    marquee:"Department of Computer Science",     
     shortName: "CSE",
     logo: "/cse.png",
-    poster: "/departments/cse-poster.png",
     description: "The Department of Computer Science Engineering at Lords Institute brings you cutting-edge technical events, hackathons, and workshops focused on the latest technologies in software development, artificial intelligence, and cybersecurity.",
+    eventPoster: "/it.jpeg",
     events: [
       {
-        title: "Code Quest",
-        description: "24-hour coding competition",
-        type: "Competition"
+        name: "Code Quest",
+        type: "Technical",
       },
       {
-        title: "Hack Lords",
-        description: "Hackathon focused on solving real-world problems",
-        type: "Hackathon"
-      }
-    ]
+        name: "Hackathon",
+        type: "Technical",
+      },
+      {
+        name: "Gaming Tournament",
+        type: "Non-Technical",
+      },
+      // Add more events
+    ],
+    socialLinks: {
+      instagram: "https://instagram.com/cse_department",
+    },
+    registrationLink: "https://forms.google.com/cse-registration",
   },
   {
     id: "it",
     name: "Information Technology",
     shortName: "IT",
+    marquee:"Department of Information and Technology",
     logo: "/it.png",
-    poster: "/departments/it-poster.png",
     description: "The IT Department showcases innovation through technical workshops, coding competitions, and project exhibitions focused on web technologies, cloud computing, and data analytics.",
+    eventPoster: "/it.jpeg",
     events: [
       {
-        title: "Web Masters",
-        description: "Web development competition",
-        type: "Competition"
+        name: "Web Development",
+        type: "Technical",
       },
       {
-        title: "Cloud Camp",
-        description: "Workshop on cloud technologies",
-        type: "Workshop"
-      }
-    ]
+        name: "UI/UX Design",
+        type: "Technical",
+      },
+      {
+        name: "Tech Quiz",
+        type: "Technical",
+      },
+      
+    ],
+    socialLinks: {
+      instagram: "https://instagram.com/it_department",
+    },
+    registrationLink: "https://forms.google.com/it-registration",
   },
   {
     id: "ds",
-    name: "Data Science",
-    shortName: "DS",
+    name: "Computer Science in Data Science",
+    marquee: "Department of Computer Science and Data Science",
+    shortName: "CSD",
     logo: "/csd.png",
     poster: "/departments/ds-poster.png",
     description: "The Data Science Department brings you events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
@@ -95,6 +112,91 @@ const DEPARTMENTS = [
       {
         title: "ML Workshop",
         description: "Hands-on machine learning workshop",
+        type: "Workshop"
+      }
+    ]
+  },
+  {
+    id: "ai",
+    name: "Computer Science in Machine Learning",
+    marquee: "Department of Computer Science and Machine Learning",
+    shortName: "CSM",
+    logo: "/csm.png",
+    description: "The Artificial Intelligence Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
+    events: [
+      {
+        title: "AI Workshop",
+        description: "Hands-on artificial intelligence workshop",
+        type: "Workshop"
+      },
+      {
+        title: "AI Competition",
+        description: "Artificial intelligence competition",
+        type: "Competition"
+      }
+    ] 
+  },
+  {
+    id:"mech",
+    name: "Mechanical Engineering",
+    marquee: "Department of Mechanical Engineering",
+    shortName: "ME",
+    logo: "/mech.png",
+    description: "The Mechanical Engineering Department offers events focused on mechanical design, automation, and manufacturing, featuring workshops, competitions, and expert talks.",
+    events: [
+      {
+        title: "Mechanical Workshop",
+        description: "Mechanical design workshop",
+        type: "Workshop"
+      },
+      {
+        title: "Mechanical Competition",
+        description: "Mechanical design competition",
+        type: "Competition"
+      }
+    ]
+  },
+  {
+    id: "civil",
+    name: "Civil Engineering",
+    marquee: "Department of Civil Engineering",
+    shortName: "CE",
+    logo: "/civil.png",
+    description: "The Civil Engineering Department offers events focused on civil design, construction, and infrastructure, featuring workshops, competitions, and expert talks.",
+    events: [
+      {
+        title: "Civil Workshop",
+        description: "Civil design workshop",
+        type: "Workshop"
+      }
+    ]
+  },
+  {
+    id:"mba",
+    name: "Master of Business Administration",
+    marquee: "Department of MBA",
+    shortName: "MBA",
+    logo: "/mba.png",
+    description: "The MBA Department offers events focused on business management, entrepreneurship, and leadership, featuring workshops, competitions, and expert talks.",
+    events: [
+      {
+        title: "MBA Workshop",
+        description: "Business management workshop",
+        type: "Workshop"
+      }
+    ]
+  },
+  {
+    id:"ece",
+    name: "Electronics and Communication Engineering",
+    marquee: "Department of Electronics and Communication Engineering",
+    shortName: "ECE",
+    logo: "/ece.png",
+    description: "The Electronics and Communication Engineering Department offers events focused on electronics, communication, and signal processing, featuring workshops, competitions, and expert talks.",
+    events: [
+      {
+        title: "ECE Workshop",
+        description: "Electronics and communication workshop",
         type: "Workshop"
       }
     ]

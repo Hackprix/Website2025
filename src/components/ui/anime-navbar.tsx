@@ -32,7 +32,14 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
 
   useEffect(() => {
     // Update active tab based on current pathname
-    const currentItem = items.find(item => item.url === pathname);
+    const currentItem = items.find(item => {
+      // Exact match
+      if (item.url === pathname) return true;
+      // Check if we're in a department page (url starts with /events/)
+      if (pathname.startsWith('/events/') && item.url === '/events') return true;
+      return false;
+    });
+    
     if (currentItem) {
       setActiveTab(currentItem.name);
     }

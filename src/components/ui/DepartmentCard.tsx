@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import { useMotionValue, useMotionTemplate, motion, MotionValue } from "framer-motion";
+import { ShinyButton } from "@/components/ui/ShinnyButton";
 
 interface Department {
   id: string;
@@ -77,17 +78,19 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
   }
 
   return (
-    <div className="relative w-3/4 sm:w-full max-w-sm mx-auto bg-white/60">
+    <div 
+      className="relative w-3/4 sm:w-full max-w-sm mx-auto group hover:-translate-y-6 transition-transform duration-300 will-change-transform"
+      onMouseMove={onMouseMove}
+    >
       {/* Corner Icons */}
-      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 -left-2 md:-top-3 md:-left-3 dark:text-white text-black" />
-      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 -left-2 md:-bottom-3 md:-left-3 dark:text-white text-black" />
-      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 -right-2 md:-top-3 md:-right-3 dark:text-white text-black" />
-      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 -right-2 md:-bottom-3 md:-right-3 dark:text-white text-black" />
+      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 -left-2 md:-top-3 md:-left-3 dark:text-white text-black transition-transform duration-300" />
+      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 -left-2 md:-bottom-3 md:-left-3 dark:text-white text-black transition-transform duration-300" />
+      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 -right-2 md:-top-3 md:-right-3 dark:text-white text-black transition-transform duration-300" />
+      <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 -right-2 md:-bottom-3 md:-right-3 dark:text-white text-black transition-transform duration-300" />
 
       <div
         onClick={handleClick}
-        className="group/card relative overflow-hidden rounded-xl sm:rounded-2xl border border-black/[0.2] dark:border-white/[0.2] px-3 sm:px-4 py-4 sm:py-6 cursor-pointer h-[300px] sm:h-[350px] md:h-[400px] transition-all duration-300"
-        onMouseMove={onMouseMove}
+        className="group/card relative overflow-hidden border border-black/[0.2] dark:border-white/[0.2] px-3 sm:px-4 py-6 sm:py-6 cursor-pointer h-[350px] sm:h-[350px] md:h-[450px] transition-all duration-300 bg-white/60 dark:bg-black/50 rounded-[2rem] [mask-image:linear-gradient(to_bottom,transparent,black_1rem,black_calc(100%-1rem),transparent)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)]"
       >
         {/* Evervault Card Effect */}
         <CardPattern mouseX={mouseX} mouseY={mouseY} randomString={randomString} />
@@ -95,7 +98,7 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
         <div className="relative z-10 flex flex-col items-center h-full">
           {/* Center Logo Section */}
           <div className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 rounded-full flex items-center justify-center mt-2 sm:mt-3 md:mt-4">
-            <div className="absolute w-full h-full bg-white/[0.8] dark:bg-black/[0.8] blur-sm rounded-full" />
+            <div className="absolute w-full h-full bg-orange-400/[0.3] dark:bg-white/[0.8] blur-sm rounded-full" />
             <img
               src={department.logo}
               alt={department.name}
@@ -115,11 +118,11 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
 
           {/* View Events and Arrow Section */}
           <div className="flex items-center justify-between w-full px-1 sm:px-2 py-2 sm:py-3 md:py-4 mt-auto">
-            <span className="rounded-lg bg-white/40 dark:bg-black/40 px-2 py-0.5 text-[10px] sm:text-xs md:text-sm font-medium text-black dark:text-white group-hover/card:bg-white/80 dark:group-hover/card:bg-black/80">
+            <ShinyButton className="textsm:text-xs md:text-sm">
               View Events
-            </span>
+            </ShinyButton>
             <div className="transform rounded-full bg-white dark:bg-black transition-transform duration-200 lg:-rotate-45 group-hover/card:-rotate-0">
-              <BsArrowRightCircleFill className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-black dark:text-white" />
+              <BsArrowRightCircleFill className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-black dark:text-white" />
             </div>
           </div>
         </div>
@@ -136,11 +139,11 @@ function CardPattern({ mouseX, mouseY, randomString }: CardPatternProps) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 rounded-xl sm:rounded-2xl [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50" />
       <motion.div
-        className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-r from-purple-500 to-cyan-700 opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-r from-purple-500 to-cyan-700  md:opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
-        className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-0 mix-blend-overlay group-hover/card:opacity-100"
+        className="absolute inset-0 rounded-xl sm:rounded-2xl opacity-100 md:opacity-0 mix-blend-overlay md:group-hover/card:opacity-100"
         style={style}
       >
         <p className="absolute inset-x-0 text-[8px] sm:text-[10px] md:text-xs h-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500">

@@ -1,14 +1,17 @@
 'use client'
 import React, { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface InfiniteMarqueeProps {
   items: string[];
   speed?: number; // pixels per second
+  className?: string;
 }
 
 const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
   items,
   speed = 50,
+  className,
 }) => {
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -34,7 +37,7 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
   return (
     <div
       ref={containerRef}
-      className="z-30 w-full overflow-hidden inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20 "
+      className={cn("z-30 w-full overflow-hidden inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20", className)}
       aria-hidden="true"
     >
       

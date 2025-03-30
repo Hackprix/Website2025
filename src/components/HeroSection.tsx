@@ -25,7 +25,7 @@ const HeroSection = () => {
         background="transparent"
         minSize={0.2}
         maxSize={1.6}
-        particleDensity={40}
+        particleDensity={50}
         className="w-full h-full opacity-50 absolute"
       />
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
