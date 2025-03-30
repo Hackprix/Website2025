@@ -45,27 +45,26 @@ const DEPARTMENTS = [
     marquee:"Department of Computer Science",     
     shortName: "CSE",
     logo: "/cse.png",
-    description: "The Department of Computer Science Engineering at Lords Institute brings you cutting-edge technical events, hackathons, and workshops focused on the latest technologies in software development, artificial intelligence, and cybersecurity.",
-    eventPoster: "/it.jpeg",
+    description: "Sanketika 2025, a prestigious national-level TechFest in collaboration with ACE and powered by CODESTORM. Scheduled for April 24-25, the event showcases cutting-edge technical competitions, workshops, and a Project Expo aligned with Sustainable Development Goals. Highlights include Static Web Design, AI-Driven Image Generation, Short Film Production, and an AR/VR/MR Workshop.",
+    eventPoster: "/posters/cse.jpg",
     events: [
       {
-        name: "Code Quest",
+        name: "Static Web Page Designing",
         type: "Technical",
       },
       {
-        name: "Hackathon",
+        name: "Image Generation using AI",
         type: "Technical",
       },
       {
-        name: "Gaming Tournament",
+        name: "Short Film Making",
         type: "Non-Technical",
-      },
-      // Add more events
-    ],
+      },    
+   ],
     socialLinks: {
-      instagram: "https://instagram.com/cse_department",
+      instagram: "https://www.instagram.com/ace_.liet?igsh=MTFwN2t2czUxZ3Q2dA%3D%3D&utm_source=qr",
     },
-    registrationLink: "https://forms.google.com/cse-registration",
+    registrationLink: "https://qrco.de/bfqkjz",
   },
   {
     id: "it",
@@ -74,54 +73,75 @@ const DEPARTMENTS = [
     marquee:"Department of Information and Technology",
     logo: "/it.png",
     description: "The IT Department showcases innovation through technical workshops, coding competitions, and project exhibitions focused on web technologies, cloud computing, and data analytics.",
-    eventPoster: "/it.jpeg",
+    eventPoster: "/posters/it.jpeg",
     events: [
       {
-        name: "Web Development",
+        name: "Project Expo",
         type: "Technical",
       },
       {
-        name: "UI/UX Design",
+        name: "Technical Quiz",
         type: "Technical",
       },
       {
-        name: "Tech Quiz",
+        name: "Bug Busters",
         type: "Technical",
       },
-      
+      {
+        name: "Blind Coding",
+        type: "Technical",
+      },
+      {
+        name: "Treasure Hunt",
+        type: "Non-Technical",
+      },
+      {
+        name: "Power BI & Tableau",
+        type: "Workshop",
+      },
     ],
     socialLinks: {
-      instagram: "https://instagram.com/it_department",
+      instagram: "https://linktr.ee/itsa_liet",
     },
-    registrationLink: "https://forms.google.com/it-registration",
+    registrationLink: "https://linktr.ee/itsa_liet",
   },
   {
     id: "ds",
-    name: "Computer Science in Data Science",
+    name: "CSE - Data Science",
     marquee: "Department of Computer Science and Data Science",
     shortName: "CSD",
     logo: "/csd.png",
-    poster: "/departments/ds-poster.png",
-    description: "The Data Science Department brings you events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
+    eventPoster: "/posters/csd.png",
+    description: "Data Sankova is an exclusive event by the Department of CSE - Data Science in association with DataNova at Sanketika 2025 for future engineers. It features a workshop, two technical competitions, and a non-technical competition, fostering innovation, problem-solving, and collaboration in data science, AI, and analytics through hands-on learning and engaging challenges.",
     events: [
-      {
-        title: "Data Derby",
-        description: "Data analysis competition",
-        type: "Competition"
-      },
-      {
-        title: "ML Workshop",
-        description: "Hands-on machine learning workshop",
-        type: "Workshop"
-      }
-    ]
+        {
+    name: "No-Code Development",
+    type: "Workshop",
+  },
+  {
+    name: "Mind Spark",
+    type: "Technical",
+  },
+  {
+    name: "Code Combat",
+    type: "Technical",
+  },
+  {
+    name: "Visionary Vids",
+    type: "Non-Technical",
+  },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/datanova.lords?igsh=MWhrNWxkZ3pzeGQ2OA==",
+    },
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdzNFfP398OKZyt0-wfJdiQJt0vR9LIROGqfjM0zcJ5GPyqFQ/viewform",
   },
   {
     id: "ai",
-    name: "Computer Science in Machine Learning",
-    marquee: "Department of Computer Science and Machine Learning",
-    shortName: "CSM",
-    logo: "/csm.png",
+    name: "CSE - AI",
+    marquee: "Department of Computer Science and Artificial Intelligence",
+    shortName: "CSAI",
+    logo: "/csai.png",
     description: "The Artificial Intelligence Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
     events: [
       {
@@ -142,19 +162,30 @@ const DEPARTMENTS = [
     marquee: "Department of Mechanical Engineering",
     shortName: "ME",
     logo: "/mech.png",
+    eventPoster: "/posters/mech.jpeg",
     description: "The Mechanical Engineering Department offers events focused on mechanical design, automation, and manufacturing, featuring workshops, competitions, and expert talks.",
     events: [
       {
-        title: "Mechanical Workshop",
-        description: "Mechanical design workshop",
+        title: "AutoCAD Challenge",
+        type: "Technical"
+      },
+      {
+        title: "Best Out of Waste",
+        type: "Non-Technical"
+      },
+      {
+        title: "Assembly & Disassembly of AutoMobile Engine",
         type: "Workshop"
       },
       {
-        title: "Mechanical Competition",
-        description: "Mechanical design competition",
-        type: "Competition"
-      }
-    ]
+        title: "Poster Presentation",
+        type: "Non-Technical"
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/lordsinstitute",
+    },
+    registrationLink: "https://qrplanet.com/hwb7sd",
   },
   {
     id: "civil",
@@ -162,14 +193,30 @@ const DEPARTMENTS = [
     marquee: "Department of Civil Engineering",
     shortName: "CE",
     logo: "/civil.png",
-    description: "The Civil Engineering Department offers events focused on civil design, construction, and infrastructure, featuring workshops, competitions, and expert talks.",
+    eventPoster: "/posters/civil.jpg",
+    description: "The Department of Civil Engineering, in association with Tameer Association, is organizing ARCHINOVA 2025—an event to showcase skills, learn from professionals, network with like-minded people, and gain knowledge while having fun.",
     events: [
       {
-        title: "Civil Workshop",
-        description: "Civil design workshop",
-        type: "Workshop"
-      }
-    ]
+        name: "Build on Spot",
+        type: "Technical",
+      },
+      {
+        name: "NDT (Non-Destructive Testing)",
+        type: "Workshop",
+      },
+      {
+        name: "Blue Print Battle",
+        type: "Technical",
+      },
+      {
+        name: "Quiz",
+        type: "Non-Technical",
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/archinova.2025?igsh=YzljYTk1ODg3Zg==",
+    },
+    registrationLink: "https://linktr.ee/tameerassociation.liet",
   },
   {
     id:"mba",
@@ -177,29 +224,66 @@ const DEPARTMENTS = [
     marquee: "Department of MBA",
     shortName: "MBA",
     logo: "/mba.png",
+    eventPoster: "/posters/mba.jpeg",
     description: "The MBA Department offers events focused on business management, entrepreneurship, and leadership, featuring workshops, competitions, and expert talks.",
     events: [
       {
-        title: "MBA Workshop",
-        description: "Business management workshop",
-        type: "Workshop"
-      }
-    ]
+        title: "Case Crackers",
+        type: "Formal"
+      },
+      {
+        title: "Young Managers",
+        type: "Formal"
+      },
+      {
+        title: "HashTag Wars",
+        type: "Informal"
+      },
+      {
+        title: "IPL Bidding",
+        type: "Informal"
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/mba_synergia",
+    },
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSfwsmpG2nj3RiuKJbdUUxjapH4ezbnAsH9ZjKnNjIdhX6QN2Q/viewform",
   },
+
   {
     id:"ece",
     name: "Electronics and Communication Engineering",
     marquee: "Department of Electronics and Communication Engineering",
     shortName: "ECE",
     logo: "/ece.png",
-    description: "The Electronics and Communication Engineering Department offers events focused on electronics, communication, and signal processing, featuring workshops, competitions, and expert talks.",
+    eventPoster: "/posters/ece.jpg",
+    description: "The Department of Electronics and Communication Engineering is organizing Sanketika-2K25, a significant step towards achieving this goal, providing a dynamic platform for knowledge exchange, skill enhancement, and industry-academia interaction.",
     events: [
       {
-        title: "ECE Workshop",
-        description: "Electronics and communication workshop",
-        type: "Workshop"
-      }
-    ]
+        name: "Circuit Debugging",
+        type: "Technical",
+      },
+      {
+        name: "Poster Presentation",
+        type: "Technical",
+      },
+      {
+        name: "Technical Quiz",
+        type: "Technical",
+      },
+      {
+        name: "PCB Design",
+        type: "Workshop",
+      },
+      {
+        name: "Talent Show",
+        type: "Non-Technical",
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/anions_sanketika?igsh=MTNhZnlhYm0ycmVmdQ==",
+    },
+    registrationLink: "https://qrplanet.com/sanketikaece?ref=wa",
   }
 ];
 

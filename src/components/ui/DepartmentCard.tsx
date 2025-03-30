@@ -122,7 +122,7 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
               View Events
             </ShinyButton>
             <div className="transform rounded-full bg-white dark:bg-black transition-transform duration-200 lg:-rotate-45 group-hover/card:-rotate-0">
-              <BsArrowRightCircleFill className="text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-black dark:text-white" />
+              <BsArrowRightCircleFill className="text-4xl sm:text-3xl md:text-6xl text-black dark:text-white" />
             </div>
           </div>
         </div>
