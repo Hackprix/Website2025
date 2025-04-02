@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
-import type { Metadata } from "next";
 import { Geist, Geist_Mono, Play, Roboto, Catamaran, Poppins, Anton, Space_Grotesk, Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider, useTheme } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react" 
 import { useEffect } from "react";
+import { metadata } from "./metadata";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -52,11 +52,6 @@ const anton = Anton({
   weight: "400",
 });
 
-export const metadata: Metadata = {
-  title: "SanketikaFest",
-  description: "SanketikaFest is an exciting annual event by Lords Institute of Engineering and Technology, featuring a blend of technical and non-technical competitions, workshops, and fun!.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -75,6 +70,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <title>{String(metadata.title) || "Default Title"}</title>
+        <meta name="description" content={String(metadata.description) || "Default description."} />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
