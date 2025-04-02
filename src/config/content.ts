@@ -106,9 +106,9 @@ const DEPARTMENTS = [
     registrationLink: "https://linktr.ee/itsa_liet",
   },
   {
-    id: "ds",
+    id: "csd",
     name: "CSE - Data Science",
-    marquee: "Department of Computer Science and Data Science",
+    marquee: "Department of Computer Science in Data Science",
     shortName: "CSD",
     logo: "/csd.png",
     eventPoster: "/posters/csd.png",
@@ -137,11 +137,11 @@ const DEPARTMENTS = [
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdzNFfP398OKZyt0-wfJdiQJt0vR9LIROGqfjM0zcJ5GPyqFQ/viewform",
   },
   {
-    id: "ai",
-    name: "CSE - AI",
-    marquee: "Department of Computer Science and Artificial Intelligence",
+    id: "csm",
+    name: "CSE - Machine Learning",
+    marquee: "Department of Computer Science in Machine Learning",
     shortName: "CSAI",
-    logo: "/csai.png",
+    logo: "/csm.png",
     description: "The Artificial Intelligence Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
     events: [
       {
