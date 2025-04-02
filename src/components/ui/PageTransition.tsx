@@ -50,14 +50,14 @@ export const PageTransition = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 1.0 }}
     >
       <div className={`absolute inset-0 ${isDark ? 'bg-black' : 'bg-white'} opacity-80`} />
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 1.0 }}
         className={isDark ? 'text-white' : 'text-black'}
       >
         <InfinityLoader size={48} />

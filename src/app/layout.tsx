@@ -9,6 +9,7 @@ import { metadata } from "./metadata";
 import { SplashScreen } from "@/components/ui/SplashScreen";
 import { Template } from "@/components/Template";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -61,15 +62,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isLoading, setIsLoading] = useState(true);
+  const [shouldRenderContent, setShouldRenderContent] = useState(false);
 
   useEffect(() => {
-    // Simulate loading time
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5500); // Slightly longer than splash screen duration
-
-    return () => clearTimeout(timer);
-  }, []);
+    // Prevent content from being rendered until splash screen completes
+    if (!isLoading) {
+      // Add a small delay before showing content to ensure smooth transition
+      const timer = setTimeout(() => {
+        setShouldRenderContent(true);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -80,10 +84,16 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
-          {isLoading && <SplashScreen />}
-          <main className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
-            <Template>{children}</Template>
-          </main>
+          <SplashScreen onComplete={() => setIsLoading(false)} />
+          {shouldRenderContent && (
+            <motion.main
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Template>{children}</Template>
+            </motion.main>
+          )}
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

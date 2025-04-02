@@ -4,7 +4,11 @@ import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { AnimatedText } from "./animated-text";
 
-export const SplashScreen = () => {
+interface SplashScreenProps {
+  onComplete: () => void;
+}
+
+export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [showSecondText, setShowSecondText] = useState(false);
 
@@ -15,13 +19,14 @@ export const SplashScreen = () => {
 
     const fadeTimer = setTimeout(() => {
       setIsVisible(false);
+      onComplete();
     }, 5000);
 
     return () => {
       clearTimeout(timer);
       clearTimeout(fadeTimer);
     };
-  }, []);
+  }, [onComplete]);
 
   const secondTextVariants: Variants = {
     hidden: { opacity: 0 },

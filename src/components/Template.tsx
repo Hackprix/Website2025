@@ -1,40 +1,42 @@
 "use client";
 
-import { AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { PageTransition } from "./ui/PageTransition";
 
 export const Template = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
-  const [isLoading, setIsLoading] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+  const isFirstMount = useRef(true);
+  const prevPathname = useRef(pathname);
 
   useEffect(() => {
-    const handleStart = () => setIsLoading(true);
-    const handleComplete = () => {
-      setTimeout(() => setIsLoading(false), 1000); // Minimum loading time of 1 second
-    };
+    // Skip if this is the first mount
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
 
-    window.addEventListener("beforeunload", handleStart);
-    window.addEventListener("load", handleComplete);
 
-    return () => {
-      window.removeEventListener("beforeunload", handleStart);
-      window.removeEventListener("load", handleComplete);
-    };
-  }, []);
+    if (prevPathname.current === pathname) {
+      return;
+    }
 
-  useEffect(() => {
-    setIsLoading(true);
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    // Update previous pathname
+    prevPathname.current = pathname;
+
+    // Show transition only for actual navigation
+    setIsNavigating(true);
+    const timer = setTimeout(() => {
+      setIsNavigating(false);
+    }, 2000);
+
     return () => clearTimeout(timer);
   }, [pathname]);
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        {isLoading && <PageTransition />}
-      </AnimatePresence>
+      {isNavigating && !isFirstMount.current && <PageTransition />}
       {children}
     </>
   );
