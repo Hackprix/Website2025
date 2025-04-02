@@ -2,9 +2,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Play, Roboto, Catamaran, Poppins, Anton, Space_Grotesk, Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider, useTheme } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react"
+import { useEffect } from "react";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -60,6 +61,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { setTheme } = useTheme();
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, [setTheme]);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

@@ -21,6 +21,12 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
 
   const isDark = resolvedTheme === "dark";
 
+  const toggleTheme = () => {
+    const newTheme = isDark ? "light" : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme); // Save the theme preference
+  };
+
   return (
     <div
       className={cn(
@@ -30,7 +36,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
           : "bg-white border border-zinc-200",
         className
       )}
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={toggleTheme}
       role="button"
       tabIndex={0}
     >
