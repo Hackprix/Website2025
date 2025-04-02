@@ -2,11 +2,14 @@
 "use client";
 import { Geist, Geist_Mono, Play, Roboto, Catamaran, Poppins, Anton, Space_Grotesk, Press_Start_2P } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider, useTheme } from "next-themes";
+import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/react" 
-import { useEffect } from "react";
 import { metadata } from "./metadata";
+import { SplashScreen } from "@/components/ui/SplashScreen";
+import { Template } from "@/components/Template";
+import { useState, useEffect } from "react";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -57,14 +60,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { setTheme } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-    }
-  }, [setTheme]);
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5500); // Slightly longer than splash screen duration
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -73,11 +78,12 @@ export default function RootLayout({
         <title>{String(metadata.title) || "Default Title"}</title>
         <meta name="description" content={String(metadata.description) || "Default description."} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider attribute={"class"} enableSystem defaultTheme="system">
-          {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+          {isLoading && <SplashScreen />}
+          <main className={isLoading ? 'opacity-0' : 'opacity-100 transition-opacity duration-500'}>
+            <Template>{children}</Template>
+          </main>
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>
