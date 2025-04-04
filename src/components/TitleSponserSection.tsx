@@ -5,7 +5,7 @@ import { SparklesCore } from './ui/Sparkles';
 
 const TitleSponserSection = () => {
   return (
-    <section className="text-center pt-12 relative h-fit">
+    <section className="text-center pt-20 relative h-fit">
       {/* Fix: Added pointer-events-none to prevent blocking interactions */}
       <SparklesCore
               id="tsparticles-sponser"
@@ -43,22 +43,27 @@ const TitleSponserSection = () => {
     </p>
 
     {/* Large Background Text */}
-    <p
-      className="font-extrabold text-black/30 dark:text-white/30 dark:hidden text-5xl md:text-7xl"
-    >
-      Title Sponser
-    </p>
+    
   </h2>
 
   {/* Background Image (Ensuring Behind Everything) */}
   <div className="absolute inset-0 items-center justify-center z-0 hidden dark:flex">
-    <Image
-      src="/titlesponser.svg"
-      alt="Journey"
-      width={600}
-      height={500}
-      className="mix-blend-lighten w-80 md:w-150"
-    />
+    <div className="flex flex-col mb-16">
+              <Image
+                src="/bg-text/titlesponsor_light.svg"
+                alt="Sanketika Logo Light"
+                width={100}
+                height={100}
+                className="w-200 block dark:hidden"
+              />
+              <Image
+                src="/bg-text/titlesponsor_dark.svg"
+                alt="Sanketika Logo Dark"
+                width={100}
+                height={100}
+                className="w-200 hidden dark:block"
+              />
+            </div>
   </div>
 </div>
 

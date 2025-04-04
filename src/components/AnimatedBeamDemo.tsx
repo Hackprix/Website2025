@@ -60,14 +60,14 @@ export function AnimatedBeamDemo() {
         {/* Logos */}
         <div className="flex flex-col mb-16">
           <Image
-            src="/org.svg"
+            src="/bg-text/Organizing Departments (1).svg"
             alt="Sanketika Logo Light"
             width={100}
             height={100}
             className="w-250 block dark:hidden"
           />
           <Image
-            src="/org2.svg"
+            src="/bg-text/Organizing Departments.svg"
             alt="Sanketika Logo Dark"
             width={100}
             height={100}

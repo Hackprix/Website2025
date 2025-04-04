@@ -64,12 +64,22 @@ const About: React.FC<AboutProps> = ({ }) => {
               <p className="absolute top-1/2 -translate-y-1/2 text-3xl md:text-4xl">
                 {ABOUT.title}
               </p>
-              <p
-                style={{ fontSize: "5rem" }}
-                className="font-extrabold dark:text-white/30 text-black/30"
-              >
-                About
-              </p>
+              <div className="flex flex-col mb-16">
+                        <Image
+                          src="/bg-text/About (1).svg"
+                          alt="Sanketika Logo Light"
+                          width={100}
+                          height={100}
+                          className="w-72 block dark:hidden"
+                        />
+                        <Image
+                          src="/bg-text/About.svg"
+                          alt="Sanketika Logo Dark"
+                          width={100}
+                          height={100}
+                          className="w-72 hidden dark:block"
+                        />
+                      </div>
             </div>
 
             <p className="mb-6 text-xl text-sky-700 font-poppins">

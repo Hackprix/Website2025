@@ -101,4 +101,15 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-stroke': {
+          'text-shadow': '2px 2px 0 rgba(255, 255, 255, 0.9), -2px -2px 0 rgba(255, 255, 255, 0.9)', /* White stroke */
+          '-webkit-background-clip': 'text',
+          'color': 'transparent',
+        },
+      })
+    },
+  ],
 };
