@@ -143,7 +143,7 @@ export function AnimatedBeamDemo() {
               <Image src="/mech.png" alt="Mech" width={100} height={100} className="w-100 mt-2" priority />
             </Circle>
             <Circle ref={div9Ref}>
-              <Image src="/mba.jpeg" alt="MBA" width={200} height={100} className="w-100 mt-2" priority />
+              <Image src="/mba.jpeg" alt="MBA" width={200} height={100} className="w-[54px] rounded-sm" unoptimized priority />
             </Circle>
             <Circle ref={div7Ref}>
               <Image src="/it.png" alt="IT" width={100} height={100} className="w-100 mt-2" priority />
