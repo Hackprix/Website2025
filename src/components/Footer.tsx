@@ -16,7 +16,7 @@ import {
 import Image from "next/image";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { ThemeToggle } from "./ui/ThemeToggle";
-
+import Link from "next/link";
 function Footerdemo() {
   const [isDarkMode, setIsDarkMode] = React.useState(true);
   const [isChatOpen, setIsChatOpen] = React.useState(false);
@@ -60,32 +60,26 @@ function Footerdemo() {
           <div>
             <h3 className="mb-4 text-lg font-semibold">Quick Links</h3>
             <nav className="space-y-2 text-sm">
-              <a
-                href="#"
+              <Link
+                href="/"
                 className="block transition-colors hover:text-primary"
               >
                 Home
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                href="/events"
                 className="block transition-colors hover:text-primary"
               >
                 Events
-              </a>
+              </Link>
               <a
-                href="#"
+                href="/sponsors"
                 className="block transition-colors hover:text-primary"
               >
-                Schedule
+                Sponsors
               </a>
               <a
-                href="#"
-                className="block transition-colors hover:text-primary"
-              >
-                Sponsers
-              </a>
-              <a
-                href="#"
+                href="/venue"
                 className="block transition-colors hover:text-primary"
               >
                 Venue
@@ -97,7 +91,7 @@ function Footerdemo() {
             <address className="space-y-2 text-sm not-italic">
               <p>Lords Institute of Engineering & Technology</p>
               <p>Himayath sagar, Hyderabad, Telangana 500091</p>
-              <p>Phone: (+91) 99086-6428</p>
+              <p>Phone: (+91)  96408-07201</p>
               <p>Email: sanketika@lords.ac.in</p>
             </address>
           </div>
