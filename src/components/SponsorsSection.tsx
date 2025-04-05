@@ -36,6 +36,14 @@ const SPONSORS: Sponsor[] = [
     href: "https://dhanalaxmioverseas.in/",
     className: "h-16 w-auto",
   },
+  {
+    id: "sponsor-3",
+    name: "Sponsor 3",
+    image: "/sponsors/lordsskil.jpg",
+    tier: "Gold",
+    href: "https://lordsskillacademy.com",
+    className: "h-16 w-auto",
+  },
   // Duplicate sponsors to ensure continuous scrolling
   {
     id: "sponsor-1-dup",
@@ -54,6 +62,14 @@ const SPONSORS: Sponsor[] = [
     className: "h-16 w-auto",
   },
   {
+    id: "sponsor-3-dup",
+    name: "Sponsor 3",
+    image: "/sponsors/lordsskil.jpg",
+    tier: "Gold",
+    href: "https://lordsskillacademy.com",
+    className: "h-16 w-auto",
+  },
+  {
     id: "sponsor-1-dup1",
     name: "Sponsor 1",
     image: "/sponsors/acube.png",
@@ -67,6 +83,14 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/dhanalaxmi.png",
     tier: "Platinum",
     href: "https://dhanalaxmioverseas.in/",
+    className: "h-16 w-auto",
+  },
+  {
+    id: "sponsor-3-dup3",
+    name: "Sponsor 3",
+    image: "/sponsors/lordsskil.jpg",
+    tier: "Gold",
+    href: "https://lordsskillacademy.com",
     className: "h-16 w-auto",
   },
 ];

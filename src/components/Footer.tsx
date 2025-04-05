@@ -38,7 +38,7 @@ function Footerdemo() {
               Stay Connected
             </h2>
             <p className="mb-6 text-muted-foreground">
-              Where Innovation Meets Collaboration
+            Unleash Talent, Ignite Passion
             </p>
             {/* <form className="relative">
               <Input
