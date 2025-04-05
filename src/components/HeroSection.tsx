@@ -68,7 +68,7 @@ const HeroSection = () => {
           </svg>
         </Link>
         <div className="flex justify-center items-center gap-4 md:gap-8">
-          <Button variant="shimmer" size="custom" onClick={() => window.open('https://discord.gg/BWNj5rfv', '_blank')} className="flex items-center gap-2">
+          <Button variant="shimmer" size="custom" onClick={() => window.open('https://discord.gg/7EEWNGJH', '_blank')} className="flex items-center gap-2">
             <span className="relative z-10">
               <AiOutlineDiscord className="w-4 h-4 md:w-6 md:h-6 text-black font-poppins dark:text-white" />
             </span>

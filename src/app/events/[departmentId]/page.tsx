@@ -6,9 +6,9 @@ import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
 import DepartmentEventDetails from "@/components/DepartmentEventDetails";
 
 const EVENT_DETAILS_MARQUEE = [
-  "Explore Department Events",
+  "Explore Events",
   "Register for Competitions",
-  "Join Technical Workshops",
+  "Join Workshops",
   "Participate in Cultural Activities",
 ];
 

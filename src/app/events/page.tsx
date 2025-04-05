@@ -3,6 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import InfiniteMarquee from "@/components/ui/InfiniteMarquee";
 import { Footerdemo } from "@/components/Footer";
 import DepartmentPage from "@/components/DepartmentPage";
+// import DepartmentCard from "@/components/ui/DepartmentCard";
+// import { DEPARTMENTS } from "@/config/content";
+// import { motion } from "framer-motion";
 
 const EVENTS_MARQUEE = [
   "Discover Amazing Events!",
@@ -10,6 +13,11 @@ const EVENTS_MARQUEE = [
   "Learn from Expert Workshops",
   "Network with Industry Leaders",
 ];
+
+// // Get first 4 departments (central events)
+// const centralEvents = DEPARTMENTS.slice(0, 4);
+// // Get remaining departments
+// const departmentEvents = DEPARTMENTS.slice(4);
 
 export default function EventsPage() {
   return (
@@ -19,7 +27,10 @@ export default function EventsPage() {
           <Navbar />
         </div>
         <div className="flex-grow relative">
-          <DepartmentPage />
+          {/* Department Events Section */}
+          <div className="">
+            <DepartmentPage />
+          </div>
         </div>
         <InfiniteMarquee items={EVENTS_MARQUEE} />
         <Footerdemo />

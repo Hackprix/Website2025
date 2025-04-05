@@ -33,7 +33,6 @@ const About: React.FC<AboutProps> = ({ }) => {
 
   const topImages = [
     "/carousal1.jpg", 
-    "/carousal2.png", 
     "/carousal7.jpg", 
     "/carousal8.jpg", 
   ];
@@ -46,7 +45,7 @@ const About: React.FC<AboutProps> = ({ }) => {
   ];
 
   return (
-    <div className="w-full bg-gradient-to-r from-purple-900/20 to-cyan-900/20 px-4 py-8 md:px-8 relative">
+    <div className="w-full px-4 py-8 md:px-8 relative">
       <SparklesCore
         id="tsparticles-about"
         background="transparent"
@@ -55,6 +54,11 @@ const About: React.FC<AboutProps> = ({ }) => {
         particleDensity={40}
         className="w-full h-full opacity-50 absolute top-0 left-0 z-0"
       />
+            <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
+        <div className="absolute md:top-1/3 top-1/6 md:left-1/8 left-1/3 -translate-x-1/2 overflow-hidden -translate-y-1/2 w-[400px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
+        <div className="absolute md:top-1/3 top-1/6 md:left-1/8 left-1/3 overflow-hidden -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
+      </div>
 
       <div ref={sectionRef} className="mx-auto max-w-9xl">
         <div className="grid gap-8 md:grid-cols-2">

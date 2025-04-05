@@ -9,6 +9,8 @@ import About from "@/components/About";
 import TitleSponserSection from "@/components/TitleSponserSection";
 import { AnimatedBeamDemo } from "@/components/AnimatedBeamDemo";
 import { Faqs } from "@/components/Faqs";
+import { SponsorsSection } from "@/components/SponsorsSection";
+import { SponsorUs } from "@/components/SponsorUs";
 
 
 export default function Home() {
@@ -24,6 +26,8 @@ export default function Home() {
         <InfiniteMarquee items={MARQUEE} />
         <About />
         <TitleSponserSection />
+        <SponsorsSection />
+        <SponsorUs />
         <AnimatedBeamDemo />
         <Faqs />
         <Footerdemo />

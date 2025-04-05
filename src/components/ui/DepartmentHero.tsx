@@ -7,7 +7,11 @@ import { DEPARTMENTS } from "@/config/content";
 export function DepartmentHero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => DEPARTMENTS.map(dept => dept.shortName),
+    () => {
+      // Filter out central events (first 4 departments)
+      const departmentTitles = DEPARTMENTS.slice(4).map(dept => dept.shortName);
+      return ["Central Committee", ...departmentTitles];
+    },
     []
   );
 
@@ -28,7 +32,7 @@ export function DepartmentHero() {
         <div className="flex gap-8 py-12 md:py-10 items-center justify-center flex-col">
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl md:text-6xl max-w-3xl tracking-tighter text-center font-regular">
-              <span className="text-black font-poppins tracking-wide dark:text-purple-400">Explore Events by</span>
+              <span className="text-black font-poppins tracking-wide dark:text-purple-400">Explore Events By</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-2 pt-1">
                 &nbsp;
                 {titles.map((title, index) => (

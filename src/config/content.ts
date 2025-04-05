@@ -3,6 +3,7 @@ const MARQUEE = [
   "Experience 2 Days of Non-Stop Fun & Learning",
   "Workshops, Networking, and Exciting Prizes Await!",
 ];
+
 const ABOUT = {
   title: "About", 
   subtitle: "Discover the Spirit of Innovation and Celebration!",
@@ -28,10 +29,11 @@ const METRICS = [
   {
       id: 4,
       label: "Prize Pool", 
-      number: 2,  // Keep it as a number
-      isCurrency: true // Add a flag to handle special formatting
+      number: 2,
+      isCurrency: true
 }
-]
+];
+
 const TitleSponser = {
   title: "Title Sponsor",
   subtitle: "Lords Institute of Engineering and Technology",
@@ -39,6 +41,133 @@ const TitleSponser = {
 };
 
 const DEPARTMENTS = [
+  // Central Events
+  {
+    id: "sports",
+    name: "Sports Mania",
+    shortName: "Sports",
+    marquee: "Sports Mania 🏐 🏀 🏓",
+    logo: "/sports.png",
+    eventPoster: "/posters/sports.jpg",
+    description: "Experience the thrill of competition at our Sports Fest! Featuring cricket, football, volleyball, and indoor games. Join us for two days of intense matches, team spirit, and athletic excellence. Open to all departments, this event promises to showcase the best sporting talent from across the campus.",
+    events: [
+      {
+        name: "Volleyball Tournament",
+        type: "Men",
+      },
+      {
+        name: "Basketball Tournament",
+        type: "Men",
+      },
+      {
+        name: "Carrom Singles Tournament",
+        type: "Men & Women",
+      },
+      {
+        name: "Carrom Doubles Tournament",
+        type: "Men & Women",
+      },
+      {
+        name: "Table Tennis Singles",
+        type: "Men & Women",
+      },
+      {
+        name: "Table Tennis Doubles",
+        type: "Men & Women",
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/sports_sanketika",
+    },
+    registrationLink: "https://qrfy.io/qr/k74Czt9sPG",
+  },
+  {
+    id: "cultural",
+    name: "Cultural Fest",
+    shortName: "Cultural",
+    marquee: "Cultural Fest ✨ ",
+    logo: "/cultural.png",
+    eventPoster: "/posters/cultural.jpg",
+    description: "Immerse yourself in our vibrant Cultural Fest! A celebration of art, music, dance, and creativity. From classical performances to modern entertainment, experience the rich diversity of talents. Features singing competitions, dance battles, fashion shows, and theatrical performances.",
+    events: [
+      {
+        name: "Mimicry",
+        type: "Solo",
+      },
+      {
+        name: "Standup Comedy",
+        type: "Solo",
+      },
+      {
+        name: "Instrument Playing",
+        type: "Solo",
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/sanketika2025",
+    },
+    registrationLink: "https://forms.google.com/",
+  },
+  {
+    id: "project-expo",
+    name: "Project Expo",
+    shortName: "Projects",
+    marquee: "Central Project Exhibition",
+    logo: "/project.png",
+    eventPoster: "/posters/project.jpg",
+    description: "Discover innovation at its finest in our Project Expo! A showcase of groundbreaking student projects across all engineering disciplines. From software solutions to hardware innovations, witness the future of technology. Features live demonstrations, expert evaluations, and networking opportunities with industry professionals.",
+    events: [
+      {
+        name: "Software Projects",
+        type: "Technical",
+      },
+      {
+        name: "Hardware Projects",
+        type: "Non-Technical/Technical",
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/sanketika2025",
+    },
+    registrationLink: "https://forms.google.com/",
+  },
+  {
+    id: "auto-expo",
+    name: "Auto Expo",
+    shortName: "Auto",
+    marquee: "Telangana’s Biggest Auto Expo",
+    logo: "/race.png",
+    eventPoster: "/posters/auto.jpg",
+    description: "TELANGANA’S BIGGEST AUTO FEST! 40+ exotic supercars to roaring superbikes on Display",
+    details: "TELANGANA’S BIGGEST AUTO FEST IS HERE!🔥 Join us at Lords Institute of Engineering & Technology, Hyderabad for an unmatched automobile experience! 🚀",
+    events: [
+      {
+        name: "Car Show",
+        type: "Technical",
+      },
+      {
+        name: "EV Innovation",
+        type: "Technical",
+      },
+      {
+        name: "Auto Design Challenge",
+        type: "Technical",
+      },
+      {
+        name: "Engine Workshop",
+        type: "Workshop",
+      },
+      {
+        name: "Racing Simulator",
+        type: "Non-Technical",
+      }
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/torquetalk.autofest",
+    },
+    registrationLink: "https://linktr.ee/telangana.autofest",
+  },
+  // Department Events (existing departments follow...)
   {
     id: "cse",
     name: "Computer Science Engineering",
@@ -134,13 +263,13 @@ const DEPARTMENTS = [
     socialLinks: {
       instagram: "https://www.instagram.com/datanova.lords?igsh=MWhrNWxkZ3pzeGQ2OA==",
     },
-    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdzNFfP398OKZyt0-wfJdiQJt0vR9LIROGqfjM0zcJ5GPyqFQ/viewform",
+    registrationLink: "https://linktr.ee/datanova.lords",
   },
   {
     id: "csm",
     name: "CSE - Machine Learning",
     marquee: "Department of Computer Science in Machine Learning",
-    shortName: "CSAI",
+    shortName: "CSM",
     logo: "/csm.png",
     description: "The Artificial Intelligence Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
     events: [
@@ -154,7 +283,7 @@ const DEPARTMENTS = [
         description: "Artificial intelligence competition",
         type: "Competition"
       }
-    ] 
+    ]
   },
   {
     id:"mech",

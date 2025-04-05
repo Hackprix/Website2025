@@ -1,11 +1,12 @@
+'use client';
 import Image from 'next/image';
 import TextImageSection from '@/components/TextImageSection';
 import { TitleSponser } from '@/config/content';
 import { SparklesCore } from './ui/Sparkles';
-
-const TitleSponserSection = () => {
+import React from 'react';
+const TitleSponserSection2 = ({ className = '' }: { className?: string }) => {
   return (
-    <section className="text-center pt-20 relative h-fit">
+    <section className={`text-center h-fit mt-40 md:mt-68 ${className}`}>
       {/* Fix: Added pointer-events-none to prevent blocking interactions */}
       <SparklesCore
               id="tsparticles-sponser"
@@ -95,4 +96,4 @@ const TitleSponserSection = () => {
 };
 
 
-export default TitleSponserSection;
+export default TitleSponserSection2;

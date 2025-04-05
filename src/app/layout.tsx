@@ -58,9 +58,9 @@ const anton = Anton({
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const [isLoading, setIsLoading] = useState(true);
   const [shouldRenderContent, setShouldRenderContent] = useState(false);
 
