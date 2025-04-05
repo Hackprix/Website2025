@@ -26,7 +26,7 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/acube.png",
     tier: "Gold",
     href: "https://acubexerox.com/",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-2",
@@ -34,15 +34,15 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/dhanalaxmi.png",
     tier: "Platinum",
     href: "https://dhanalaxmioverseas.in/",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-3",
     name: "Sponsor 3",
-    image: "/sponsors/lordsskil.jpg",
+    image: "/sponsors/lordsskill.jpg",
     tier: "Gold",
     href: "https://lordsskillacademy.com",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   // Duplicate sponsors to ensure continuous scrolling
   {
@@ -51,7 +51,7 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/acube.png",
     tier: "Gold",
     href: "https://acubexerox.com/",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-2-dup",
@@ -59,15 +59,15 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/dhanalaxmi.png",
     tier: "Platinum",
     href: "https://dhanalaxmioverseas.in/",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-3-dup",
     name: "Sponsor 3",
-    image: "/sponsors/lordsskil.jpg",
+    image: "/sponsors/lordsskill.jpg",
     tier: "Gold",
     href: "https://lordsskillacademy.com",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-1-dup1",
@@ -75,7 +75,7 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/acube.png",
     tier: "Gold",
     href: "https://acubexerox.com/",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-2-dup2",
@@ -83,12 +83,12 @@ const SPONSORS: Sponsor[] = [
     image: "/sponsors/dhanalaxmi.png",
     tier: "Platinum",
     href: "https://dhanalaxmioverseas.in/",
-    className: "h-16 w-auto",
+    className: "h-16 w-auto rounded-sm",
   },
   {
     id: "sponsor-3-dup3",
     name: "Sponsor 3",
-    image: "/sponsors/lordsskil.jpg",
+    image: "/sponsors/lordsskill.jpg",
     tier: "Gold",
     href: "https://lordsskillacademy.com",
     className: "h-16 w-auto",
@@ -132,7 +132,7 @@ export function SponsorsSection() {
       </div>
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-1">
         <div className="flex flex-col items-center justify-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r dark:from-purple-500 dark:to-cyan-500 from-gray-900 to-gray-700">
             Our Sponsors
           </h2>
           <p className="text-lg md:text-xl text-center max-w-2xl mx-auto text-black/70 dark:text-white/70">
