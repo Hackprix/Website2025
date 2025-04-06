@@ -193,7 +193,7 @@ const DEPARTMENTS = [
     socialLinks: {
       instagram: "https://www.instagram.com/ace_.liet?igsh=MTFwN2t2czUxZ3Q2dA%3D%3D&utm_source=qr",
     },
-    registrationLink: "https://qrco.de/bfqkjz",
+    registrationLink: "https://forms.gle/cskvWahsLL2ZLWtb9",
   },
   {
     id: "it",
