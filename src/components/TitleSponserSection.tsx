@@ -47,7 +47,7 @@ const TitleSponserSection = () => {
   </h2>
 
   {/* Background Image (Ensuring Behind Everything) */}
-  <div className="absolute inset-0 items-center justify-center z-0 hidden dark:flex">
+  <div className="absolute inset-0 items-center justify-center z-0 flex dark:flex">
     <div className="flex flex-col mb-16">
               <Image
                 src="/bg-text/titlesponsor_light.svg"
@@ -69,7 +69,7 @@ const TitleSponserSection = () => {
 
       
 
-      <p className="mt-2 text-sm font-poppins md:text-2xl relative z-50 md:mb-0 mb-4">{TitleSponser.subtitle}</p>
+      <p className="mt-10 text-sm font-poppins md:text-2xl relative z-50 md:mb-0 mb-4">{TitleSponser.subtitle}</p>
       <SparklesCore
               id="tsparticles-sponser2"
               background="transparent"

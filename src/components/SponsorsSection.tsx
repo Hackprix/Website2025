@@ -110,7 +110,7 @@ const getTierColor = (tier: Sponsor["tier"]) => {
 
 export function SponsorsSection() {
   return (
-    <section className="relative h-fit flex flex-col py-10 ">
+    <section className="relative h-fit flex flex-col py-20 md:py-20 ">
       <SparklesCore
         id="tsparticlessponsors"
         background="transparent"
@@ -131,14 +131,36 @@ export function SponsorsSection() {
         <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
       </div>
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-1">
-        <div className="flex flex-col items-center justify-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r dark:from-purple-500 dark:to-cyan-500 from-gray-900 to-gray-700">
-            Our Sponsors
+      <div className="flex flex-col justify-center relative mb-12 dark:mb-12">
+          {/* Main Title Text */}
+          <h2 className="text-4xl font-poppins tracking-widest text-black dark:text-white">
+            {/* Foreground Text */}
+            <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/3 font-bold text-center text-lg md:text-5xl lg:text-6xl z-20 text-black dark:text-white">
+              Our Sponsors
+            </p>
           </h2>
-          <p className="text-lg md:text-xl text-center max-w-2xl mx-auto text-black/70 dark:text-white/70">
-            Thank you to our amazing sponsors for making this event possible
-          </p>
+
+          {/* Background Image */}
+          <div className="absolute inset-0 items-center justify-center z-0 flex dark:flex">
+            <div className="flex flex-col mb-3 md:mb-16">
+              <Image
+                src="/bg-text/sponsors.svg"
+                alt="Sponsors Background Light"
+                width={100}
+                height={100}
+                className="w-100 md:w-200 block dark:hidden"
+              />
+              <Image
+                src="/bg-text/sponsors2.svg"
+                alt="Sponsors Background Dark"
+                width={100}
+                height={100}
+                className="w-100 md:w-200 hidden dark:block"
+              />
+            </div>
+          </div>
         </div>
+
 
         <div className="relative w-full">
           <Carousel

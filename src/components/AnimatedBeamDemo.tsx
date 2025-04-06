@@ -70,32 +70,37 @@ export function AnimatedBeamDemo() {
           className="w-full h-full opacity-50 absolute top-0 left-0 z-0 pointer-events-none"
         />
 
-        {/* Logos */}
-        <motion.div 
-          className="flex flex-col mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <Image
-            src="/org.svg"
-            alt="Sanketika Logo Light"
-            width={100}
-            height={100}
-            className="w-250 block dark:hidden"
-            priority
-            onLoad={() => setImagesLoaded(true)}
-          />
-          <Image
-            src="/org2.svg"
-            alt="Sanketika Logo Dark"
-            width={100}
-            height={100}
-            className="w-250 hidden dark:block"
-            priority
-            onLoad={() => setImagesLoaded(true)}
-          />
-        </motion.div>
+        {/* Title Section with Background Text */}
+        <div className="flex flex-col justify-center relative mb-36 w-full">
+          {/* Main Title Text */}
+          <h2 className="text-4xl font-poppins tracking-widest text-black dark:text-white">
+            <p className="absolute top-1/2 left-1/2 w-screen -translate-x-1/2 -translate-y-1/8 font-bold text-center text-xl md:text-5xl z-20 text-black dark:text-white">
+              Organizing Departments
+            </p>
+          </h2>
+
+          {/* Background Text Image */}
+          <div className=" absolute inset-0 items-center justify-center z-0 flex dark:flex">
+            <div className="flex flex-col ">
+              <Image
+                src="/bg-text/org2.svg"
+                alt="Departments Background Light"
+                width={500}
+                height={500}
+                className="w-[1000px] block dark:hidden "
+                priority
+              />
+              <Image
+                src="/bg-text/org.svg"
+                alt="Departments Background Dark"
+                width={500}
+                height={500}
+                className="w-[1000px] hidden dark:block "
+                priority
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Gradient Background Overlays */}
         <div className="absolute inset-0 pointer-events-none">
@@ -103,6 +108,7 @@ export function AnimatedBeamDemo() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
           <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
         </div>
+        
 
         {/* Circles Container */}
         <motion.div 
