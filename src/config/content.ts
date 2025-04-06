@@ -175,7 +175,7 @@ const DEPARTMENTS = [
     shortName: "CSE",
     logo: "/cse.png",
     description: "Sanketika 2025, a prestigious national-level TechFest in collaboration with ACE and powered by CODESTORM. Scheduled for April 24-25, the event showcases cutting-edge technical competitions, workshops, and a Project Expo aligned with Sustainable Development Goals. Highlights include Static Web Design, AI-Driven Image Generation, Short Film Production, and an AR/VR/MR Workshop.",
-    eventPoster: "/posters/cse.jpg",
+    eventPoster: "/posters/cse.png",
     events: [
       {
         name: "Static Web Page Designing",
