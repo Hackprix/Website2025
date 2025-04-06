@@ -114,7 +114,7 @@ const DepartmentEventDetails = ({ departmentId }: DepartmentEventDetailsProps) =
                           <p className="text-black dark:text-white"><span className="text-cyan-600 dark:text-cyan-400">Informal</span> - Events that are more relaxed and casual</p>
                           <p className="text-black dark:text-white"><span className="text-pink-600 dark:text-pink-400">Men & Women</span> - Events that are open to both men and women</p>
                           <p className="text-black dark:text-white"><span className="text-orange-600 dark:text-orange-400">Men</span> - Events that are team based</p>
-                          <p className="text-black dark:text-white"><span className="text-sky-600 dark:text-sky-400">Solo</span> - Events that allow solo participants</p>
+                          <p className="text-black dark:text-white"><span className="text-sky-600 dark:text-sky-400">Solo/Group</span> - Events that allow solo or group participants</p>
                             </div>
                       </PopoverContent>
                     </Popover>
@@ -137,7 +137,7 @@ const DepartmentEventDetails = ({ departmentId }: DepartmentEventDetailsProps) =
                           "bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 group-hover:bg-cyan-500/20": event.type === "Informal",
                           "bg-pink-500/10 text-pink-700 dark:text-pink-400 group-hover:bg-pink-500/20": event.type === "Men & Women",
                           "bg-orange-500/10 text-orange-700 dark:text-orange-400 group-hover:bg-orange-500/20": event.type === "Men",
-                          "bg-gray-500/10 text-sky-200 dark:text-sky-400 group-hover:bg-gray-500/20": event.type === "Solo",
+                          "bg-gray-500/10 text-sky-200 dark:text-sky-400 group-hover:bg-gray-500/20": event.type === "Solo/Group",
                         }
                       )}>
                         {event.type}

@@ -87,26 +87,30 @@ const DEPARTMENTS = [
     shortName: "Cultural",
     marquee: "Cultural Fest ✨ ",
     logo: "/cultural.png",
-    eventPoster: "/posters/cultural.jpg",
+    eventPoster: "/posters/cultural.jpeg",
     description: "Immerse yourself in our vibrant Cultural Fest! A celebration of art, music, dance, and creativity. From classical performances to modern entertainment, experience the rich diversity of talents. Features singing competitions, dance battles, fashion shows, and theatrical performances.",
     events: [
       {
         name: "Mimicry",
-        type: "Solo",
+        type: "Solo/Group",
+      },
+      {
+        name: "Singing",
+        type: "Solo/Group",
       },
       {
         name: "Standup Comedy",
-        type: "Solo",
+        type: "Solo/Group",
       },
       {
         name: "Instrument Playing",
-        type: "Solo",
+        type: "Solo/Group",
       },
     ],
     socialLinks: {
       instagram: "https://www.instagram.com/sanketika2025",
     },
-    registrationLink: "https://forms.google.com/",
+    registrationLink: "https://forms.gle/jfnomrH91gtLxiPV8",
   },
   {
     id: "project-expo",
