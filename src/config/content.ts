@@ -48,7 +48,7 @@ const DEPARTMENTS = [
     shortName: "Sports",
     marquee: "Sports Mania 🏐 🏀 🏓",
     logo: "/sports.png",
-    eventPoster: "/posters/sports.jpg",
+    eventPoster: "/posters/sports.png",
     description: "Experience the thrill of competition at our Sports Fest! Featuring cricket, football, volleyball, and indoor games. Join us for two days of intense matches, team spirit, and athletic excellence. Open to all departments, this event promises to showcase the best sporting talent from across the campus.",
     events: [
       {
@@ -77,9 +77,9 @@ const DEPARTMENTS = [
       },
     ],
     socialLinks: {
-      instagram: "https://www.instagram.com/sports_sanketika",
+      instagram: "https://www.instagram.com/sanketika2025",
     },
-    registrationLink: "https://qrfy.io/qr/k74Czt9sPG",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSc0FXakalvD-8WoOggt6XcHsAvrG-_BdrhQc2z1rzeuPijbJA/viewform",
   },
   {
     id: "cultural",
@@ -254,10 +254,12 @@ const DEPARTMENTS = [
   {
     name: "Mind Spark",
     type: "Technical",
+    description: "Round - 1 : Data Science Detective, \n Round - 2 : Bugbusters, Round - 3 : Data War",
   },
   {
     name: "Code Combat",
     type: "Technical",
+    description: "Round-1 : Styling Sprint, \n Round-2: SQL Showdown",
   },
   {
     name: "Visionary Vids",

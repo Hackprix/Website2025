@@ -115,7 +115,7 @@ const DepartmentEventDetails = ({ departmentId }: DepartmentEventDetailsProps) =
                           <p className="text-black dark:text-white"><span className="text-pink-600 dark:text-pink-400">Men & Women</span> - Events that are open to both men and women</p>
                           <p className="text-black dark:text-white"><span className="text-orange-600 dark:text-orange-400">Men</span> - Events that are team based</p>
                           <p className="text-black dark:text-white"><span className="text-sky-600 dark:text-sky-400">Solo/Group</span> - Events that allow solo or group participants</p>
-                            </div>
+                        </div>
                       </PopoverContent>
                     </Popover>
                   </th>
@@ -124,7 +124,21 @@ const DepartmentEventDetails = ({ departmentId }: DepartmentEventDetailsProps) =
               <tbody className="divide-y divide-white/10 dark:divide-white/20">
                 {department.events?.map((event: Event, index) => (
                   <tr key={index} className="group transition-colors hover:bg-white/5 dark:hover:bg-white/5">
-                    <td className="p-3 md:p-4 text-black dark:text-white text-xs md:text-sm">{event.name || event.title}</td>
+                    <td className="p-3 md:p-4 text-black dark:text-white text-xs md:text-sm">
+                      {event.name || event.title}
+                      {event.description && (
+                        <Popover>
+                          <PopoverTrigger>
+                            <InfoIcon className="ml-2 inline-block h-3 w-3 md:h-4 md:w-4 hover:text-purple-500 dark:hover:text-purple-400 transition-colors" />
+                          </PopoverTrigger>
+                          <PopoverContent className="bg-white/80 dark:bg-black/80 backdrop-blur-sm border border-white/20 text-xs md:text-sm">
+                            <div className="space-y-1 md:space-y-2">
+                              <p className="text-black dark:text-white">{event.description}</p>
+                            </div>
+                          </PopoverContent>
+                        </Popover>
+                      )}
+                    </td>
                     <td className="p-3 md:p-4 border-l border-white/10 dark:border-white/20">
                       <span className={cn(
                         "px-2 md:px-3 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-medium transition-colors",

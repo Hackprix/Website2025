@@ -34,7 +34,7 @@ const About: React.FC<AboutProps> = ({ }) => {
   const topImages = [
     "/carousal1.jpg", 
     "/carousal7.jpg", 
-    "/carousal8.jpg", 
+    "/carousal8.jpg",
   ];
 
   const bottomImages = [
