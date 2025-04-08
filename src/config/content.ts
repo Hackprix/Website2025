@@ -133,7 +133,7 @@ const DEPARTMENTS = [
     socialLinks: {
       instagram: "https://www.instagram.com/sanketika2025",
     },
-    registrationLink: "https://forms.google.com/",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSdAH0nFebiA2q4mg6IMgYUcji1U2nKq-LL61FwLabIzHtE6qQ/viewform?usp=header",
   },
   {
     id: "auto-expo",
