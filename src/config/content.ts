@@ -48,7 +48,7 @@ const DEPARTMENTS = [
     shortName: "Sports",
     marquee: "Sports Mania 🏐 🏀 🏓",
     logo: "/sports.png",
-    eventPoster: "/posters/sports.png",
+    eventPoster: "/posters/sports.jpeg",
     description: "Experience the thrill of competition at our Sports Fest! Featuring cricket, football, volleyball, and indoor games. Join us for two days of intense matches, team spirit, and athletic excellence. Open to all departments, this event promises to showcase the best sporting talent from across the campus.",
     events: [
       {
@@ -118,7 +118,7 @@ const DEPARTMENTS = [
     shortName: "Projects",
     marquee: "Central Project Exhibition",
     logo: "/project.png",
-    eventPoster: "/posters/project.jpg",
+    eventPoster: "/posters/projectexpo.png",
     description: "Discover innovation at its finest in our Project Expo! A showcase of groundbreaking student projects across all engineering disciplines. From software solutions to hardware innovations, witness the future of technology. Features live demonstrations, expert evaluations, and networking opportunities with industry professionals.",
     events: [
       {
@@ -209,10 +209,6 @@ const DEPARTMENTS = [
     eventPoster: "/posters/it.jpeg",
     events: [
       {
-        name: "Project Expo",
-        type: "Technical",
-      },
-      {
         name: "Technical Quiz",
         type: "Technical",
       },
@@ -277,19 +273,26 @@ const DEPARTMENTS = [
     marquee: "Department of Computer Science in Machine Learning",
     shortName: "CSM",
     logo: "/csm.png",
-    description: "The Artificial Intelligence Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
+    eventPoster: "/posters/csm.jpg",
+    description: "The CSM Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
     events: [
       {
-        title: "AI Workshop",
-        description: "Hands-on artificial intelligence workshop",
-        type: "Workshop"
+        title: "Auto Fest",
+        type: "Non-Technical"
       },
       {
-        title: "AI Competition",
-        description: "Artificial intelligence competition",
-        type: "Competition"
-      }
-    ]
+        title: "Coding Faceoff",
+        type: "Technical"
+      },
+      {
+        title: "E-sports Tournament",
+        type: "Non-Technical"
+      },
+    ],
+    socialLinks: {
+      instagram: "https://www.instagram.com/p/DHDzxA2hV2h/?igsh=MTVkM3YzNHBlaTY3ZA==",
+    },
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSei6X-8EKXDnebS5JWdiG24EywyYRqtn4fXympKuo_zXzMMUg/viewform?usp=header",
   },
   {
     id:"mech",
@@ -358,7 +361,7 @@ const DEPARTMENTS = [
     name: "Master of Business Administration",
     marquee: "Department of MBA",
     shortName: "MBA",
-    logo: "/mba.png",
+    logo: "/mba.jpeg",
     eventPoster: "/posters/mba.jpeg",
     description: "The MBA Department offers events focused on business management, entrepreneurship, and leadership, featuring workshops, competitions, and expert talks.",
     events: [
