@@ -24,36 +24,43 @@ const geistMono = Geist_Mono({
 const press = Press_Start_2P({
   subsets: ["latin"],
   weight: "400",
-})
+  variable: "--font-press",
+});
 
 const play = Play({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-play",
 });
 
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  variable: "--font-roboto",
 });
 
 const space = Space_Grotesk({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-space",
 });
 
 const catamaran = Catamaran({
   subsets: ["latin"],
   weight: "800",
+  variable: "--font-cat",
 });
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-poppins",
 });
 
 const anton = Anton({
   subsets: ["latin"],
   weight: "400",
+  variable: "--font-anton",
 });
 
 export default function RootLayout({
@@ -82,7 +89,7 @@ export default function RootLayout({
         <title>{String(metadata.title) || "Default Title"}</title>
         <meta name="description" content={String(metadata.description) || "Default description."} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${press.variable} ${play.variable} ${roboto.variable} ${space.variable} ${catamaran.variable} ${poppins.variable} ${anton.variable} antialiased`}>
         <ThemeProvider attribute="class" enableSystem defaultTheme="system">
           <SplashScreen onComplete={() => setIsLoading(false)} />
           {shouldRenderContent && (
