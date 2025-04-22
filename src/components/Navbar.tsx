@@ -6,6 +6,7 @@ import {
   // ClipboardPen,
   HandCoins,
   Navigation,
+  Store,
 } from "lucide-react";
 import { AnimeNavBar } from "./ui/anime-navbar";
 import { ThemeToggle } from "./ui/ThemeToggle";
@@ -64,6 +65,7 @@ export function Navbar() {
                 // { name: "Schedule", url: "/contact", icon: ClipboardPen },
                 { name: "Sponsors", url: "/sponsors", icon: HandCoins },
                 { name: "Venue", url: "/venue", icon: Navigation },
+                { name: "Stalls", url: "/stalls", icon: Store},
               ]}
             />
             <ThemeToggle />
@@ -88,6 +90,7 @@ export function Navbar() {
           // { name: "Contact", url: "/contact", icon: ClipboardPen },
           { name: "Sponsors", url: "/sponsors", icon: HandCoins },
           { name: "Venue", url: "/venue", icon: Navigation },
+          { name: "Stalls", url: "/stalls", icon: Store},
         ]}
       />
     </header>
