@@ -44,6 +44,15 @@ const SPONSORS: Sponsor[] = [
     href: "https://lordsskillacademy.com",
     className: "h-16 w-auto rounded-sm",
   },
+ {
+    id: "sponsor-4",
+    name: "Sponsor 4",
+    image: "/sponsors/farmrobo.png",
+    tier: "Gold",
+    href: "https://www.farmrobo.in/",
+    className: "h-16 w-auto rounded-sm",
+ },
+  
   // Duplicate sponsors to ensure continuous scrolling
   {
     id: "sponsor-1-dup",
@@ -69,6 +78,15 @@ const SPONSORS: Sponsor[] = [
     href: "https://lordsskillacademy.com",
     className: "h-16 w-auto rounded-sm",
   },
+ 
+ {
+    id: "sponsor-4-dup",
+    name: "Sponsor 4",
+    image: "/sponsors/farmrobo.png",
+    tier: "Gold",
+    href: "https://www.farmrobo.in/",
+    className: "h-16 w-auto rounded-sm",
+ },
   {
     id: "sponsor-1-dup1",
     name: "Sponsor 1",
@@ -93,6 +111,15 @@ const SPONSORS: Sponsor[] = [
     href: "https://lordsskillacademy.com",
     className: "h-16 w-auto",
   },
+ 
+ {
+    id: "sponsor-4-dup4",
+    name: "Sponsor 4",
+    image: "/sponsors/farmrobo.png",
+    tier: "Gold",
+    href: "https://www.farmrobo.in/",
+    className: "h-16 w-auto rounded-sm",
+ },
 ];
 
 const getTierColor = (tier: Sponsor["tier"]) => {
