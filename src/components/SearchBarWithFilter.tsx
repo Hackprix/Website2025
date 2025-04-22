@@ -1,5 +1,6 @@
 "use client";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Stall, StallType, STALL_TYPES } from "@/app/stalls/content";
 import { useState, useRef, useEffect } from "react";
 
