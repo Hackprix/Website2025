@@ -49,6 +49,7 @@ const DEPARTMENTS = [
     marquee: "Sports Mania 🏐 🏀 🏓",
     logo: "/sports.png",
     eventPoster: "/posters/sports.jpeg",
+    schedulePoster: "/schedule/sports.jpg",
     description: "Experience the thrill of competition at our Sports Fest! Featuring cricket, football, volleyball, and indoor games. Join us for two days of intense matches, team spirit, and athletic excellence. Open to all departments, this event promises to showcase the best sporting talent from across the campus.",
     events: [
       {
@@ -88,6 +89,7 @@ const DEPARTMENTS = [
     marquee: "Cultural Fest ✨ ",
     logo: "/cultural.png",
     eventPoster: "/posters/cultural.jpeg",
+    schedulePoster: "/schedule/cultural.jpg",
     description: "Immerse yourself in our vibrant Cultural Fest! A celebration of art, music, dance, and creativity. From classical performances to modern entertainment, experience the rich diversity of talents. Features singing competitions, dance battles, fashion shows, and theatrical performances.",
     events: [
       {
@@ -119,6 +121,7 @@ const DEPARTMENTS = [
     marquee: "Central Project Exhibition",
     logo: "/project.png",
     eventPoster: "/posters/projectexpo.png",
+    schedulePoster: "/schedule/project.jpg",
     description: "Discover innovation at its finest in our Project Expo! A showcase of groundbreaking student projects across all engineering disciplines. From software solutions to hardware innovations, witness the future of technology. Features live demonstrations, expert evaluations, and networking opportunities with industry professionals.",
     events: [
       {
@@ -139,11 +142,12 @@ const DEPARTMENTS = [
     id: "auto-expo",
     name: "Auto Expo",
     shortName: "Auto",
-    marquee: "Telangana’s Biggest Auto Expo",
+    marquee: "Telangana's Biggest Auto Expo",
     logo: "/race.png",
     eventPoster: "/posters/auto.jpg",
-    description: "TELANGANA’S BIGGEST AUTO FEST! 40+ exotic supercars to roaring superbikes on Display",
-    details: "TELANGANA’S BIGGEST AUTO FEST IS HERE!🔥 Join us at Lords Institute of Engineering & Technology, Hyderabad for an unmatched automobile experience! 🚀",
+    schedulePoster: "/schedule/auto.jpg",
+    description: "TELANGANA'S BIGGEST AUTO FEST! 40+ exotic supercars to roaring superbikes on Display",
+    details: "TELANGANA'S BIGGEST AUTO FEST IS HERE!🔥 Join us at Lords Institute of Engineering & Technology, Hyderabad for an unmatched automobile experience! 🚀",
     events: [
       {
         name: "Car Show",
@@ -178,8 +182,9 @@ const DEPARTMENTS = [
     marquee:"Department of Computer Science",     
     shortName: "CSE",
     logo: "/cse.png",
-    description: "Sanketika 2025, a prestigious national-level TechFest in collaboration with ACE and powered by CODESTORM. Scheduled for April 24-25, the event showcases cutting-edge technical competitions, workshops, and a Project Expo aligned with Sustainable Development Goals. Highlights include Static Web Design, AI-Driven Image Generation, Short Film Production, and an AR/VR/MR Workshop.",
     eventPoster: "/posters/cse.png",
+    schedulePoster: "/schedule/cse.jpg",
+    description: "Sanketika 2025, a prestigious national-level TechFest in collaboration with ACE and powered by CODESTORM. Scheduled for April 24-25, the event showcases cutting-edge technical competitions, workshops, and a Project Expo aligned with Sustainable Development Goals. Highlights include Static Web Design, AI-Driven Image Generation, Short Film Production, and an AR/VR/MR Workshop.",
     events: [
       {
         name: "Static Web Page Designing",
@@ -205,8 +210,9 @@ const DEPARTMENTS = [
     shortName: "IT",
     marquee:"Department of Information and Technology",
     logo: "/it.png",
-    description: "The IT Department showcases innovation through technical workshops, coding competitions, and project exhibitions focused on web technologies, cloud computing, and data analytics.",
     eventPoster: "/posters/it.jpeg",
+    schedulePoster: "/schedule/it.jpg",
+    description: "The IT Department showcases innovation through technical workshops, coding competitions, and project exhibitions focused on web technologies, cloud computing, and data analytics.",
     events: [
       {
         name: "Technical Quiz",
@@ -241,6 +247,7 @@ const DEPARTMENTS = [
     shortName: "CSD",
     logo: "/csd.png",
     eventPoster: "/posters/csd.png",
+    schedulePoster: "/schedule/csd.jpg",
     description: "Data Sankova is an exclusive event by the Department of CSE - Data Science in association with DataNova at Sanketika 2025 for future engineers. It features a workshop, two technical competitions, and a non-technical competition, fostering innovation, problem-solving, and collaboration in data science, AI, and analytics through hands-on learning and engaging challenges.",
     events: [
         {
@@ -274,6 +281,7 @@ const DEPARTMENTS = [
     shortName: "CSM",
     logo: "/csm.png",
     eventPoster: "/posters/csm.jpg",
+    schedulePoster: "/schedule/csm.jpg",
     description: "The CSM Department offers events focused on machine learning, data analytics, and artificial intelligence, featuring workshops, competitions, and expert talks.",
     events: [
       {
@@ -301,6 +309,7 @@ const DEPARTMENTS = [
     shortName: "ME",
     logo: "/mech.png",
     eventPoster: "/posters/mech.jpeg",
+    schedulePoster: "/schedule/mech.jpg",
     description: "The Mechanical Engineering Department offers events focused on mechanical design, automation, and manufacturing, featuring workshops, competitions, and expert talks.",
     events: [
       {
@@ -332,6 +341,7 @@ const DEPARTMENTS = [
     shortName: "CE",
     logo: "/civil.png",
     eventPoster: "/posters/civil.jpg",
+    schedulePoster: "/schedule/civil.jpg",
     description: "The Department of Civil Engineering, in association with Tameer Association, is organizing ARCHINOVA 2025—an event to showcase skills, learn from professionals, network with like-minded people, and gain knowledge while having fun.",
     events: [
       {
@@ -363,6 +373,7 @@ const DEPARTMENTS = [
     shortName: "MBA",
     logo: "/mba.jpeg",
     eventPoster: "/posters/mba.jpeg",
+    schedulePoster: "/schedule/mba.jpg",
     description: "The MBA Department offers events focused on business management, entrepreneurship, and leadership, featuring workshops, competitions, and expert talks.",
     events: [
       {
@@ -395,6 +406,7 @@ const DEPARTMENTS = [
     shortName: "ECE",
     logo: "/ece.png",
     eventPoster: "/posters/ece.jpg",
+    schedulePoster: "/schedule/ece.jpg",
     description: "The Department of Electronics and Communication Engineering is organizing Sanketika-2K25, a significant step towards achieving this goal, providing a dynamic platform for knowledge exchange, skill enhancement, and industry-academia interaction.",
     events: [
       {

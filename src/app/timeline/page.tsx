@@ -28,13 +28,13 @@ const TimelinePage = () => {
       <div className="inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20">
         <Navbar />
       </div>
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen">
         <SparklesCore
-          id="tsparticlesstalls"
+          id="tsparticlestimeline"
           background="transparent"
           minSize={0.8}
           maxSize={1.6}
-          particleDensity={60}
+          particleDensity={30}
           className="w-full h-full opacity-50 absolute"
         />
         {/* Background Grid */}
@@ -63,8 +63,8 @@ const TimelinePage = () => {
                   onClick={() => setSelectedDay(day as "day1" | "day2")}
                   className={`px-5 py-2 rounded-xl capitalize transition-all duration-300 font-medium ${
                     selectedDay === day
-                      ? "bg-yellow-900/10 border border-yellow-500/20 text-yellow-300"
-                      : "bg-purple-900/10 border border-purple-500/20 text-purple-200 hover:bg-purple-900/20"
+                      ? "bg-yellow-900 border border-yellow-500/20 text-yellow-300"
+                      : "bg-purple-900 border border-purple-500/20 text-purple-200 hover:bg-purple-900/60"
                   }`}
                 >
                   {day === "day1" ? "Day 1" : "Day 2"}
@@ -90,11 +90,11 @@ const TimelinePage = () => {
                 )
               )}
             </div> */}
-            <div className="absolute inset-0 -z-10">
+            {/* <div className="absolute inset-0 -z-10">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
               <div className="absolute top-1/2 left-1/1 -translate-x-1/2 -translate-y-1/2 w-[1500px] h-[800px] bg-purple-500/30 rounded-full blur-[120px]" />
               <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[1300px] h-[800px] bg-cyan-500/30 rounded-full blur-[120px]" />
-            </div>
+            </div> */}
             {/* Roadmap Timeline */}
             <div className="relative">
               {/* Connecting Line with curved sections */}
@@ -113,13 +113,12 @@ const TimelinePage = () => {
                 {filteredEvents.map((event, index) => {
                   const eventKey = `${event.id}-${event.title}`;
                   const isHovered = hoveredEvent === eventKey;
-                  const isDimmed = hoveredEvent && !isHovered;
 
                   return (
                     <motion.div
                       key={eventKey}
                       initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: isDimmed ? 0.3 : 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{
                         delay: index * 0.2,
                         duration: 0.3,
@@ -141,13 +140,13 @@ const TimelinePage = () => {
                         ${
                           isHovered
                             ? "transform scale-105 shadow-2xl border-2 border-transparent"
-                            : "bg-gradient-to-br from-purple-900/20 to-purple-900/5 border border-purple-500/20"
+                            : "bg-gradient-to-br from-purple-900 to-purple-900 border border-purple-500"
                         }`}
                         >
                           {/* Gradient Border Background */}
                           {isHovered && (
                             <>
-                              <div className="absolute inset-0 rounded-2xl bg-purple-950/20" />
+                              <div className="absolute inset-0 rounded-2xl bg-purple-950" />
                             </>
                           )}
 

@@ -4,6 +4,7 @@ export type StallType =
   | "Games & Activities"
   | "Tech & Education"
   | "Merchandise & Accessories"
+  | "Business"
   | "Others";
 
 export interface Stall {
@@ -20,7 +21,7 @@ export const STALLS: Stall[] = [
     id: "1",
     name: "SE7EN",
     image: "/assets/stalls/seven.png",
-    stallNumber: "S15",
+    stallNumber: "S9",
     type: "Food & Beverages",
     description: "SERVING VIBES AND BITES", 
   },
@@ -36,7 +37,7 @@ export const STALLS: Stall[] = [
     id: "3",
     name: "Cocoacrafts ",
     image: "/assets/stalls/cocoacrafts.png",
-    stallNumber: "S14",
+    stallNumber: "S11",
     type: "Food & Beverages",
     description: "Baker dreams • Crafted carvings ",
   },
@@ -52,15 +53,15 @@ export const STALLS: Stall[] = [
     id: "5",
     name: "FITNESS BOOSTERS",
     image: "/assets/stalls/fitness.jpeg",
-    stallNumber: "",
-    type: "Others",
+    stallNumber: "SS1",
+    type: "Business",
     description: "Supplement Store",
   },
   {
     id: "6",
     name: "Crimson brew",
     image: "/assets/stalls/crimsonbrew.jpeg",
-    stallNumber: "S14",
+    stallNumber: "S12",
     type: "Food & Beverages",
     description: "Crimson brew we sip the boldest brew",
   },
@@ -68,15 +69,15 @@ export const STALLS: Stall[] = [
     id: "7",
     name: "DELHI CHAAT",
     image: "/assets/stalls/delhichaat.jpg",
-    stallNumber: "F-02",
-    type: "Tech & Education",
+    stallNumber: "F8",
+    type: "Food & Beverages",
     description: "Delicious Chaat",
   },
   {
     id: "8",
     name: "Bajaj Study Abroad",
     image: "/assets/stalls/bajaj.jpg",
-    stallNumber: "",
+    stallNumber: "SS2",
     type: "Tech & Education",
     description: "Education | Immigration | Training",
   },
@@ -84,15 +85,15 @@ export const STALLS: Stall[] = [
     id: "9",
     name: "ACube",
     image: "/assets/stalls/acube.png",
-    stallNumber: "",
-    type: "Tech & Education",
+    stallNumber: "SS3",
+    type: "Business",
     description: "Your Printing Partner",
   },
   {
     id: "10",
     name: "Dhanalaxmi Overseas",
     image: "/assets/stalls/Dhanalaxmi.png",
-    stallNumber: "",
+    stallNumber: "SS5",
     type: "Tech & Education",
     description: "Where Your Overseas Journey Begins",
   },
@@ -100,7 +101,7 @@ export const STALLS: Stall[] = [
     id: "11",
     name: "Farmrobo",
     image: "/assets/stalls/farmrobo.png",
-    stallNumber: "",
+    stallNumber: "SS10",
     type: "Tech & Education",
     description: "Where Technology Meets the Soil",
   },
@@ -108,10 +109,43 @@ export const STALLS: Stall[] = [
     id: "12",
     name: "Lords Skill Academy",
     image: "/assets/stalls/lordsskill.png",
-    stallNumber: "",
+    stallNumber: "SS11",
     type: "Tech & Education",
     description: "Master In-Demand Tech Skills with Hands-On Learning",
   },
+  {
+    id: "13",
+    name: "Masqati",
+    image: "/assets/stalls/masqati.svg",
+    stallNumber: "F1",
+    type: "Food & Beverages",
+    description: "Premium Milk and Milk Products",
+  },
+  {
+    id: "15",
+    name: "Mustafa Ice Cream",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "F3",
+    type: "Food & Beverages",
+    description: "Creamy and Delicious Ice Cream",
+  }, 
+  {
+    id: "16",
+    name: "Mojitos Bubble",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "F5",
+    type: "Food & Beverages",
+    description: "Bubble Tea and Beverages",
+  },
+  {
+    id: "17",
+    name: "Nestle",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "F7",
+    type: "Food & Beverages",
+    description: "Nestle Products",
+  },
+  
 ];
 
 export const STALL_TYPES: StallType[] = [
@@ -120,5 +154,6 @@ export const STALL_TYPES: StallType[] = [
   "Games & Activities",
   "Tech & Education",
   "Merchandise & Accessories",
+  "Business",
   "Others"
 ]; 

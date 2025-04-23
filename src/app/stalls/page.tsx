@@ -5,26 +5,104 @@ import { Navbar } from "@/components/Navbar";
 import { StallCard } from "@/components/StallCard";
 import { SearchBarWithFilter } from "@/components/SearchBarWithFilter";
 import { Stall, StallType, STALLS } from "./content";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { SparklesCore } from "@/components/ui/Sparkles";
 
 export default function StallsPage() {
-  const [filteredStalls, setFilteredStalls] = useState<Stall[]>(STALLS);
+  const [filteredStalls, setFilteredStalls] = useState<Stall[]>(
+    [...STALLS].sort((a, b) => {
+      // If both have stall numbers
+      if (a.stallNumber && b.stallNumber) {
+        // Extract the letter and number parts
+        const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
+        const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
+
+        if (aMatch && bMatch) {
+          // Compare letters first
+          if (aMatch[1] !== bMatch[1]) {
+            return aMatch[1].localeCompare(bMatch[1]);
+          }
+          // If letters are same, compare numbers
+          return parseInt(aMatch[2]) - parseInt(bMatch[2]);
+        }
+        return a.stallNumber.localeCompare(b.stallNumber);
+      }
+      // Put empty stall numbers at the end
+      if (!a.stallNumber) return 1;
+      if (!b.stallNumber) return -1;
+      return 0;
+    })
+  );
 
   const handleSearch = (searchTerm: string) => {
     const filtered = STALLS.filter((stall) =>
       stall.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setFilteredStalls(filtered);
+    // Maintain the same sorting when filtering
+    setFilteredStalls(
+      filtered.sort((a, b) => {
+        if (a.stallNumber && b.stallNumber) {
+          const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
+          const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
+
+          if (aMatch && bMatch) {
+            if (aMatch[1] !== bMatch[1]) {
+              return aMatch[1].localeCompare(bMatch[1]);
+            }
+            return parseInt(aMatch[2]) - parseInt(bMatch[2]);
+          }
+          return a.stallNumber.localeCompare(b.stallNumber);
+        }
+        if (!a.stallNumber) return 1;
+        if (!b.stallNumber) return -1;
+        return 0;
+      })
+    );
   };
 
   const handleTypeFilter = (type: StallType | null) => {
     if (!type) {
-      setFilteredStalls(STALLS);
+      setFilteredStalls(
+        [...STALLS].sort((a, b) => {
+          if (a.stallNumber && b.stallNumber) {
+            const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
+            const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
+
+            if (aMatch && bMatch) {
+              if (aMatch[1] !== bMatch[1]) {
+                return aMatch[1].localeCompare(bMatch[1]);
+              }
+              return parseInt(aMatch[2]) - parseInt(bMatch[2]);
+            }
+            return a.stallNumber.localeCompare(b.stallNumber);
+          }
+          if (!a.stallNumber) return 1;
+          if (!b.stallNumber) return -1;
+          return 0;
+        })
+      );
       return;
     }
     const filtered = STALLS.filter((stall) => stall.type === type);
-    setFilteredStalls(filtered);
+    setFilteredStalls(
+      filtered.sort((a, b) => {
+        if (a.stallNumber && b.stallNumber) {
+          const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
+          const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
+
+          if (aMatch && bMatch) {
+            if (aMatch[1] !== bMatch[1]) {
+              return aMatch[1].localeCompare(bMatch[1]);
+            }
+            return parseInt(aMatch[2]) - parseInt(bMatch[2]);
+          }
+          return a.stallNumber.localeCompare(b.stallNumber);
+        }
+        if (!a.stallNumber) return 1;
+        if (!b.stallNumber) return -1;
+        return 0;
+      })
+    );
   };
 
   return (

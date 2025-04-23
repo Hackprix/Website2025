@@ -8,6 +8,7 @@ import {
   Navigation,
   Store,
   ClockFading,
+  Calendar,
 } from "lucide-react";
 import { AnimeNavBar } from "./ui/anime-navbar";
 import { ThemeToggle } from "./ui/ThemeToggle";
@@ -68,6 +69,7 @@ export function Navbar() {
                 { name: "Venue", url: "/venue", icon: Navigation },
                 { name: "Stalls", url: "/stalls", icon: Store },
                 { name: "Timeline", url: "/timeline", icon: ClockFading },
+                { name: "Schedule", url: "/schedule", icon: Calendar },
               ]}
             />
             <ThemeToggle />
@@ -93,6 +95,8 @@ export function Navbar() {
           { name: "Sponsors", url: "/sponsors", icon: HandCoins },
           { name: "Venue", url: "/venue", icon: Navigation },
           { name: "Stalls", url: "/stalls", icon: Store },
+          { name: "Timeline", url: "/timeline", icon: ClockFading },
+          { name: "Schedule", url: "/schedule", icon: Calendar },
         ]}
       />
     </header>

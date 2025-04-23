@@ -107,7 +107,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${press.variable} ${play.variable} ${roboto.variable} ${space.variable} ${catamaran.variable} ${poppins.variable} ${anton.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" enableSystem defaultTheme="system">
+        <ThemeProvider attribute="class" enableSystem defaultTheme="dark">
           <SplashScreen onComplete={() => setIsLoading(false)} />
           {shouldRenderContent && (
             <motion.main
