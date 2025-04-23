@@ -7,6 +7,7 @@ import {
   HandCoins,
   Navigation,
   Store,
+  ClockFading,
 } from "lucide-react";
 import { AnimeNavBar } from "./ui/anime-navbar";
 import { ThemeToggle } from "./ui/ThemeToggle";
@@ -32,17 +33,17 @@ export function Navbar() {
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
   return (
-    <header 
+    <header
       className={`fixed top-4 mb-8 md:top-10 left-0 right-0 z-70 mx-4 md:mx-20 transition-opacity duration-700 ${
-        visible ? 'opacity-100 rounded-full' : 'opacity-0 rounded-full pointer-events-none'
-      } ${
-        atTop ? '' : 'backdrop-blur-sm bg-white/80 dark:bg-black/80'
-      }`}
+        visible
+          ? "opacity-100 rounded-full"
+          : "opacity-0 rounded-full pointer-events-none"
+      } ${atTop ? "" : "backdrop-blur-sm bg-white/80 dark:bg-black/80"}`}
     >
       <div className="w-full rounded-full bg-white dark:bg-black shadow-md hover:shadow-2xl dark:hover:shadow-white/50 transition-all duration-300">
         <div className="container mx-auto flex items-center justify-between md:p-4 p-4 px-8 md:px-8 gap-40">
@@ -65,7 +66,8 @@ export function Navbar() {
                 // { name: "Schedule", url: "/contact", icon: ClipboardPen },
                 { name: "Sponsors", url: "/sponsors", icon: HandCoins },
                 { name: "Venue", url: "/venue", icon: Navigation },
-                { name: "Stalls", url: "/stalls", icon: Store},
+                { name: "Stalls", url: "/stalls", icon: Store },
+                { name: "Timeline", url: "/timeline", icon: ClockFading },
               ]}
             />
             <ThemeToggle />
@@ -90,7 +92,7 @@ export function Navbar() {
           // { name: "Contact", url: "/contact", icon: ClipboardPen },
           { name: "Sponsors", url: "/sponsors", icon: HandCoins },
           { name: "Venue", url: "/venue", icon: Navigation },
-          { name: "Stalls", url: "/stalls", icon: Store},
+          { name: "Stalls", url: "/stalls", icon: Store },
         ]}
       />
     </header>
