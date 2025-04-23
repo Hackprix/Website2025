@@ -139,13 +139,68 @@ export const STALLS: Stall[] = [
   },
   {
     id: "17",
-    name: "Nestle",
+    name: "Snacks",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "F6",
+    type: "Food & Beverages",
+    description: "Satisfy your cravings with a burst of flavor",
+  },
+  {
+    id: "18",
+    name: "Nice Juice Center",
     image: "/assets/stalls/lordsskill.png",
     stallNumber: "F7",
     type: "Food & Beverages",
-    description: "Nestle Products",
+    description: "Fresh, fruity, and refreshingly cool",
   },
-  
+  {
+    id: "19",
+    name: "Germanten Hospital",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "SS4",
+    type: "Others",
+    description: "Engineering Health",
+  },
+  {
+    id: "20",
+    name: "Shahi Kebabs",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "SS9",
+    type: "Food & Beverages",
+    description: "Royal flavors, grilled to perfection!",
+  },
+  {
+    id: "21",
+    name: "Shooting Stall",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "S4",
+    type: "Games & Activities",
+    description: "Aim. Shoot. Win the thrill!",
+  },
+  {
+    id: "22",
+    name: "Medical Facility",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "S8",
+    type: "Others",
+    description: "Care and support",
+  },
+  {
+    id: "23",
+    name: "Hickey Cafe",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "S10",
+    type: "Food & Beverages",
+    description: "Providers of your Daily Dose of Caffeine.",
+  },
+  {
+    id: "24",
+    name: "Ice Gola",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "S13",
+    type: "Food & Beverages",
+    description: "Chill out with colorful, refreshing coolness!",
+  }
 ];
 
 export const STALL_TYPES: StallType[] = [
