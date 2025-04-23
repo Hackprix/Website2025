@@ -2,7 +2,7 @@ export type StallType =
   | "Food & Beverages"
   | "Arts & Crafts"
   | "Games & Activities"
-  | "Tech & Innovation"
+  | "Tech & Education"
   | "Merchandise & Accessories"
   | "Others";
 
@@ -22,7 +22,7 @@ export const STALLS: Stall[] = [
     image: "/assets/stalls/seven.png",
     stallNumber: "S15",
     type: "Food & Beverages",
-    description: "SERVING VIBES AND BITES",
+    description: "SERVING VIBES AND BITES", 
   },
   {
     id: "2",
@@ -64,13 +64,61 @@ export const STALLS: Stall[] = [
     type: "Food & Beverages",
     description: "Crimson brew we sip the boldest brew",
   },
+  {
+    id: "7",
+    name: "DELHI CHAAT",
+    image: "/assets/stalls/delhichaat.jpg",
+    stallNumber: "F-02",
+    type: "Tech & Education",
+    description: "Delicious Chaat",
+  },
+  {
+    id: "8",
+    name: "Bajaj Study Abroad",
+    image: "/assets/stalls/bajaj.jpg",
+    stallNumber: "",
+    type: "Tech & Education",
+    description: "Education | Immigration | Training",
+  },
+  {
+    id: "9",
+    name: "ACube",
+    image: "/assets/stalls/acube.png",
+    stallNumber: "",
+    type: "Tech & Education",
+    description: "Your Printing Partner",
+  },
+  {
+    id: "10",
+    name: "Dhanalaxmi Overseas",
+    image: "/assets/stalls/Dhanalaxmi.png",
+    stallNumber: "",
+    type: "Tech & Education",
+    description: "Where Your Overseas Journey Begins",
+  },
+  {
+    id: "11",
+    name: "Farmrobo",
+    image: "/assets/stalls/farmrobo.png",
+    stallNumber: "",
+    type: "Tech & Education",
+    description: "Where Technology Meets the Soil",
+  },
+  {
+    id: "12",
+    name: "Lords Skill Academy",
+    image: "/assets/stalls/lordsskill.png",
+    stallNumber: "",
+    type: "Tech & Education",
+    description: "Master In-Demand Tech Skills with Hands-On Learning",
+  },
 ];
 
 export const STALL_TYPES: StallType[] = [
   "Food & Beverages",
   "Arts & Crafts",
   "Games & Activities",
-  "Tech & Innovation",
+  "Tech & Education",
   "Merchandise & Accessories",
   "Others"
 ]; 
