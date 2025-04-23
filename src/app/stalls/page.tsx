@@ -8,30 +8,45 @@ import { Stall, StallType, STALLS } from "./content";
 import { useState } from "react";
 import { SparklesCore } from "@/components/ui/Sparkles";
 
+const getPrefixPriority = (prefix: string) => {
+  if (prefix === "SS") return 0;
+  if (prefix === "F") return 1;
+  if (prefix === "S") return 2;
+  return 3;
+};
+
+const sortStalls = (a: Stall, b: Stall) => {
+  if (a.stallNumber && b.stallNumber) {
+    // Extract the prefix (SS, F, or S) and number parts
+    const aMatch = a.stallNumber.match(/^(SS|[FS])(\d+)$/);
+    const bMatch = b.stallNumber.match(/^(SS|[FS])(\d+)$/);
+
+    if (aMatch && bMatch) {
+      const [, aPrefix, aNum] = aMatch;
+      const [, bPrefix, bNum] = bMatch;
+
+      // Compare prefixes first based on priority
+      const aPriority = getPrefixPriority(aPrefix);
+      const bPriority = getPrefixPriority(bPrefix);
+
+      if (aPriority !== bPriority) {
+        return aPriority - bPriority;
+      }
+
+      // If prefixes are the same, compare numbers
+      return parseInt(aNum) - parseInt(bNum);
+    }
+    return a.stallNumber.localeCompare(b.stallNumber);
+  }
+  // Put empty stall numbers at the end
+  if (!a.stallNumber) return 1;
+  if (!b.stallNumber) return -1;
+  return 0;
+};
+
 export default function StallsPage() {
   const [filteredStalls, setFilteredStalls] = useState<Stall[]>(
-    [...STALLS].sort((a, b) => {
-      // If both have stall numbers
-      if (a.stallNumber && b.stallNumber) {
-        // Extract the letter and number parts
-        const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
-        const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
-
-        if (aMatch && bMatch) {
-          // Compare letters first
-          if (aMatch[1] !== bMatch[1]) {
-            return aMatch[1].localeCompare(bMatch[1]);
-          }
-          // If letters are same, compare numbers
-          return parseInt(aMatch[2]) - parseInt(bMatch[2]);
-        }
-        return a.stallNumber.localeCompare(b.stallNumber);
-      }
-      // Put empty stall numbers at the end
-      if (!a.stallNumber) return 1;
-      if (!b.stallNumber) return -1;
-      return 0;
-    })
+    [...STALLS].sort(sortStalls)
   );
 
   const handleSearch = (searchTerm: string) => {
@@ -39,70 +54,16 @@ export default function StallsPage() {
       stall.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     // Maintain the same sorting when filtering
-    setFilteredStalls(
-      filtered.sort((a, b) => {
-        if (a.stallNumber && b.stallNumber) {
-          const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
-          const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
-
-          if (aMatch && bMatch) {
-            if (aMatch[1] !== bMatch[1]) {
-              return aMatch[1].localeCompare(bMatch[1]);
-            }
-            return parseInt(aMatch[2]) - parseInt(bMatch[2]);
-          }
-          return a.stallNumber.localeCompare(b.stallNumber);
-        }
-        if (!a.stallNumber) return 1;
-        if (!b.stallNumber) return -1;
-        return 0;
-      })
-    );
+    setFilteredStalls([...filtered].sort(sortStalls));
   };
 
   const handleTypeFilter = (type: StallType | null) => {
     if (!type) {
-      setFilteredStalls(
-        [...STALLS].sort((a, b) => {
-          if (a.stallNumber && b.stallNumber) {
-            const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
-            const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
-
-            if (aMatch && bMatch) {
-              if (aMatch[1] !== bMatch[1]) {
-                return aMatch[1].localeCompare(bMatch[1]);
-              }
-              return parseInt(aMatch[2]) - parseInt(bMatch[2]);
-            }
-            return a.stallNumber.localeCompare(b.stallNumber);
-          }
-          if (!a.stallNumber) return 1;
-          if (!b.stallNumber) return -1;
-          return 0;
-        })
-      );
+      setFilteredStalls([...STALLS].sort(sortStalls));
       return;
     }
     const filtered = STALLS.filter((stall) => stall.type === type);
-    setFilteredStalls(
-      filtered.sort((a, b) => {
-        if (a.stallNumber && b.stallNumber) {
-          const aMatch = a.stallNumber.match(/([A-Z])(\d+)/);
-          const bMatch = b.stallNumber.match(/([A-Z])(\d+)/);
-
-          if (aMatch && bMatch) {
-            if (aMatch[1] !== bMatch[1]) {
-              return aMatch[1].localeCompare(bMatch[1]);
-            }
-            return parseInt(aMatch[2]) - parseInt(bMatch[2]);
-          }
-          return a.stallNumber.localeCompare(b.stallNumber);
-        }
-        if (!a.stallNumber) return 1;
-        if (!b.stallNumber) return -1;
-        return 0;
-      })
-    );
+    setFilteredStalls([...filtered].sort(sortStalls));
   };
 
   return (

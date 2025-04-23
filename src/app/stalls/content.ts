@@ -124,7 +124,7 @@ export const STALLS: Stall[] = [
   {
     id: "15",
     name: "Mustafa Ice Cream",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/icecream.jpg",
     stallNumber: "F3",
     type: "Food & Beverages",
     description: "Creamy and Delicious Ice Cream",
@@ -132,7 +132,7 @@ export const STALLS: Stall[] = [
   {
     id: "16",
     name: "Mojitos Bubble",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/bubble.webp",
     stallNumber: "F5",
     type: "Food & Beverages",
     description: "Bubble Tea and Beverages",
@@ -140,7 +140,7 @@ export const STALLS: Stall[] = [
   {
     id: "17",
     name: "Snacks",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/snacks.jpg",
     stallNumber: "F6",
     type: "Food & Beverages",
     description: "Satisfy your cravings with a burst of flavor",
@@ -148,7 +148,7 @@ export const STALLS: Stall[] = [
   {
     id: "18",
     name: "Nice Juice Center",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/nicejuice.webp",
     stallNumber: "F7",
     type: "Food & Beverages",
     description: "Fresh, fruity, and refreshingly cool",
@@ -156,15 +156,15 @@ export const STALLS: Stall[] = [
   {
     id: "19",
     name: "Germanten Hospital",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/germanten.jpg",
     stallNumber: "SS4",
     type: "Others",
     description: "Engineering Health",
   },
   {
     id: "20",
-    name: "Shahi Kebabs",
-    image: "/assets/stalls/lordsskill.png",
+    name: "Shahi Kabab",
+    image: "/assets/stalls/kabab.jpeg",
     stallNumber: "SS9",
     type: "Food & Beverages",
     description: "Royal flavors, grilled to perfection!",
@@ -172,7 +172,7 @@ export const STALLS: Stall[] = [
   {
     id: "21",
     name: "Shooting Stall",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/shooting.webp",
     stallNumber: "S4",
     type: "Games & Activities",
     description: "Aim. Shoot. Win the thrill!",
@@ -180,7 +180,7 @@ export const STALLS: Stall[] = [
   {
     id: "22",
     name: "Medical Facility",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/medical.jpg",
     stallNumber: "S8",
     type: "Others",
     description: "Care and support",
@@ -188,7 +188,7 @@ export const STALLS: Stall[] = [
   {
     id: "23",
     name: "Hickey Cafe",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/hickeycoffee.jpg",
     stallNumber: "S10",
     type: "Food & Beverages",
     description: "Providers of your Daily Dose of Caffeine.",
@@ -196,7 +196,7 @@ export const STALLS: Stall[] = [
   {
     id: "24",
     name: "Ice Gola",
-    image: "/assets/stalls/lordsskill.png",
+    image: "/assets/stalls/gola.webp",
     stallNumber: "S13",
     type: "Food & Beverages",
     description: "Chill out with colorful, refreshing coolness!",
