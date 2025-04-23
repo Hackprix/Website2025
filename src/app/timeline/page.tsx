@@ -1,5 +1,5 @@
 "use client";
-
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Footerdemo } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { useState } from "react";
@@ -111,7 +111,7 @@ const TimelinePage = () => {
               {/* Timeline Events */}
               <div className="space-y-16">
                 {filteredEvents.map((event, index) => {
-                  const eventKey = `${event.year}-${event.title}`;
+                  const eventKey = `${event.id}-${event.title}`;
                   const isHovered = hoveredEvent === eventKey;
                   const isDimmed = hoveredEvent && !isHovered;
 
