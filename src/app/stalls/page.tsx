@@ -5,7 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { StallCard } from "@/components/StallCard";
 import { SearchBarWithFilter } from "@/components/SearchBarWithFilter";
 import { Stall, StallType, STALLS } from "./content";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { SparklesCore } from "@/components/ui/Sparkles";
 
 export default function StallsPage() {
