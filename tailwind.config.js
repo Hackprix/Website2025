@@ -65,6 +65,9 @@ export const theme = {
         "100%": { "background-position": "200%" },
       },
     },
+    fontFamily: {
+      minecraft: ['Minecraftia', 'sans-serif'],
+    },
   },
 };
 export const plugins = [

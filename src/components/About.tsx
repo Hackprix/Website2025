@@ -45,8 +45,8 @@ const About: React.FC<AboutProps> = ({ }) => {
   ];
 
   return (
-    <div className="w-full px-4 py-8 md:px-8 relative">
-      <SparklesCore
+    <div className="w-full px-4 py-8 md:px-8 relative bg-gradient-to-b from-black via-slate-950 to-slate-950">
+      {/* <SparklesCore
         id="tsparticles-about"
         background="transparent"
         minSize={0.2}
@@ -58,7 +58,7 @@ const About: React.FC<AboutProps> = ({ }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute md:top-1/3 top-1/6 md:left-1/8 left-1/3 -translate-x-1/2 overflow-hidden -translate-y-1/2 w-[400px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
         <div className="absolute md:top-1/3 top-1/6 md:left-1/8 left-1/3 overflow-hidden -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
-      </div>
+      </div> */}
 
       <div ref={sectionRef} className="mx-auto max-w-9xl">
         <div className="grid gap-8 md:grid-cols-2">
@@ -117,14 +117,14 @@ const About: React.FC<AboutProps> = ({ }) => {
 
           {/* Right Content - Scrolling Images */}
           <div className="relative overflow-hidden">
-            <SparklesCore
+            {/* <SparklesCore
               id="tsparticlesfullpage"
               background="transparent"
               minSize={0.2}
               maxSize={1.6}
               particleDensity={40}
               className="w-full h-full opacity-50 absolute"
-            />
+            /> */}
 
             {/* First Scrolling Row */}
             <div className="relative mb-4 h-48 overflow-hidden md:h-64">

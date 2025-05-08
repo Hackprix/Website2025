@@ -37,7 +37,7 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
   return (
     <div
       ref={containerRef}
-      className={cn("z-30 w-full overflow-hidden inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20", className)}
+      className={cn("z-30 w-full overflow-hidden inset-0 bg-black", className)}
       aria-hidden="true"
     >
       
@@ -55,8 +55,8 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
               key={`first-${index}`}
               className="flex items-center px-4 md:px-6"
             >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
-              <span className="ml-4 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
+              <div className="h-2 w-2 shrink-0 rounded-full bg-indigo-600" />
+              <span className="ml-4 -mb-3 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
                 {item}
               </span>
             </div>
@@ -75,8 +75,8 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
               key={`second-${index}`}
               className="flex items-center px-4 md:px-6"
             >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
-              <span className="ml-4 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
+              <div className="h-2 w-2 shrink-0 rounded-full bg-indigo-600" />
+              <span className="ml-4 -mb-3 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
                 {item}
               </span>
             </div>
@@ -95,8 +95,8 @@ const InfiniteMarquee: React.FC<InfiniteMarqueeProps> = ({
               key={`third-${index}`}
               className="flex items-center px-4 md:px-6"
             >
-              <div className="h-2 w-2 shrink-0 rounded-full bg-green-600" />
-              <span className="ml-4 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
+              <div className="h-2 w-2 shrink-0 rounded-full bg-indigo-600" />
+              <span className="ml-4 -mb-3 whitespace-nowrap text-xs text-black dark:text-white md:text-lg">
                 {item}
               </span>
             </div>
