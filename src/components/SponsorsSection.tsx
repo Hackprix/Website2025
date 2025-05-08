@@ -138,25 +138,25 @@ const getTierColor = (tier: Sponsor["tier"]) => {
 export function SponsorsSection() {
   return (
     <section className="relative h-fit flex flex-col py-20 md:py-20 ">
-      <SparklesCore
+      {/* <SparklesCore
         id="tsparticlessponsors"
         background="transparent"
         minSize={0.8}
         maxSize={1.6}
         particleDensity={30}
         className="w-full h-full opacity-50 absolute"
-      />
+      /> */}
       {/* Gradient Background Overlays */}
       {/* <div className="absolute inset-0 pointer-events-none">
          
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
           <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
         </div> */}
-            <div className="absolute inset-0 pointer-events-none">
+            {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
         <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
-      </div>
+      </div> */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 py-1">
       <div className="flex flex-col justify-center relative mb-12 dark:mb-12">
           {/* Main Title Text */}

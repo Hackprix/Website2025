@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { config } from '@/config';
-import { Card } from './ui/Card';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { config } from "@/config";
+import { Card } from "./ui/Card";
 
 interface TimeLeft {
   days: number;
@@ -13,7 +13,12 @@ interface TimeLeft {
 }
 
 const CountdownTimer: React.FC = () => {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const [eventStarted, setEventStarted] = useState<boolean>(false);
 
   useEffect(() => {
@@ -39,19 +44,28 @@ const CountdownTimer: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const validUnits: [string, number][] = Object.entries(timeLeft).reduce<[string, number][]>(
+  const validUnits: [string, number][] = Object.entries(timeLeft).reduce<
+    [string, number][]
+  >(
     (acc, [unit, value]) =>
-      value > 0 || acc.length > 0 ? [...acc, [value === 1 ? unit.slice(0, -1) : unit, value]] : acc,
+      value > 0 || acc.length > 0
+        ? [...acc, [value === 1 ? unit.slice(0, -1) : unit, value]]
+        : acc,
     []
   );
 
   if (eventStarted) {
     return (
       <div className="bg-gradient-to-br from-purple-900/10 to-purple-900/5 p-4 border border-purple-500/10 rounded-lg">
-        <h3 className="text-lg font-semibold text-yellow-200 mb-2">Sanketika 2025 is here!</h3>
+        <h3 className="text-lg font-semibold text-yellow-200 mb-2">
+          Sanketika 2025 is here!
+        </h3>
         <p className="text-sm text-gray-300">
-          Join us now! -{' '}
-          <Link href="/venue" className="text-yellow-300 hover:text-yellow-400 underline">
+          Join us now! -{" "}
+          <Link
+            href="/venue"
+            className="text-yellow-300 hover:text-yellow-400 underline"
+          >
             View Venue Details
           </Link>
         </p>
@@ -62,26 +76,29 @@ const CountdownTimer: React.FC = () => {
   if (validUnits.length === 0) return null;
 
   return (
-<div className="dark:bg-black/90 bg-white p-2 border rounded-lg">
-  <h3 className="text-xl font-semibold dark:text-white text-black mb-2 font-poppins tracking-wider">
-    Event Starts in
-  </h3>
-  <div className="grid grid-cols-4 sm:grid-cols-4 gap-0 mb-3">
-    {validUnits.map(([label, value], index) => (
-      <Card key={index} variant="dots" className="flex flex-col justify-center items-center p-2">
-        <div className="flex flex-col justify-center items-center">
-        <div className="md:text-2xl text-base font-bold dark:text-yellow-200 text-sky-700 font-poppins">
-          {String(value).padStart(2, '0')}
-        </div>
-        <div className="md:text-lg text-xs dark:text-gray-300 text-sky-700 capitalize font-poppins">
-          {label}
-        </div>
-        </div>
-      </Card>
-    ))}
-  </div>
-</div>
-
+    <div className="dark:bg-black/90 bg-white p-2 border rounded-lg">
+      <h3 className="text-xl font-semibold dark:text-white text-black mb-2 font-poppins tracking-wider">
+        Hacking Starts In
+      </h3>
+      <div className="grid grid-cols-4 sm:grid-cols-4 gap-5 mb-3">
+        {validUnits.map(([label, value], index) => (
+          <Card
+            key={index}
+            variant="lifted"
+            className="flex flex-col justify-center items-center p-2"
+          >
+            <div className="flex flex-col justify-center items-center">
+              <div className="md:text-2xl text-base font-bold  text-sky-700 font-poppins">
+                {String(value).padStart(2, "0")}
+              </div>
+              <div className="md:text-lg text-xs dark:text-gray-300 text-sky-700 capitalize font-poppins">
+                {label}
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </div>
   );
 };
 

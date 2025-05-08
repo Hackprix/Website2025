@@ -7,7 +7,7 @@ const TitleSponserSection = () => {
   return (
     <section className="text-center pt-20 relative h-fit">
       {/* Fix: Added pointer-events-none to prevent blocking interactions */}
-      <SparklesCore
+      {/* <SparklesCore
               id="tsparticles-sponser"
               background="transparent"
               minSize={0.2}
@@ -19,7 +19,7 @@ const TitleSponserSection = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute top-1/7 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[400px] bg-purple-500/30 rounded-full blur-[120px]" />
         <div className="absolute top-1/7 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
-      </div>
+      </div> */}
 {/* 
       <h2 className="relative mb-4 font-poppins dark:text-white text-black">
               <p className="absolute top-1/2 -translate-y-1/2 text-3xl md:text-4xl">
@@ -70,14 +70,14 @@ const TitleSponserSection = () => {
       
 
       <p className="mt-10 text-sm font-poppins md:text-2xl relative z-50 md:mb-0 mb-4">{TitleSponser.subtitle}</p>
-      <SparklesCore
+      {/* <SparklesCore
               id="tsparticles-sponser2"
               background="transparent"
               minSize={0.2}
               maxSize={1.6}
               particleDensity={40}
               className="w-full h-full opacity-50 absolute top-0 left-0 z-0 pointer-events-none"
-            />
+            /> */}
 
       <TextImageSection
         description={TitleSponser.description}

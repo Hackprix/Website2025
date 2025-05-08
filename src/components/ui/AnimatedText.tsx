@@ -55,7 +55,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
             {text}
           </motion.h1>
 
-          <motion.svg
+          {/* <motion.svg
             width="100%"
             height="40"
             viewBox="0 0 300 20"
@@ -74,7 +74,7 @@ const AnimatedText = React.forwardRef<HTMLDivElement, AnimatedTextProps>(
                 transition: { duration: 0.8 },
               }}
             />
-          </motion.svg>
+          </motion.svg> */}
         </div>
       </div>
     );
