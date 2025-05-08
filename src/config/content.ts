@@ -1,13 +1,15 @@
 const MARQUEE = [
-  "Bringing Innovation across India!",
-  "Experience 2 Days of Non-Stop Fun & Learning",
-  "Workshops, Networking, and Exciting Prizes Await!",
+  "Code. Create. Conquer -- Welcome to HackPrix!",
+  "From Concept to Code -- HackPrix is the Launchpad!",
+  "The Hack is On -- Let the Prix Begin!",
 ];
 
 const ABOUT = {
   title: "About", 
-  subtitle: "Discover the Spirit of Innovation and Celebration!",
-  description: "SanketikaFest is an exciting annual event organized by Lords Institute of Engineering and Technology, bringing together students, innovators, and enthusiasts from diverse backgrounds. It features a perfect blend of technical and non-technical competitions, interactive workshops, inspiring speaker sessions, and fun-filled activities. The fest serves as a platform to showcase talent, learn new skills, and engage with like-minded individuals, fostering creativity and collaboration. Whether you're here to compete, explore, or simply enjoy the experience, SanketikaFest promises an unforgettable journey of knowledge and entertainment!"
+  subtitle: "Build better, bring brighter",
+  description: "HackPrix is a premier hackathon in Hyderabad, India, organized by CodeWave Hub to foster innovation and collaboration. This exclusive event brings together top students, developers, and tech visionaries to create cutting-edge solutions for real-world challenges. " +
+    "Designed to push creative boundaries, HackPrix provides a platform for skill development through intense, solution-oriented teamwork. Participants conceptualize and build impactful projects, culminating in high-stakes pitches to industry leaders and potential investors. " +
+    "Whether you're an experienced hacker or embarking on your first tech challenge, HackPrix offers unparalleled opportunities for growth, networking, and technological advancement."
 }
 
 const METRICS = [

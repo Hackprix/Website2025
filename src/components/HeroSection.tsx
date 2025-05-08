@@ -108,7 +108,7 @@ const HeroSection = () => {
         </div>
         <AnimatedShinyText className="rounded-full border inline-flex items-center justify-center px-4 md:w-3/4 py-1 transition ease-out hover:text-black hover:duration-300 text-black dark:text-white z-10">
           <span className="font-poppins md:text-lg text-xs">
-            🕹️ Unleash Talent, Ignite Passion
+            Build for Better
           </span>
           {/* <ArrowRightIcon className="ml-1 size-3 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
         </AnimatedShinyText>
