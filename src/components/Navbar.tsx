@@ -46,7 +46,7 @@ export function Navbar() {
           : "opacity-0 rounded-full pointer-events-none"
       } ${atTop ? "" : "backdrop-blur-sm bg-white/80 dark:bg-black/80"}`}
     >
-      <div className="w-full rounded-full bg-white dark:bg-black shadow-md hover:shadow-2xl dark:hover:shadow-white/50 transition-all duration-300">
+      <div className="w-full rounded-full bg-black shadow-md hover:shadow-2xl dark:hover:shadow-white/50 transition-all duration-300">
         <div className="container mx-auto flex items-center justify-between md:p-4 p-4 px-8 md:px-8 gap-40">
           <div className="flex items-center h-4 md:h-12">
             <Image
@@ -59,7 +59,7 @@ export function Navbar() {
             />
           </div>
 
-          <div className="hidden xl:flex items-center space-x-8">
+          <div className="hidden font-poppins xl:flex items-center space-x-8">
             <AnimeNavBar
               items={[
                 { name: "Home", url: "/", icon: Home },
@@ -69,10 +69,9 @@ export function Navbar() {
                 { name: "Venue", url: "/venue", icon: Navigation },
                 { name: "Stalls", url: "/stalls", icon: Store },
                 { name: "Timeline", url: "/timeline", icon: ClockFading },
-                { name: "Schedule", url: "/schedule", icon: Calendar },
+                // { name: "Schedule", url: "/schedule", icon: Calendar },
               ]}
             />
-            <ThemeToggle />
           </div>
           <div className="xl:hidden flex items-center">
             <button
@@ -96,7 +95,7 @@ export function Navbar() {
           { name: "Venue", url: "/venue", icon: Navigation },
           { name: "Stalls", url: "/stalls", icon: Store },
           { name: "Timeline", url: "/timeline", icon: ClockFading },
-          { name: "Schedule", url: "/schedule", icon: Calendar },
+          // { name: "Schedule", url: "/schedule", icon: Calendar },
         ]}
       />
     </header>

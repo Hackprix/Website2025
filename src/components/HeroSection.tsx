@@ -55,6 +55,62 @@ const HeroSection = () => {
         minDelay={1500}
         maxDelay={3500}
       />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#9E00FF"
+        trailColor="#2EB9DF"
+        minSpeed={15}
+        maxSpeed={35}
+        minDelay={1000}
+        maxDelay={3000}
+      />
+      <ShootingStars
+        starColor="#FF0099"
+        trailColor="#FFB800"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={2000}
+        maxDelay={4000}
+      />
+      <ShootingStars
+        starColor="#9E00FF"
+        trailColor="#2EB9DF"
+        minSpeed={15}
+        maxSpeed={35}
+        minDelay={1000}
+        maxDelay={3000}
+      />
+      <ShootingStars
+        starColor="#FF0099"
+        trailColor="#FFB800"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={2000}
+        maxDelay={4000}
+      />
       <style jsx>{`
         .stars {
           background-image: radial-gradient(
@@ -106,14 +162,14 @@ const HeroSection = () => {
             // underlineDuration={1.5}
           />
         </div>
-        <AnimatedShinyText className="rounded-full border inline-flex items-center justify-center px-4 md:w-3/4 py-1 transition ease-out hover:text-black hover:duration-300 text-black dark:text-white z-10">
+        <AnimatedShinyText className="rounded-full inline-flex items-center justify-center mb-6 px-4 md:w-3/4 py-1 bg-white/60 border-black-500 border-4 text-black z-10">
           <span className="font-poppins md:text-lg text-xs">
-            🕹️ Unleash Talent, Ignite Passion
+            Build for Better
           </span>
-          {/* <ArrowRightIcon className="ml-1 size-3 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" /> */}
+          <ArrowRightIcon className="ml-1 size-3 md:size-5 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
         </AnimatedShinyText>
-        <Link
-          href=""
+        {/* <Link
+          href="www"
           target="_blank"
           className="px-6 py-3 text-base font-medium text-purple-300 hover:text-purple-200 transition-all duration-300 flex items-center justify-center"
         >
@@ -132,7 +188,7 @@ const HeroSection = () => {
               d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
             />
           </svg>
-        </Link>
+        </Link> */}
         <div className="flex justify-center items-center gap-4 md:gap-8">
           <Button
             variant="shimmer"

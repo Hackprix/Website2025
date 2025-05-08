@@ -143,7 +143,7 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
               {isActive && (
                 <motion.div
                   layoutId="anime-mascot"
-                  className="absolute -top-12 left-1/2 -translate-x-1/2 pointer-events-none "
+                  className="absolute -top-12 left-1/2 -translate-x-1/2 pointer-events-none"
                   initial={false}
                   transition={{
                     type: "spring",
@@ -152,18 +152,13 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
                   }}
                 >
                   <div className="relative w-12 h-12">
-                    <motion.div
-                      className="absolute w-10 h-10 bg-yellow-300 rounded-full left-1/2 -translate-x-1/2"
+                    <motion.img
+                      src="/navguy1.png"
+                      alt="Nav Guy"
+                      className="w-60"
                       animate={
                         hoveredTab
-                          ? {
-                              scale: [1, 1.1, 1],
-                              rotate: [0, -5, 5, 0],
-                              transition: {
-                                duration: 0.5,
-                                ease: "easeInOut",
-                              },
-                            }
+                          ? {}
                           : {
                               y: [0, -3, 0],
                               transition: {
@@ -173,116 +168,54 @@ export function AnimeNavBar({ items, className, defaultActive = "Home" }: NavBar
                               },
                             }
                       }
-                    >
-                      <motion.div
-                        className="absolute w-2 h-2 bg-black rounded-full"
-                        animate={
-                          hoveredTab
-                            ? {
-                                scaleY: [1, 0.2, 1],
+                    />
+                    <AnimatePresence>
+                      {hoveredTab && (
+                        <>
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0 }}
+                            className="absolute -top-1 -right-8 text-yellow-300"
+                          >
+                            <motion.img
+                              src="/rocket.png"
+                              alt="rocket"
+                              className="w-10 h-10"
+                              animate={{
+                                y: [0, -2, 0],
                                 transition: {
-                                  duration: 0.2,
-                                  times: [0, 0.5, 1],
+                                  duration: 1,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
                                 },
-                              }
-                            : {}
-                        }
-                        style={{ left: "25%", top: "40%" }}
-                      />
-                      <motion.div
-                        className="absolute w-2 h-2 bg-black rounded-full"
-                        animate={
-                          hoveredTab
-                            ? {
-                                scaleY: [1, 0.2, 1],
+                              }}
+                            />
+                          </motion.div>
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="absolute -top-2 -left-4 text-yellow-300"
+                          >
+                            <motion.img
+                              src="/rocket.png"
+                              alt="rocket"
+                              className="w-8 h-8"
+                              animate={{
+                                y: [0, -2, 0],
                                 transition: {
-                                  duration: 0.2,
-                                  times: [0, 0.5, 1],
+                                  duration: 1,
+                                  repeat: Infinity,
+                                  ease: "easeInOut",
                                 },
-                              }
-                            : {}
-                        }
-                        style={{ right: "25%", top: "40%" }}
-                      />
-                      <motion.div
-                        className="absolute w-2 h-1.5 mt-[1px] bg-pink-400 rounded-full"
-                        animate={{
-                          opacity: hoveredTab ? 0.8 : 0.6,
-                        }}
-                        style={{ left: "15%", top: "55%" }}
-                      />
-                      <motion.div
-                        className="absolute w-2 h-1.5 mt-[1px] bg-pink-400  rounded-full"
-                        animate={{
-                          opacity: hoveredTab ? 0.8 : 0.6,
-                        }}
-                        style={{ right: "15%", top: "55%" }}
-                      />
-
-                      <motion.div
-                        className="absolute w-4 h-2 border-b-2 border-black rounded-full"
-                        animate={
-                          hoveredTab
-                            ? {
-                                scaleY: 1.5,
-                                y: -1,
-                              }
-                            : {
-                                scaleY: 1,
-                                y: 0,
-                              }
-                        }
-                        style={{ left: "30%", top: "60%" }}
-                      />
-                      <AnimatePresence>
-                        {hoveredTab && (
-                          <>
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              exit={{ opacity: 0, scale: 0 }}
-                              className="absolute -top-1 -right-1 w-2 h-2 text-yellow-300"
-                            >
-                              ✨
-                            </motion.div>
-                            <motion.div
-                              initial={{ opacity: 0, scale: 0 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              exit={{ opacity: 0, scale: 0 }}
-                              transition={{ delay: 0.1 }}
-                              className="absolute -top-2 left-0 w-2 h-2 text-yellow-300"
-                            >
-                              ✨
-                            </motion.div>
-                          </>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                    <motion.div
-                      className="absolute -bottom-1 left-1/2 w-4 h-4 -translate-x-1/2"
-                      animate={
-                        hoveredTab
-                          ? {
-                              y: [0, -4, 0],
-                              transition: {
-                                duration: 0.3,
-                                repeat: Infinity,
-                                repeatType: "reverse",
-                              },
-                            }
-                          : {
-                              y: [0, 2, 0],
-                              transition: {
-                                duration: 1,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: 0.5,
-                              },
-                            }
-                      }
-                    >
-                      <div className="w-full h-full bg-yellow-300/90 rotate-45 transform origin-center" />
-                    </motion.div>
+                              }}
+                            />
+                          </motion.div>
+                        </>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </motion.div>
               )}
