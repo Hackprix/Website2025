@@ -63,7 +63,7 @@ export function Navbar() {
             <AnimeNavBar
               items={[
                 { name: "Home", url: "/", icon: Home },
-                { name: "Events", url: "/events", icon: ScrollText },
+                { name: "Pre-Events", url: "/events", icon: ScrollText },
                 // { name: "Schedule", url: "/contact", icon: ClipboardPen },
                 { name: "Sponsors", url: "/sponsors", icon: HandCoins },
                 { name: "Venue", url: "/venue", icon: Navigation },
@@ -89,7 +89,7 @@ export function Navbar() {
         onClose={() => setIsSideNavOpen(false)}
         items={[
           { name: "Home", url: "/", icon: Home },
-          { name: "Events", url: "/events", icon: ScrollText },
+          { name: "Pre-Events", url: "/events", icon: ScrollText },
           // { name: "Contact", url: "/contact", icon: ClipboardPen },
           { name: "Sponsors", url: "/sponsors", icon: HandCoins },
           { name: "Venue", url: "/venue", icon: Navigation },

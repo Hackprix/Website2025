@@ -142,7 +142,7 @@ const HeroSection = () => {
         }
       `}</style>
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mb-5">
-        <div className="inline-block font-poppins px-6 py-2 mb-2 rounded-full border-2 border-blue-500 text-white text-sm md:text-xl font-semibold dark:bg-blue-500/60 transition-all duration-300">
+        <div className="inline-block font-poppins px-6 py-2 mb-2 rounded-full border-2 border-blue-500 text-white text-sm md:text-xl font-semibold bg-blue-500/60 transition-all duration-300">
           {conferenceDates}
         </div>
         <div className="flex flex-col items-center">

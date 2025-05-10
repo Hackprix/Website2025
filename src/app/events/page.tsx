@@ -28,7 +28,7 @@ export default function EventsPage() {
         </div>
         <div className="flex-grow relative">
           {/* Department Events Section */}
-          <div className="">
+          <div className="h-full">
             <DepartmentPage />
           </div>
         </div>
