@@ -2,15 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { DEPARTMENTS } from "@/config/content";
 
 export function DepartmentHero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
     () => {
-      // Filter out central events (first 4 departments)
-      const departmentTitles = DEPARTMENTS.slice(4).map(dept => dept.shortName);
-      return ["Central Committee", ...departmentTitles];
+      return [
+        "Meetups",
+        "Workshops",
+        "Events",
+        "Sessions"
+      ];
     },
     []
   );
@@ -38,7 +40,7 @@ export function DepartmentHero() {
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold text-blue-500 mt-8 "
+                    className="absolute font-semibold text-blue-500 mt-8"
                     initial={{ opacity: 0, y: "-100" }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
@@ -60,9 +62,8 @@ export function DepartmentHero() {
             </h1>
 
             <p className="mb-10 font-poppins text-base md:text-xl leading-relaxed tracking-tight text-black/70 dark:text-white/70 max-w-2xl text-center">
-              Immerse yourself in a world of innovation and learning. Each department brings unique events, 
-              from technical workshops to management symposiums, creating a vibrant tapestry of academic excellence 
-              and practical knowledge.
+            Pre-hackathon sessions are on.
+            Come, learn a bit, meet people, and get set to build.
             </p>
           </div>
         </div>

@@ -50,7 +50,7 @@ const SESSIONS = [
     eventName: "Beyond Chatgpt: Building AI That Actually Does Something",
     description: "Learn how to build AI systems that go further than just chatting. Explore tools, APIs, and use cases where AI actually gets things done.",
     eventLink: "https://www.youtube.com/watch?v=Kn8WrnWtJbA",
-    Image: "/ap.jpg",
+    SpeakerImage: "/speakers/atul.jpg",
   },
   {
     id: "2",
@@ -59,7 +59,7 @@ const SESSIONS = [
     eventName: "From Ideas to Impact: The Real Power of AI, APIs and Agents",
     description: "Discover how to transform ideas into action with the power of AI, APIs, and Agents!",
     event: "Draper Startup House",
-    Image: "/IMG_4678.png",
+    SpeakerImage: "/speakers/reda.png",
   },
   {
     id: "3",
@@ -68,7 +68,7 @@ const SESSIONS = [
     eventName: "Build Your Project with Firebase",
     description: "Want to supercharge your next app idea? Join us for a hands-on session on how to build powerful and scalable projects using Firebase!",
     eventLink: "https://www.youtube.com/live/RgXZBil0eKk?si=E_Fu_ibZ68rhEMLW",
-    Image: "/IMG_4678.png",
+    SpeakerImage: "/speakers/bhawna.jpg",
   },
   {
     id: "4",
@@ -77,7 +77,7 @@ const SESSIONS = [
     eventName: "Building in public with GitHub copilot",
     description: "Learn how to leverage GitHub Copilot to boost your coding efficiency and build projects transparently to grow your developer profile",
     event: "Draper Startup House",
-    Image: "/vb.jpg",
+    SpeakerImage: "/speakers/bot.jpg",
   }
 ];
 
@@ -478,4 +478,4 @@ const DEPARTMENTS = [
   }
 ];
 
-export { MARQUEE, ABOUT, METRICS, TitleSponser, DEPARTMENTS };
+export { MARQUEE, ABOUT, METRICS, TitleSponser, DEPARTMENTS, SESSIONS };

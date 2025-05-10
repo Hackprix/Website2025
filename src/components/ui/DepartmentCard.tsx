@@ -10,17 +10,21 @@ import {
   MotionValue,
 } from "framer-motion";
 import { ShinyButton } from "@/components/ui/ShinnyButton";
+import { SESSIONS } from "@/config/content";
 
-interface Department {
+interface Sessions {
   id: string;
   name: string;
-  shortName: string;
-  logo: string;
+  position: string;
+  eventName: string;
   description: string;
+  eventLink?: string;
+  event?: string;
+  SpeakerImage: string;
 }
 
-interface DepartmentCardProps {
-  department: Department;
+interface SessionsCardProps {
+  session: Sessions;
 }
 
 interface MouseMoveEvent {
@@ -60,7 +64,7 @@ const Icon = ({ className }: { className?: string }) => {
   );
 };
 
-const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
+const SessionsCard: React.FC<SessionsCardProps> = ({ session }) => {
   const router = useRouter();
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -72,7 +76,9 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
   }, []);
 
   const handleClick = () => {
-    router.push(`/events/${department.id}`);
+    if (session.eventLink) {
+      window.open(session.eventLink, '_blank');
+    }
   };
 
   function onMouseMove({ currentTarget, clientX, clientY }: MouseMoveEvent) {
@@ -110,26 +116,35 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
           <div className="relative h-20 w-20 sm:h-24 sm:w-24 md:h-32 md:w-32 rounded-full flex items-center justify-center mt-2 sm:mt-3 md:mt-4">
             <div className="absolute w-full h-full bg-orange-400/[0.3] dark:bg-white/[0.8] blur-sm rounded-full" />
             <img
-              src={department.logo}
-              alt={department.name}
-              className="relative z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+              src={session.SpeakerImage}
+              alt={session.name}
+              className="relative z-20 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain rounded-full"
             />
           </div>
 
-          {/* Department Name and Description */}
+          {/* Speaker Name, Position and Event Name */}
           <div className="text-center flex-grow px-1 sm:px-2 mt-3 sm:mt-4 md:mt-6">
-            <h3 className="text-lg h-20 sm:text-lg md:text-xl lg:text-3xl font-bold text-black dark:text-white mb-2 sm:mb-3 md:mb-4">
-              {department.name}
-            </h3>
-            <p className="text-xs sm:text-sm text-black/80 dark:text-white/80  max-w-prose mx-auto">
-              {department.description}
-            </p>
+            <div className="h-8 sm:h-10 md:h-12 flex items-center justify-center">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-black dark:text-white font-poppins">
+                {session.name}
+              </h3>
+            </div>
+            <div className="h-6 sm:h-8 md:h-10 flex items-center justify-center">
+              <p className="text-sm sm:text-base text-black/80 dark:text-white/80 font-poppins">
+                {session.position}
+              </p>
+            </div>
+            <div className="h-12 sm:h-14 md:h-16 flex items-start">
+              <h4 className="text-base sm:text-lg md:text-xl text-black dark:text-white font-poppins">
+                {session.eventName}
+              </h4>
+            </div>
           </div>
 
-          {/* View Events and Arrow Section */}
+          {/* View Event and Arrow Section */}
           <div className="flex items-center justify-between w-full px-1 sm:px-2 py-2 sm:py-3 md:py-4 mt-auto h-full">
-            <ShinyButton className="textsm:text-xs md:text-sm">
-              View Events
+            <ShinyButton className="textsm:text-xs md:text-sm font-press">
+              View Event
             </ShinyButton>
             <div className="transform rounded-full bg-white dark:bg-black transition-transform duration-200 lg:-rotate-45 group-hover/card:-rotate-0">
               <BsArrowRightCircleFill className="text-4xl sm:text-3xl md:text-6xl text-black dark:text-white" />
@@ -164,4 +179,4 @@ function CardPattern({ mouseX, mouseY, randomString }: CardPatternProps) {
   );
 }
 
-export default DepartmentCard;
+export default SessionsCard;
