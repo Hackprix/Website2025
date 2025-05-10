@@ -42,17 +42,56 @@ const TitleSponser = {
   description: "Lords Institute of Engineering and Technology proudly serves as the Title Sponsor for SanketikaFest, providing the venue, funding, and essential support to bring this event to life. As the host institution, they play a crucial role in facilitating a platform where students, professionals, and tech enthusiasts can engage in a wide range of technical and non-technical competitions, hands-on workshops, speaker sessions, and interactive activities.Their commitment to fostering innovation, creativity, and knowledge-sharing ensures that SanketikaFest is not just an event, but an experience that inspires learning and growth. By providing an ecosystem that encourages collaboration, networking, and skill-building, Lords Institute empowers students to explore cutting-edge technologies, develop solutions to real-world problems, and connect with industry leaders."
 };
 
+const SESSIONS = [
+  {
+    id: "1",
+    name: "Atulpriya Sharma",
+    position: "Sr. Developer Advocate | CNCF Ambassador ",
+    eventName: "Beyond Chatgpt: Building AI That Actually Does Something",
+    description: "Learn how to build AI systems that go further than just chatting. Explore tools, APIs, and use cases where AI actually gets things done.",
+    eventLink: "https://www.youtube.com/watch?v=Kn8WrnWtJbA",
+    Image: "/ap.jpg",
+  },
+  {
+    id: "2",
+    name: "Reda Kaleem",
+    position: "Lead - CodeWave Hub | HackPrix",
+    eventName: "From Ideas to Impact: The Real Power of AI, APIs and Agents",
+    description: "Discover how to transform ideas into action with the power of AI, APIs, and Agents!",
+    event: "Draper Startup House",
+    Image: "/IMG_4678.png",
+  },
+  {
+    id: "3",
+    name: "Bhawna Chauhan",
+    position: "DevRel @quillaudits_ai",
+    eventName: "Build Your Project with Firebase",
+    description: "Want to supercharge your next app idea? Join us for a hands-on session on how to build powerful and scalable projects using Firebase!",
+    eventLink: "https://www.youtube.com/live/RgXZBil0eKk?si=E_Fu_ibZ68rhEMLW",
+    Image: "/IMG_4678.png",
+  },
+  {
+    id: "4",
+    name: "Afnan Abdul Vasay",
+    position: "GitHub Campus Expert",
+    eventName: "Building in public with GitHub copilot",
+    description: "Learn how to leverage GitHub Copilot to boost your coding efficiency and build projects transparently to grow your developer profile",
+    event: "Draper Startup House",
+    Image: "/vb.jpg",
+  }
+];
+
 const DEPARTMENTS = [
   // Central Events
   {
-    id: "sports",
-    name: "Sports Mania",
-    shortName: "Sports",
-    marquee: "Sports Mania 🏐 🏀 🏓",
+    id: "Pre-event",
+    name: "Pre-Hackathon Meetup",
+    shortName: "PM",
+    marquee: "Pre-Hackathon Meetup 🧑‍💻",
     logo: "/sports.png",
-    eventPoster: "/posters/sports.jpeg",
+    host: "/posters/sports.jpeg",
     schedulePoster: "/schedule/sports.jpg",
-    description: "Experience the thrill of competition at our Sports Fest! Featuring cricket, football, volleyball, and indoor games. Join us for two days of intense matches, team spirit, and athletic excellence. Open to all departments, this event promises to showcase the best sporting talent from across the campus.",
+    description: "Join us for an exciting pre-hackathon event designed to gear you up for the big day! Connect with fellow participants, form teams, get insights from mentors, and learn more about the problem statements and judging criteria.",
     events: [
       {
         name: "Volleyball Tournament",

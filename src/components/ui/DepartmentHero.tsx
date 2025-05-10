@@ -32,13 +32,13 @@ export function DepartmentHero() {
         <div className="flex gap-8 py-12 md:py-10 items-center justify-center flex-col">
           <div className="flex gap-4 flex-col">
             <h1 className="text-4xl md:text-6xl max-w-3xl tracking-tighter text-center font-regular">
-              <span className="text-black font-poppins tracking-wide dark:text-purple-400">Explore Events By</span>
+              <span className="font-poppins tracking-wide text-white mb-10">Stay Tuned For</span>
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-2 pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
                     key={index}
-                    className="absolute font-semibold text-cyan-600 dark:text-cyan-400"
+                    className="absolute font-semibold text-blue-500 mt-8 "
                     initial={{ opacity: 0, y: "-100" }}
                     transition={{ type: "spring", stiffness: 50 }}
                     animate={
@@ -59,7 +59,7 @@ export function DepartmentHero() {
               </span>
             </h1>
 
-            <p className="text-base md:text-xl leading-relaxed tracking-tight text-black/70 dark:text-white/70 max-w-2xl text-center">
+            <p className="mb-10 font-poppins text-base md:text-xl leading-relaxed tracking-tight text-black/70 dark:text-white/70 max-w-2xl text-center">
               Immerse yourself in a world of innovation and learning. Each department brings unique events, 
               from technical workshops to management symposiums, creating a vibrant tapestry of academic excellence 
               and practical knowledge.

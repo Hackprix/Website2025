@@ -8,20 +8,20 @@ import { DepartmentHero } from "@/components/ui/DepartmentHero";
 
 const DepartmentPage = () => {
   return (
-    <div className="w-full h-full flex items-center justify-center overflow-hidden z-20 md:pt-40 pt-16">
-      <div className="absolute inset-0">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden z-20 md:pt-36 pt-16 bg-gradient-to-b from-black via-slate-900 to-slate-900">
+      {/* <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px]" />
         <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px]" />
-      </div>
-      <SparklesCore
+      </div> */}
+      {/* <SparklesCore
         id="tsparticlesdepartmentpage"
         background="transparent"
         minSize={0.8}
         maxSize={1.6}
         particleDensity={60}
         className="w-full h-full opacity-50 absolute"
-      />
+      /> */}
       <div className="relative z-10 px-4 max-w-7xl mx-auto my-2">
         <DepartmentHero />
         
@@ -40,7 +40,7 @@ const DepartmentPage = () => {
             >
               <DepartmentCard department={department} />
             </motion.div>
-          ))}
+          ))}                                 
         </motion.div>
       </div>
     </div>

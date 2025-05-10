@@ -3,7 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { BsArrowRightCircleFill } from "react-icons/bs";
-import { useMotionValue, useMotionTemplate, motion, MotionValue } from "framer-motion";
+import {
+  useMotionValue,
+  useMotionTemplate,
+  motion,
+  MotionValue,
+} from "framer-motion";
 import { ShinyButton } from "@/components/ui/ShinnyButton";
 
 interface Department {
@@ -30,7 +35,8 @@ interface CardPatternProps {
   randomString: string;
 }
 
-const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+const characters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const generateRandomString = (length: number) => {
   let result = "";
   for (let i = 0; i < length; i++) {
@@ -78,8 +84,8 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
   }
 
   return (
-    <div 
-      className="relative w-3/4 sm:w-full max-w-sm mx-auto group hover:-translate-y-6 transition-transform duration-300 will-change-transform"
+    <div
+      className="relative w-3/4 sm:w-full h-full max-w-sm mx-auto group hover:-translate-y-6 transition-transform duration-300 will-change-transform"
       onMouseMove={onMouseMove}
     >
       {/* Corner Icons */}
@@ -90,10 +96,14 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
 
       <div
         onClick={handleClick}
-        className="group/card relative overflow-hidden border border-black/[0.2] dark:border-white/[0.2] px-3 sm:px-4 py-6 sm:py-6 cursor-pointer h-[350px] sm:h-[350px] md:h-[450px] transition-all duration-300 bg-white/60 dark:bg-black/50 rounded-[2rem] [mask-image:linear-gradient(to_bottom,transparent,black_1rem,black_calc(100%-1rem),transparent)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)]"
+        className="group/card h-full relative border border-black/[0.2] dark:border-white/[0.2] px-3 sm:px-4 py-6 sm:py-6 cursor-pointer transition-all duration-300 bg-white/60 dark:bg-black/50 rounded-[2rem] [mask-image:linear-gradient(to_bottom,transparent,black_1rem,black_calc(100%-1rem),transparent)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] dark:hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.2)]"
       >
         {/* Evervault Card Effect */}
-        <CardPattern mouseX={mouseX} mouseY={mouseY} randomString={randomString} />
+        <CardPattern
+          mouseX={mouseX}
+          mouseY={mouseY}
+          randomString={randomString}
+        />
 
         <div className="relative z-10 flex flex-col items-center h-full">
           {/* Center Logo Section */}
@@ -111,13 +121,13 @@ const DepartmentCard: React.FC<DepartmentCardProps> = ({ department }) => {
             <h3 className="text-lg h-20 sm:text-lg md:text-xl lg:text-3xl font-bold text-black dark:text-white mb-2 sm:mb-3 md:mb-4">
               {department.name}
             </h3>
-            <p className="text-xs sm:text-sm text-black/80 dark:text-white/80 line-clamp-3 max-w-prose mx-auto">
+            <p className="text-xs sm:text-sm text-black/80 dark:text-white/80  max-w-prose mx-auto">
               {department.description}
             </p>
           </div>
 
           {/* View Events and Arrow Section */}
-          <div className="flex items-center justify-between w-full px-1 sm:px-2 py-2 sm:py-3 md:py-4 mt-auto">
+          <div className="flex items-center justify-between w-full px-1 sm:px-2 py-2 sm:py-3 md:py-4 mt-auto h-full">
             <ShinyButton className="textsm:text-xs md:text-sm">
               View Events
             </ShinyButton>
@@ -154,4 +164,4 @@ function CardPattern({ mouseX, mouseY, randomString }: CardPatternProps) {
   );
 }
 
-export default DepartmentCard; 
+export default DepartmentCard;
