@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { timelineEvents } from "@/app/timeline/content";
 import MainHeading from "@/components/ui/MainHeading";
 import { SparklesCore } from "@/components/ui/Sparkles";
+import { ShootingStars } from "@/components/ui/ShootingStar";
 
 const TimelinePage = () => {
   const [filter, setFilter] = useState<string>("all");
@@ -28,15 +29,126 @@ const TimelinePage = () => {
       <div className="inset-0 bg-gradient-to-r from-purple-900/20 to-cyan-900/20">
         <Navbar />
       </div>
-      <main className="min-h-screen">
-        <SparklesCore
+      <main className="min-h-screen stars">
+        {/* <SparklesCore
           id="tsparticlestimeline"
           background="transparent"
           minSize={0.8}
           maxSize={1.6}
           particleDensity={30}
           className="w-full h-full opacity-50 absolute"
-        />
+        /> */}
+
+<ShootingStars
+        starColor="#9E00FF"
+        trailColor="#2EB9DF"
+        minSpeed={5}
+        maxSpeed={15}
+        minDelay={1000}
+        maxDelay={3000}
+      />
+      <ShootingStars
+        starColor="#FF0099"
+        trailColor="#FFB800"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={2000}
+        maxDelay={4000}
+      />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#00FF9E"
+        trailColor="#00B8FF"
+        minSpeed={20}
+        maxSpeed={40}
+        minDelay={1500}
+        maxDelay={3500}
+      />
+      <ShootingStars
+        starColor="#9E00FF"
+        trailColor="#2EB9DF"
+        minSpeed={15}
+        maxSpeed={35}
+        minDelay={1000}
+        maxDelay={3000}
+      />
+      <ShootingStars
+        starColor="#FF0099"
+        trailColor="#FFB800"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={2000}
+        maxDelay={4000}
+      />
+      <ShootingStars
+        starColor="#9E00FF"
+        trailColor="#2EB9DF"
+        minSpeed={15}
+        maxSpeed={35}
+        minDelay={1000}
+        maxDelay={3000}
+      />
+      <ShootingStars
+        starColor="#FF0099"
+        trailColor="#FFB800"
+        minSpeed={10}
+        maxSpeed={25}
+        minDelay={2000}
+        maxDelay={4000}
+      />
+            <style jsx>{`
+        .stars {
+          background-image: radial-gradient(
+              2px 2px at 20px 30px,
+              #eee,
+              rgba(0, 0, 0, 0)
+            ),
+            radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+            radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+            radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+            radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+            radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+          background-repeat: repeat;
+          background-size: 200px 200px;
+          animation: twinkle 5s ease-in-out infinite;
+          opacity: 0.5;
+        }
+
+        @keyframes twinkle {
+          0% {
+            opacity: 0.5;
+          }
+          50% {
+            opacity: 0.8;
+          }
+          100% {
+            opacity: 0.5;
+          }
+        }
+      `}</style>
         {/* Background Grid */}
         <div className="fixed inset-0 z-0">
           <div className="absolute inset-0 grid grid-cols-[repeat(auto-fit,minmax(50px,1fr))] grid-rows-[repeat(auto-fit,minmax(50px,1fr))] opacity-10">
@@ -61,7 +173,7 @@ const TimelinePage = () => {
                 <button
                   key={day}
                   onClick={() => setSelectedDay(day as "day1" | "day2")}
-                  className={`px-5 py-2 rounded-xl capitalize transition-all duration-300 font-medium ${
+                  className={`px-5 py-2 rounded-xl font-poppins capitalize transition-all duration-300 font-medium ${
                     selectedDay === day
                       ? "bg-yellow-900 border border-yellow-500/20 text-yellow-300"
                       : "bg-purple-900 border border-purple-500/20 text-purple-200 hover:bg-purple-900/60"
@@ -158,29 +270,29 @@ const TimelinePage = () => {
                             >
                               {event.timing}
                             </span> */}
-                            <h2 className="text-2xl font-bold text-yellow-200 mt-2 flex items-center gap-2">
+                            <h2 className="text-2xl font-bold text-yellow-200 mt-2 flex items-center justify-center gap-2 font-poppins">
                               {index % 2 === 0 ? (
                                 <>
                                   {event.title}{" "}
-                                  <span className="w-6 h-6 text-yellow-400">
+                                  <span className="text-yellow-400 font-poppins">
                                     {event.icon}
                                   </span>
                                 </>
                               ) : (
                                 <>
-                                  <span className="w-6 h-6 text-yellow-400">
+                                  <span className="text-yellow-400">
                                     {event.icon}
                                   </span>{" "}
                                   {event.title}
                                 </>
                               )}
                             </h2>
-                            <p className="mt-2 text-gray-300 text-left">
-                              {event.venue}
+                            <p className="mt-2 text-gray-300 text-left font-poppins">
+                              {event.venue && `Venue: ${event.venue}`}
                             </p>
                             <div className="w-full flex justify-end">
                               <span
-                                className={`inline-flex text-yellow-400 items-center gap-2 px-4 py-2 rounded-xl mt-3 text-sm transition-all duration-300 ${
+                                className={`inline-flex text-yellow-400 items-center gap-2 px-4 py-2 rounded-xl mt-3 text-sm transition-all duration-300 font-press ${
                                   isHovered
                                     ? "bg-yellow-900/10 border border-yellow-500/20 text-yellow-300"
                                     : "bg-purple-900/10 border border-purple-500/20 text-purple-200"

@@ -41,14 +41,14 @@ const DepartmentEventDetails = ({ departmentId }: DepartmentEventDetailsProps) =
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] dark:opacity-50" />
         <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-cyan-500/30 rounded-full blur-[120px] dark:opacity-50" />
       </div>
-      <SparklesCore
+      {/* <SparklesCore
         id="tsparticlesdeptdetailspage"
         background="transparent"
         minSize={0.2}
         maxSize={1.6}
         particleDensity={50}
         className="w-full h-full opacity-50 absolute"
-      />
+      /> */}
 
       <div className="relative z-10 max-w-xs md:max-w-6xl md:mx-auto px-4 md:px-4 py-4 md:py-8 dark:bg-black/50 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl border border-white/10 dark:border-white/20 bg-white/50">
         {/* Poster Container */}

@@ -19,14 +19,14 @@ const SchedulePage = () => {
         <Navbar />
       </div>
       <main className="min-h-screen">
-        <SparklesCore
+        {/* <SparklesCore
           id="tsparticlesschedule"
           background="transparent"
           minSize={0.8}
           maxSize={1.6}
           particleDensity={30}
           className="w-full h-full opacity-50 absolute"
-        />
+        /> */}
 
         {/* Content */}
         <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
